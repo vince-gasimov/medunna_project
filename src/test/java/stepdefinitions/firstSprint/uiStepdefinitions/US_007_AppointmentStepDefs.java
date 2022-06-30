@@ -52,8 +52,8 @@ public class US_007_AppointmentStepDefs {
     }
     @Then("user sees Appointment date can not be past date! warning on date field")
     public void userSeesAppointmentDateCanNotBePastDateWarningOnDateField() {
-        Driver.waitForVisibility(appointment.pastDueWarnning,10);
-        Assert.assertTrue(appointment.pastDueWarnning.isDisplayed());
+        Driver.waitForVisibility(appointment.pastDueWarning,10);
+        Assert.assertTrue(appointment.pastDueWarning.isDisplayed());
     }
     @Then("verify user can not make an appointment successfully")
     public void verify_user_can_not_make_an_appointment_successfully() {
@@ -83,7 +83,7 @@ public class US_007_AppointmentStepDefs {
 
     @Then("user should not see any error message")
     public void userShouldNotSeeAnyErrorMessage() {
-        Assert.assertFalse(appointment.pastDueWarnning.isDisplayed());
+        Assert.assertFalse(appointment.pastDueWarning.isDisplayed());
     }
 
     @When("user enters valid {string} using forward slash")
@@ -97,5 +97,13 @@ public class US_007_AppointmentStepDefs {
     @Then("user does not see any change on date")
     public void user_does_not_see_any_change_on_date() {
         Assert.assertTrue(appointment.todaysDate.isDisplayed());
+    }
+    @When("user enters symbols date box")
+    public void user_enters_symbols_date_box() {
+        appointment.date.sendKeys("!@#$!$@$!@$!@$");
+    }
+    @Then("user does not see any error message under date box")
+    public void user_does_not_see_any_error_message_under_date_box() {
+        Assert.assertFalse(appointment.pastDueWarning.isDisplayed());
     }
 }
