@@ -49,4 +49,5 @@ public class RegisterPage {
 
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement registerButton;
+
 }
