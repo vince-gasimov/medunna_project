@@ -6,7 +6,7 @@ import pages.HomePage;
 import utilities.ConfigurationReader;
 import utilities.Driver;
 
-public class HomePageStepDefs {
+public class US_007_HomePageStepDefs {
 
     HomePage homePage = new HomePage();
     @Given("user is navigated to medunna.com")
