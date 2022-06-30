@@ -1,16 +1,14 @@
-package stepdefinitions;
+package stepdefinitions.firstSprint.uiStepdefinitions;
 
-import com.github.javafaker.Faker;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import pages.HomePage;
 import utilities.ConfigurationReader;
 import utilities.Driver;
 
-public class US_007_MakeAppointmentStepDefs {
+public class HomePageStepDefs {
 
     HomePage homePage = new HomePage();
-    Faker faker = new Faker();
     @Given("user is navigated to medunna.com")
     public void user_is_navigated_to_medunna_com() {
         Driver.getDriver().get(ConfigurationReader.getProperty("medunna_url"));

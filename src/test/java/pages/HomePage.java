@@ -13,4 +13,14 @@ public class HomePage {
 
     @FindBy(xpath = "//a[@class='appointment-btn scrollto']")
     public WebElement makeAnAppointment;
+    @FindBy(xpath = "//*[@data-icon='user']")
+    public WebElement userIcon;
+    @FindBy(xpath = "//*[text()='Register']")
+    public WebElement registerButton;
+    @FindBy(xpath = "//*[text()='Sign in']")
+    public WebElement signInButton;
+    @FindBy(xpath = "//*[@id='entity-menu']")
+    public WebElement itemsAndTitlesButton;
+    @FindBy(xpath = "//a[@href='/patient']")
+    public WebElement patientButton;
 }
