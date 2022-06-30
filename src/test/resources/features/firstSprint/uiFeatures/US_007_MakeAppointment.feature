@@ -51,12 +51,19 @@ Scenario Outline: TC_00_No_Date_Entry
     |03/12/2029|
 
   @US007_TC012
-  Scenario: TC_004_Todays_Date
+  Scenario: TC_004_Enter_Letter
     When user enters letters on date box
     Then user does not see any change on date
     Then user clicks Send and Appointment Request
     And verify user can make an appointment successfully
     Then close the application
+
+  @US007_TC013
+  Scenario: TC_004_Enter_Symbol
+    When user enters symbols date box
+    Then user clicks Send and Appointment Request
+    And verify user can make an appointment successfully
+
 
 
 
