@@ -17,7 +17,8 @@ import java.util.List;
 import java.util.Random;
 import java.util.function.Function;
 
-public class ReusableMethods {
+public class
+ ReusableMethods {
     /*HOW DO YOU GET SCREENSHOT?
      * I use getScreenShotAs method to take a screenshot in selenium in my framework
      * I actually store the screenshot with unique name in my framework*/
