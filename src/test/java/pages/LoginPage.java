@@ -7,9 +7,15 @@ import utilities.Driver;
 
 public class LoginPage {
 
-    public LoginPage(){
+    public LoginPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
+
+    @FindBy(xpath = "//*[@id='account-menu']")
+    public WebElement humanIcon;
+
+    @FindBy(xpath = "//*[@id='login-item']/span")
+    public WebElement signInLocation;
 
     @FindBy(xpath = "//input[@name='username']")
     public WebElement usernameBox;
@@ -19,4 +25,8 @@ public class LoginPage {
 
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement signInButton;
+
+    @FindBy(xpath = "//*[@id='account-menu']")
+    public WebElement signedInUserName;
+
 }
