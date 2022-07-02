@@ -1,4 +1,4 @@
-package stepdefinitions.uiStepdefinitions;
+package stepdefinitions.firstSprint.uiStepdefinitions;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
