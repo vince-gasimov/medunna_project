@@ -1,10 +1,12 @@
-package stepdefinitions.firstSprint.uiStepdefinitions;
+package stepdefinitions.uiStepdefinitions;
 
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 import pages.US_007_AppointmentPage;
 import utilities.Driver;
 
@@ -12,6 +14,7 @@ public class US_007_AppointmentStepDefs {
 
     US_007_AppointmentPage appointment = new US_007_AppointmentPage();
     Faker faker = new Faker();
+    Actions actions = new Actions(Driver.getDriver());
     @Then("user enters valid first name")
     public void user_enters_valid_first_name() throws InterruptedException {
         Thread.sleep(3);
@@ -105,5 +108,43 @@ public class US_007_AppointmentStepDefs {
     @Then("user does not see any error message under date box")
     public void user_does_not_see_any_error_message_under_date_box() {
         Assert.assertFalse(appointment.pastDueWarning.isDisplayed());
+    }
+    @When("user clicks on date tab and enters valid {string}, {string}, and {string} using tab key")
+    public void user_clicks_on_date_tab_and_enters_valid_and_using_tab_key(String month, String day, String year) {
+        actions.click(appointment.date).sendKeys(month).
+                sendKeys(Keys.TAB).sendKeys(day)
+                .sendKeys(Keys.TAB).sendKeys(year).perform();
+    }
+
+    @When("user enters valid appointment {string}")
+    public void user_enters_valid_appointment(String date) {
+
+    }
+
+
+    @Then("user enters valid first name {string}")
+    public void userEntersValidFirstName(String firstname) {
+        firstname = faker.name().firstName();
+        Driver.waitAndSendText(appointment.firstName, firstname);
+
+    }
+
+    @And("user enters valid last name {string}")
+    public void userEntersValidLastName(String lastname) {
+        
+    }
+
+    @And("user enters valid ssn {string}")
+    public void userEntersValidSsn(String ssn) {
+        
+    }
+
+    @And("user enters valid email {string}")
+    public void userEntersValidEmail(String email) {
+        
+    }
+
+    @And("user enters valid phone number {string}")
+    public void userEntersValidPhoneNumber(String number) {
     }
 }
