@@ -12,7 +12,7 @@ import utilities.ConfigurationReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-import static utilities.TXTWriter.saveUiRegistrantData;
+import static utilities.US_001_TXTWriter.saveUiRegistrantData;
 
 public class US_001_RegisterationStepDefs {
 
