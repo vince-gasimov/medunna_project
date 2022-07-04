@@ -6,7 +6,7 @@ import pojos.US_007_Appointments;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 
-public class TXTWriter {
+public class US_007_TXTWriter {
 
     public static void saveUiRegistrantData(US_007_Appointments appointmentPojo){
 
