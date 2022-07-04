@@ -11,8 +11,6 @@ public class LoginPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(xpath = "//*[@id='account-menu']")
-    public WebElement humanIcon;
 
     @FindBy(xpath = "//*[@id='login-item']/span")
     public WebElement signInLocation;
@@ -29,4 +27,9 @@ public class LoginPage {
     @FindBy(xpath = "//*[@id='account-menu']")
     public WebElement signedInUserName;
 
+    @FindBy(xpath = "//input[@name='rememberMe']")
+    public WebElement rememberMeBox;
+
+    @FindBy(xpath = "//a[@span='Sign out']")
+    public WebElement signOutButton;
 }
