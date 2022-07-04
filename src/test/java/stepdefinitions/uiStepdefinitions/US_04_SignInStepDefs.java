@@ -1,14 +1,16 @@
-package stepdefinitions.firstSprint.uiStepdefinitions;
+package stepdefinitions.uiStepdefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import pages.HomePage;
 import pages.LoginPage;
 import utilities.ConfigurationReader;
 import utilities.Driver;
 
 public class US_04_SignInStepDefs {
     LoginPage loginPage = new LoginPage();
+    HomePage homePage=new HomePage();
 
     @Given("user is on the Medunna page")
     public void user_is_on_the_Medunna_page() {
@@ -17,12 +19,12 @@ public class US_04_SignInStepDefs {
 
     @Given("user clicks human icon")
     public void user_clicks_human_icon() {
-
-        loginPage.humanIcon.click();
+        homePage.userIcon.click();
     }
 
     @Given("user clicks signInLocation button")
     public void user_clicks_sign_in_location_button() {
+
         loginPage.signInLocation.click();
     }
 

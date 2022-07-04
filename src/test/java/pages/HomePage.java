@@ -23,4 +23,5 @@ public class HomePage {
     public WebElement itemsAndTitlesButton;
     @FindBy(xpath = "//a[@href='/patient']")
     public WebElement patientButton;
+
 }
