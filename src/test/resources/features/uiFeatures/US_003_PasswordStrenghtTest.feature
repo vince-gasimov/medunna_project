@@ -1,4 +1,4 @@
-@password_strength
+git @password_strength
 Feature: Registration_page_should_restrict_password
   Background:
     Given User navigates to "https://www.medunna.com/"
