@@ -36,4 +36,6 @@ public class US_007_AppointmentPage {
     public WebElement futureDate;
     @FindBy(xpath = "//input[@value='2022-06-30']")
     public WebElement todaysDate;
+    @FindBy(xpath = "//input[@id='appoDate']")
+    public WebElement displayedDate;
 }
