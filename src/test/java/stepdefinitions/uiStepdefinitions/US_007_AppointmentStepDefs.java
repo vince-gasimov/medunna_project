@@ -14,13 +14,10 @@ import pojos.US_007_Appointments;
 import utilities.ConfigurationReader;
 import utilities.Date;
 import utilities.Driver;
-import utilities.ExcelUtil;
 
 import java.time.LocalDate;
-import java.util.List;
-import java.util.Map;
 
-import static utilities.TXTWriter.saveUiRegistrantData;
+import static utilities.US_007_TXTWriter.saveUiRegistrantData;
 
 public class US_007_AppointmentStepDefs {
 
