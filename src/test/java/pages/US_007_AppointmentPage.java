@@ -29,11 +29,13 @@ public class US_007_AppointmentPage {
     @FindBy(id = "appoDate")
     public WebElement calendarButton;
     @FindBy(xpath = "//*[text()='Appointment date can not be past date!']")
-    public WebElement pastDueWarnning;
+    public WebElement pastDueWarning;
     @FindBy(xpath = "//*[text()='Internal server error.']")
     public WebElement errorMessage;
     @FindBy(xpath = "//input[@value='2035-03-12']")
     public WebElement futureDate;
     @FindBy(xpath = "//input[@value='2022-06-30']")
     public WebElement todaysDate;
+    @FindBy(xpath = "//input[@id='appoDate']")
+    public WebElement displayedDate;
 }
