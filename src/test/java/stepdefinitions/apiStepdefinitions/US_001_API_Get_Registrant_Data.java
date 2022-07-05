@@ -11,7 +11,7 @@ import utilities.ConfigurationReader;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertTrue;
 import static utilities.Authentication.generateToken;
-import static utilities.TXTWriter.saveUiRegistrantData;
+import static utilities.US_001_TXTWriter.saveUiRegistrantData;
 
 public class US_001_API_Get_Registrant_Data {
 
