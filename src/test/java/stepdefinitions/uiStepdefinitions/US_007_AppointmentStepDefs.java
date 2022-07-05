@@ -61,7 +61,7 @@ public class US_007_AppointmentStepDefs {
     }
     @Then("close the application")
     public void closeTheApplication() {
-        Driver.getDriver().close();
+        Driver.closeDriver();
     }
     @When("user enters valid future date")
     public void userEntersValidFutureDate() {
