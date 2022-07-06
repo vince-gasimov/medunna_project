@@ -19,7 +19,7 @@ public class HomePage {
     public WebElement registerButton;
     @FindBy(xpath = "//*[text()='Sign in']")
     public WebElement signInButton;
-    @FindBy(xpath = "//*[@id='entity-menu']")
+    @FindBy(xpath = "//span[.='Items&Titles']")
     public WebElement itemsAndTitlesButton;
     @FindBy(xpath = "//a[@href='/patient']")
     public WebElement patientButton;

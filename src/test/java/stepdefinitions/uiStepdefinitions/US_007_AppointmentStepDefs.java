@@ -48,6 +48,7 @@ public class US_007_AppointmentStepDefs {
         Driver.waitForVisibility(appointment.successMessage,10);
         Assert.assertTrue(appointment.successMessage.isDisplayed());
         saveUiRegistrantData(appointmentPojo);
+        System.out.println(appointmentPojo);
     }
     @Then("user sees Appointment date can not be past date! warning on date field")
     public void userSeesAppointmentDateCanNotBePastDateWarningOnDateField() {
