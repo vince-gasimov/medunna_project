@@ -1,2 +1,6 @@
-package stepdefinitions.apiStepdefinitions;public class Us_010_AppointmentsListApiStepDefs {
+package stepdefinitions.apiStepdefinitions;
+
+public class Us_010_AppointmentsListApiStepDefs {
+
+
 }
