@@ -1,4 +1,4 @@
-package stepdefinitions.firstSprint.uiStepdefinitions;
+package stepdefinitions.uiStepdefinitions;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -16,8 +16,8 @@ public class US_006_User_Settings_P1_StepDefs {
 
     @Given("User should navigate to medunna.com")
     public void user_should_navigate_to_medunna_com() {
-//        Driver.getDriver().get(ConfigurationReader.getProperty("medunna_url"));
-        Driver.getDriver().get("https://medunna.com");
+        Driver.getDriver().get(ConfigurationReader.getProperty("medunna_url"));
+
     }
 
 
@@ -99,13 +99,15 @@ public class US_006_User_Settings_P1_StepDefs {
 
     @Then("User should click save button")
     public void user_should_click_save_button() {
-
+        userSettingsPage.saveButton.click();
     }
 
 
 
     @Then("User should see Settings saved! popup message on the top left corner")
     public void user_should_see_settings_saved_popup_message_on_the_top_left_corner() {
+        Assert.assertTrue(userSettingsPage.popup.isDisplayed());
+    //Assert.assertEquals("Settings saved!", userSettingsPage.popup.getText());
 
     }
 
@@ -114,7 +116,9 @@ public class US_006_User_Settings_P1_StepDefs {
 
     @Then("User settings for page should include First Name, Last Name, and Email options")
     public void user_settings_for_page_should_include_first_name_last_name_and_email_options() {
-
+    Assert.assertTrue(userSettingsPage.firstName.isDisplayed());
+    Assert.assertTrue(userSettingsPage.lastName.isDisplayed());
+    Assert.assertTrue(userSettingsPage.eMail.isDisplayed());
     }
 
 
@@ -137,11 +141,6 @@ public class US_006_User_Settings_P1_StepDefs {
     public void user_should_see_your_email_is_required_text_message_when_entering_invalid_email() {
 
     }
-
-
-
-
-
 }
 
 
