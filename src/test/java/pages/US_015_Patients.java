@@ -19,37 +19,49 @@ public class US_015_Patients {
     @FindBy(xpath = "//a[@id='jh-create-entity']")
     public WebElement createNewPatient;
     @FindBy(xpath = "(//a[@class='btn btn-primary btn-sm'])[1]")
-    public WebElement edit;
+    public WebElement editPatient;
+    @FindBy(xpath = "//a[@class='btn btn-danger btn-sm']")
+    public WebElement deletePatient;
+    @FindBy(xpath = "//button[@class='btn btn-danger']")
+    public WebElement confirmDelete;
+    @FindBy(xpath = "//button[@class='btn btn-secondary']")
+    public WebElement cancelDelete;
     @FindBy(xpath = "(//a[@class='page-link'])[9]")
     public WebElement lastPage;
-    @FindBy(xpath = "//span[.='ID']")
-    public WebDriver id;
-    @FindBy(xpath = "//span[.='SSN']")
-    public WebDriver ssn;
     @FindBy(xpath = "//span[.='First Name']")
-    public WebDriver firstName;
+    public WebElement firstNameButton;
     @FindBy(xpath = "//span[.='Last Name']")
-    public WebDriver lastName;
-    @FindBy(xpath = "//span[.='Birth Date']")
-    public WebDriver birthDate;
-    @FindBy(xpath = "//span[.='Phone']")
-    public WebDriver phone;
-    @FindBy(xpath = "///span[.='Gender']")
-    public WebDriver gender;
-    @FindBy(xpath = "//span[.='Blood Group']")
-    public WebDriver bloodGroup;
-    @FindBy(xpath = "//span[.='Address']")
-    public WebDriver address;
-    @FindBy(xpath = "//span[.='Description']")
-    public WebDriver description;
-    @FindBy(xpath = "//span[.='Created Date']")
-    public WebDriver createdDate;
-    @FindBy(xpath = "//span[.='User']")
-    public WebDriver user;
-    @FindBy(xpath = "(//span[.='Country'])[2]")
-    public WebDriver country;
-    @FindBy(xpath = "//span[.=' State/City']")
-    public WebDriver stateCity;
+    public WebElement lastNameButton;
+    @FindBy(xpath = "//a[.='109504']")
+    public WebElement patientiId;
+    @FindBy(xpath = "//td[.='839-97-7135']")
+    public WebElement patientSsn;
+    @FindBy(xpath = "(//*[text()='0000001Team83'])[1]")
+    public WebElement patientFirstName;
+    @FindBy(xpath = "(//*[text()='0000001Team83'])[2]")
+    public WebElement patienLastName;
+    @FindBy(xpath = "//*[text()='05/07/22 00:00']")
+    public WebElement patientBirthDate;
+    @FindBy(xpath = "//*[text()='223-223-2222']")
+    public WebElement patientPhone;
+    @FindBy(xpath = "//*[text()='0000001Team83@gmail.com']")
+    public WebElement patientEmail;
+    @FindBy(xpath = "//*[text()='Gender']")
+    public WebElement patientGender;
+    @FindBy(xpath = "//*[text()='O-']")
+    public WebElement patientBloodGroup;
+    @FindBy(xpath = "//*[text()='123mainst']")
+    public WebElement patientAddress;
+    @FindBy(xpath = "//*[text()='111']")
+    public WebElement patientDescription;
+    @FindBy(xpath = "//*[text()='05/07/22 14:06']")
+    public WebElement patientCreatedDate;
+    @FindBy(xpath = "//*[text()='waylon.rodriguezz']")
+    public WebElement patientUser;
+    @FindBy(xpath = "//*[text()='USA']")
+    public WebElement patientCountry;
+    @FindBy(xpath = "//*[text()='California']")
+    public WebElement patinentStateCity;
 
 
 }
