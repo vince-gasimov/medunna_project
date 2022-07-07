@@ -94,9 +94,8 @@ public class US13Stepdefinition {
     }
     @Then("Doctor get error message or success message")
     public void doctor_get_error_message_or_success_message() throws InterruptedException {
-        Thread.sleep(5000);
+        Thread.sleep(1000);
         try {
-            Thread.sleep(100);
             Boolean result = us_013Pages.InpatientRequestDoneAlertSuccessMessage.isDisplayed();
             Assert.assertTrue(result);
 
@@ -104,5 +103,5 @@ public class US13Stepdefinition {
             Boolean result = us_013Pages.InpatientRequestDoneAlertErrorMessage.isDisplayed();
             Assert.assertTrue(result);
         }
+        }
     }
-}
