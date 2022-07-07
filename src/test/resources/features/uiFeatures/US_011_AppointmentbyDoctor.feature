@@ -31,31 +31,31 @@ Feature: US_011 My Appointments Edit portal by Physician(Doctor)
     And user verifies patient's physician is visible
     And verify the patient's physician name which should be the same with login user's name
     Then closes the page
+
+
+
+
   @US011_TC006
-  Scenario:TC_006 Check Patient's name
-    And user verifies patient's name is visible
-    And closes the page
-  @US011_TC007
   Scenario:TC_007 Check Doctor fills in required fields and save
     And user fills in required fields, anemnesis, treatment, diagnosis
     And user clicks on Save button
     And verify appointment is saved successfully
     Then closes the page
-  @US011_TC008
+  @US011_TC007
   Scenario:TC_008 Negative Scenario for Anamnesis, Treatment, and Diagnosis as required fields
     Then user does not fill in required fields, anemnesis, treatment, diagnosis
     And checks if the error messages are displayed
     And user clicks on Save button
     And verify appointment is not saved
     Then closes the page
-  @US011_TC009
+  @US011_TC008
   Scenario: TC_009 Status can be only selected as "PENDING" by Doctor
     Then user fills in required fields, anemnesis, treatment, diagnosis
     And user selects status as "PENDING"
     And verify selected status as "PENDING"
     And user clicks on Save button
     Then closes the page
-  @US011_TC010
+  @US011_TC009
   Scenario: TC_010 Status can be only selected as "COMPLETED" by Doctor
     Then user fills in required fields, anemnesis, treatment, diagnosis
     And user selects status as "COMPLETED"
@@ -63,14 +63,14 @@ Feature: US_011 My Appointments Edit portal by Physician(Doctor)
     And user clicks on Save button
     And verify appointment is saved successfully
     Then closes the page
-  @US011_TC011
+  @US011_TC010
   Scenario: TC_011 Status can be only selected as "CANCELLED" by Doctor
     Then user fills in required fields, anemnesis, treatment, diagnosis
     And user selects status as "CANCELLED"
     And verify selected status as "CANCELLED"
     And user clicks on Save button
     Then closes the page
-  @US011_TC012
+  @US011_TC011
   Scenario: TC_012 Status can be only selected as "UNAPPROVED" by Doctor
     Then user fills in required fields, anemnesis, treatment, diagnosis
     And user selects status as "UNAPPROVED"
