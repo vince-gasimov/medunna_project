@@ -30,7 +30,7 @@ public class US_01_Registrant {
 
     private String firstName;
     private String lastName;
-    private String snn;
+    private String string;
     private String login;
     private String langKey;
     private String password;
@@ -55,12 +55,12 @@ public class US_01_Registrant {
         this.lastName = lastName;
     }
 
-    public String getSnn() {
-        return snn;
+    public String getString() {
+        return string;
     }
 
-    public void setSnn(String snn) {
-        this.snn = snn;
+    public void setString(String string) {
+        this.string = string;
     }
 
     public String getLogin() {
@@ -124,7 +124,7 @@ public class US_01_Registrant {
         return "Registrant{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", snn='" + snn + '\'' +
+                ", snn='" + string + '\'' +
                 ", login='" + login + '\'' +
                 ", langKey='" + langKey + '\'' +
                 ", password='" + password + '\'' +
