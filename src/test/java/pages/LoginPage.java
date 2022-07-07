@@ -19,4 +19,10 @@ public class LoginPage {
 
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement signInButton;
+
+    @FindBy(id="account-menu")
+    public WebElement signInAndRegistrationPortal;
+
+    @FindBy(id="login-item")
+    public WebElement signIn;
 }
