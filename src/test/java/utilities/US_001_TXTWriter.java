@@ -9,7 +9,7 @@ public class US_001_TXTWriter {
 
     public static void saveUiRegistrantData(US_01_Registrant US01Registrant) {
         try {
-            FileWriter fw = new FileWriter(ConfigurationReader.getProperty("applicant_data"), true);
+            FileWriter fw = new FileWriter(ConfigurationReader.getProperty("us_001_registrant_data"), true);
 
             BufferedWriter bw = new BufferedWriter(fw);
 
@@ -21,7 +21,7 @@ public class US_001_TXTWriter {
     }
     public static void saveUiRegistrantData(US_01_Registrant[] US01Registrants) {
         try {
-            FileWriter fw = new FileWriter(ConfigurationReader.getProperty("api_all_registrant_data"), true);
+            FileWriter fw = new FileWriter(ConfigurationReader.getProperty("us_001_API_user_data"), true);
 
             BufferedWriter bw = new BufferedWriter(fw);
 

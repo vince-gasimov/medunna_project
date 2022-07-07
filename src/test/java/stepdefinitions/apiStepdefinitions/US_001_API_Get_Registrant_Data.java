@@ -8,6 +8,8 @@ import io.restassured.response.Response;
 import pojos.US_01_Registrant;
 import utilities.ConfigurationReader;
 
+import java.util.Arrays;
+
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertTrue;
 import static utilities.Authentication.generateToken;
@@ -27,7 +29,7 @@ public class US_001_API_Get_Registrant_Data {
                 "Content-Type", ContentType.JSON,
                 "Accept", ContentType.JSON
         ).when().get(ConfigurationReader.getProperty("registrant_endpoint"));
-//        response.prettyPrint();
+        response.prettyPrint();
 
     }
 
@@ -48,7 +50,7 @@ public class US_001_API_Get_Registrant_Data {
         boolean flag = false;
         for (int i = 0; i < US01Registrants.length; i++) {
 
-            if (US01Registrants[i].getFirstName().contains("Team")) {
+            if (US01Registrants[i].getLogin().contains("Team")) {
                 System.out.println(US01Registrants[i].getFirstName());
                 flag = true;
                 break;
@@ -61,6 +63,7 @@ public class US_001_API_Get_Registrant_Data {
     @Then("user saves the data to the files and validates")
     public void user_saves_the_data_to_the_files_and_validates() {
         saveUiRegistrantData(US01Registrants);
+        System.out.println(Arrays.stream(US01Registrants).allMatch( reg -> reg.getFirstName().contains("Team")));
 
 
     }
