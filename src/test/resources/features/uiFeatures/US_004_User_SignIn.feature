@@ -16,6 +16,7 @@ Feature: user_signin
     Then  user should verify signed in "<signedInUserName>" successful
     Then close the application
 
+
     Examples: customer credentials
       | username       | password  | signedInUserName
       | Team83-kubraoz | Esra2014. | Kubra Ozyasar
@@ -30,6 +31,7 @@ Feature: user_signin
     When  user should click sign in box
     Then  user should verify fail message
     Then close the application
+
     Examples: customer credentials
       | username     | password  |
       | Team83-ghj15 | Esra2014. |
@@ -59,6 +61,7 @@ Feature: user_signin
     And user clicked on username box
     And username should automatically see existing password
     Then close the application
+
     Examples: customer credentials
       | username       | password  | signedInUserName
       | Team83-kubraoz | Esra2014. | Kubra Ozyasar
@@ -70,6 +73,8 @@ Feature: user_signin
     And  user should click sign in box
     Then user verify failed message
     Then close the application
+
+
   @US004_TC06
   Scenario Outline:TC06_Need_to_update_password_if_forgotten_"Did_you_forget_your_password
     And user should double click to Did you forget your password
@@ -77,6 +82,7 @@ Feature: user_signin
     When user clicked reset password
     Then user verify the  message "Check your emails for details on how to reset your password" message
     Then close the application
+
     Examples: customer credentials
       | valid email address   |
       | kubracanada@gmail.com |
@@ -88,6 +94,7 @@ Feature: user_signin
     And user clicked reset password
     Then user verify the invalid character message "This field is invalid"
     Then close the application
+
     Examples: customer credentials
       | invalid email address |
       | kubraca842-gmail/com  |
@@ -99,6 +106,7 @@ Feature: user_signin
     When user clicked reset password
     Then user verify the  message "Check your emails for details on how to reset your password" message
     Then close the application
+
     Examples: customer credentials
       | non-registered email |
       | kubra@gmail.com      |
@@ -108,6 +116,7 @@ Feature: user_signin
     When user should click to " You don't have an account yet? Register a new account"
     And user verify to navigate registration page
     Then close the application
+
   @US004_TC10
   Scenario Outline:Need to to navigate to "cancel login"
     And  user should entered a valid username "<username>" on the sign in page
@@ -115,6 +124,7 @@ Feature: user_signin
     When user should click to cancel button
     Then user verify that  successfully to switch to home page
     Then close the application
+
     Examples: customer credentials
       | username        | password |
       | Team83-kubra123 | asdFJ12  |

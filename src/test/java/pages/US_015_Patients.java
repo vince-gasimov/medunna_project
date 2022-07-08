@@ -66,5 +66,6 @@ public class US_015_Patients {
     public WebElement patientStateCity;
     @FindBy(xpath = "//span[.='Patient']")
     public WebElement patientButton;
-
+    @FindBy(xpath = "//*[text()='ahmet']")
+    public WebElement ahmetDoctor;
 }

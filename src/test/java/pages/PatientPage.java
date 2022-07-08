@@ -40,6 +40,9 @@ public class PatientPage {
     public WebElement saveButton;
     @FindBy(xpath = "//div[contains(text(),'A new Patient is created')]")
     public WebElement successMessage;
-
+    @FindBy(xpath = "//span[.='Created Date']")
+    public WebElement createdDate;
+    @FindBy(xpath = "(//a[.='California'])[1]")
+    public WebElement californiaState;
 
 }

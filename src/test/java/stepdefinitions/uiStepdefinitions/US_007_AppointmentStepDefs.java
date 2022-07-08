@@ -10,7 +10,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import pages.HomePage;
 import pages.US_007_AppointmentPage;
-import pojos.US_007_Appointments;
+import pojos.US_007_AppointmentsPojo;
 import utilities.ConfigurationReader;
 import utilities.Date;
 import utilities.Driver;
@@ -25,7 +25,7 @@ public class US_007_AppointmentStepDefs {
     US_007_AppointmentPage appointment = new US_007_AppointmentPage();
     Faker faker = new Faker();
     Actions actions = new Actions(Driver.getDriver());
-    US_007_Appointments appointmentPojo = new US_007_Appointments();
+    US_007_AppointmentsPojo appointmentPojo = new US_007_AppointmentsPojo();
     LocalDate todaysData;
     String path = "./src/test/resources/testdata/mysmoketestdata.xlsx";
 
