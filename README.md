@@ -1,4 +1,4 @@
-<h3 align="center">medunna.com</h3>
+<h1 align="center">medunna.com</h1>
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
