@@ -20,6 +20,8 @@ public class US_015_Patients {
     public WebElement createNewPatient;
     @FindBy(xpath = "(//a[@class='btn btn-primary btn-sm'])[1]")
     public WebElement editPatient;
+    @FindBy(xpath = "//*[contains (text(),'Patient is updated')]")
+    public WebElement patientUpdatedMessage;
     @FindBy(xpath = "//a[@class='btn btn-danger btn-sm']")
     public WebElement deletePatient;
     @FindBy(xpath = "//button[@class='btn btn-danger']")
@@ -39,7 +41,7 @@ public class US_015_Patients {
     @FindBy(xpath = "(//*[text()='0000001Team83'])[1]")
     public WebElement patientFirstName;
     @FindBy(xpath = "(//*[text()='0000001Team83'])[2]")
-    public WebElement patienLastName;
+    public WebElement patientLastName;
     @FindBy(xpath = "//*[text()='05/07/22 00:00']")
     public WebElement patientBirthDate;
     @FindBy(xpath = "//*[text()='223-223-2222']")
@@ -61,7 +63,9 @@ public class US_015_Patients {
     @FindBy(xpath = "//*[text()='USA']")
     public WebElement patientCountry;
     @FindBy(xpath = "//*[text()='California']")
-    public WebElement patinentStateCity;
-
-
+    public WebElement patientStateCity;
+    @FindBy(xpath = "//span[.='Patient']")
+    public WebElement patientButton;
+    @FindBy(xpath = "//*[text()='ahmet']")
+    public WebElement ahmetDoctor;
 }

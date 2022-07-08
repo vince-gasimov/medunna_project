@@ -14,7 +14,6 @@ Feature: Make Appointment
     Examples: valid credentials
       |firstName|lastName|ssn        |email                 |phone       |
       |Lev      |Tolstoy |653-24-3425|annakarenina@gmail.com|653-204-3425|
-      |Lev      |Tolstoy |653-24-3425|annakarenina@gmail.com|653-204-3425|
 
   @US007_TC003
   Scenario: TC_004_Passed_Date
