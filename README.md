@@ -1,6 +1,6 @@
 <h1 align="center">medunna.com</h1>
 
-<h3 align="left">Connect with me:</h3>
+<h3 align="left">Team collaboration on testing medunna.com</h3>
 <p align="left">
 </p>
 
