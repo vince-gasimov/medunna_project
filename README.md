@@ -8,7 +8,8 @@ ___
 <p align="left">
 </p>
 
-- ⚡ Reported all bugs to Jira <img src="https://github.com/devicons/devicon/blob/master/icons/jira/jira-original-wordmark.svg" title="Jira" alt="Jira" width="40" height="40"/>&nbsp; <br/>
+- ⚡ Reported all bugs to Jira <img src="https://github.com/devicons/devicon/blob/master/icons/jira/jira-original-wordmark.svg" title="Jira" alt="Jira" width="40" height="40"/>&nbsp; 
+<br/>
 
  <h3 align=“left”> Scenarios </h4>
 
