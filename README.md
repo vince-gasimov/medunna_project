@@ -2,7 +2,7 @@
 
 <h3 align=“left”> Team collaboration on testing medunna website </h4>
 
-----
+***
 
 - 🔭 Link to the project: [medunna.com](medunna.com)
 <p align="left">
