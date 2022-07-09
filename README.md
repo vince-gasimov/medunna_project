@@ -20,6 +20,7 @@ ___
 - Smoke Testing
 - Sanity Testing
 - Regression Testing
+<br/>
 
 <h3 align="left">Languages and Tools used for this project</h3>
 
