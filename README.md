@@ -11,6 +11,7 @@ ___
 </p>
 
 - ⚡ Reported all bugs to Jira <img src="https://github.com/devicons/devicon/blob/master/icons/jira/jira-original-wordmark.svg" title="Jira" alt="Jira" width="40" height="40"/>&nbsp; 
+- Tested website 
 <br/>
 
  <h3 align=“left”> Scenarios </h4>
@@ -19,6 +20,7 @@ ___
 
 - Black Box Testing
 - Functional Testing
+- End-To-End Testing
 - Smoke Testing
 - Sanity Testing
 - Regression Testing
