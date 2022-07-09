@@ -20,10 +20,10 @@ ___
 
 - Black Box Testing
 - Functional Testing
-- End-To-End Testing
 - Smoke Testing
 - Sanity Testing
 - Regression Testing
+- End-To-End Testing
 <br/>
 
 <h3 align="left">Languages and Tools used for this project</h3>
