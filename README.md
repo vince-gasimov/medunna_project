@@ -1,8 +1,8 @@
 <h1 align="center">medunna.com</h1>
 
-<h3 align="left">Team collaboration on testing medunna.com</h3>
+<h2 align="left">Team collaboration on testing medunna.com</h2>
 
-- 🔭 Link to the project: [medunna.com](medunna.com)
+<h3 align="left">- 🔭 Link to the project: [medunna.com](medunna.com)</h3>
 <p align="left">
 </p>
 
