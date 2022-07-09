@@ -18,7 +18,7 @@ ___
 - Functional Testing
 - Smoke Testing
 - Sanity Testing
-- Resgression Testing
+- Regression Testing
 
 <h3 align="left">Languages and Tools used for this project:</h3>
 
