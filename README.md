@@ -10,6 +10,8 @@
 <p align="left">
 </p>
 
+- ⚡ Reported all bugs to Jira
+
 ---
 
 <h3 align="left">Languages and Tools used for this project:</h3>
