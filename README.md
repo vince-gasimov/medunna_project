@@ -6,7 +6,7 @@
 
 ___
 
-- 🔭 Link to the project: [medunna.com](medunna.com)
+- 🔭 Link to the project: [medunna.com](https://medunna.com/)
 <p align="left">
 </p>
 
