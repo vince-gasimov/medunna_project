@@ -14,7 +14,7 @@ ___
 - Tested website 
 <br/>
 
- <h3 align=“left”> Scenarios </h4>
+ <h3 align=“left”> Test Executions </h4>
 
 ---
 
