@@ -1,5 +1,7 @@
 <h1 align="center">Medunna Health Project</h1>
 
+---
+
 <h4 align=“left”> 
   Team collaboration on testing medunna website 
 </h4>
