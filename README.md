@@ -1,6 +1,8 @@
 <h1 align="center">Medunna Health Project</h1>
 
-# 🔭 Team collaboration on testing [medunna.com](medunna.com) </h4>
+<h4 align=“left”> 
+  Team collaboration on testing [medunna.com](medunna.com) 
+</h4>
 
 - 🔭 Link to the project: [medunna.com](medunna.com)
 <p align="left">
