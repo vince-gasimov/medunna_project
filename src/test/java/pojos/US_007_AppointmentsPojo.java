@@ -3,7 +3,7 @@ package pojos;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class US_007_Appointments {
+public class US_007_AppointmentsPojo {
 
     /*
     {
