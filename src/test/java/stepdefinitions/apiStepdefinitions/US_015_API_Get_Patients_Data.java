@@ -14,6 +14,7 @@ import java.io.IOException;
 
 import static io.restassured.RestAssured.given;
 import static utilities.Authentication.generateToken;
+import static utilities.US_001_TXTWriter.saveApiAllPatientsData;
 
 public class US_015_API_Get_Patients_Data {
 
@@ -45,26 +46,12 @@ public class US_015_API_Get_Patients_Data {
         ObjectMapper obj = new ObjectMapper();
         patients = obj.readValue(response.asString(), US_015_Patient_Pojo[].class);
 
-        //user adds user data to patients array of POJO objects
+        //user adds json to patients array of POJO objects
 
 
         System.out.println(patients.length);
 
-//        boolean flag = false;
-//        for (int i = 0; i < patients.length; i++) {
-//            for (int j = 0; j < 7; j++) {
-//
-//                if (patients[i][j].getFirstName().contains("Team83")) {
-//                    System.out.println(patients[i][j].getFirstName());
-//                    System.out.println(patients[i][j].getLastName());
-//                    flag = true;
-//
-//                }
-//            }
-//            assertTrue(flag);
-//
-//
-//        }
+
     }
 
         @Then("user saves the patients data to the file and validates")
