@@ -110,9 +110,7 @@ public class US_015_PatientsByAdminStepDefs {
     @Then("user clicks on edit button")
     public void user_clicks_on_edit_button() {
         Driver.waitAndClick(us015_Patients.firstNameButton, 5);
-//        us015_Patients.firstNameButton.click();
         Driver.waitAndClick(us015_Patients.lastNameButton, 5);
-//        us015_Patients.lastNameButton.click();
         Driver.waitAndClick(us015_Patients.editPatient, 1);
     }
     @Then("user sees all patient information")
@@ -203,6 +201,20 @@ public class US_015_PatientsByAdminStepDefs {
         ReusableMethods.selectRandomTextFromDropdown(select);
         select = new Select(patientPage.countryBox);
         select.selectByVisibleText("Morocco");
+    }
+    @When("user sorts the patients and clicks on delete button on first patient")
+    public void user_sorts_the_patients_and_clicks_on_delete_button_on_first_patient() {
+        patientPage.createdDateButton.click();
+        us015_Patients.deletePatient.click();
+    }
+    @Then("user confirms delete")
+    public void user_confirms_delete() {
+        us015_Patients.confirmDelete.click();
+    }
+    @Then("user confirms that patients information is deleted")
+    public void user_confirms_that_patients_information_is_deleted() {
+        Driver.waitAndClick(patientPage.createdDateButton, 5);
+//        Assert.assertFalse(us015_Patients.deletedUser.isDisplayed());
     }
 }
 
