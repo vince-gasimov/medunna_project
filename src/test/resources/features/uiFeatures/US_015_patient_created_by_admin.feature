@@ -52,10 +52,16 @@ Feature: patient_by_admin
     Then user enters valid information and select country as USA
     And user does not select any state option and clicks save button
 
-  @TC_018_Select_Country_Morocco
+  @TC_008_Select_Country_Morocco
   Scenario: User select country as Morocco
     When user clicks on create new patient button
     Then user enters valid information and select country as Morocco
     And user does not select any state option and clicks save button
+
+  @TC_009_DeletePatient
+  Scenario: Delete user
+    When user sorts the patients and clicks on delete button on first patient
+    Then user confirms delete
+    And user confirms that patients information is deleted
 
 

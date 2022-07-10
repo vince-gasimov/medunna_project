@@ -44,5 +44,7 @@ public class PatientPage {
     public WebElement createdDate;
     @FindBy(xpath = "(//a[.='California'])[1]")
     public WebElement californiaState;
+    @FindBy(xpath = "(//th[@class='hand'])[12]")
+    public WebElement createdDateButton;
 
 }
