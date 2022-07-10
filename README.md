@@ -26,7 +26,7 @@ ___
 - End-To-End Testing
 <br/>
 
-<h3 align="left">Languages and Tools used for this project</h3>
+<h3 align="left"> 👨‍💻 Languages and Tools used for this project</h3>
 
 ---
 
