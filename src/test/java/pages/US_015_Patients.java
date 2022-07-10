@@ -22,7 +22,7 @@ public class US_015_Patients {
     public WebElement editPatient;
     @FindBy(xpath = "//*[contains (text(),'Patient is updated')]")
     public WebElement patientUpdatedMessage;
-    @FindBy(xpath = "//a[@class='btn btn-danger btn-sm']")
+    @FindBy(xpath = "(//a[@class='btn btn-danger btn-sm'])[1]")
     public WebElement deletePatient;
     @FindBy(xpath = "//button[@class='btn btn-danger']")
     public WebElement confirmDelete;
@@ -68,4 +68,6 @@ public class US_015_Patients {
     public WebElement patientButton;
     @FindBy(xpath = "//*[text()='ahmet']")
     public WebElement ahmetDoctor;
+    @FindBy(xpath = "//*[text()='Deleteuser']")
+    public WebElement deletedUser;
 }

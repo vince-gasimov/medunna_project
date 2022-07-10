@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
         },
         features = "./src/test/resources/features",
         glue = {"stepdefinitions", "hooks"},
-        tags = "@TC_018_Select_Country_Morocco",
+        tags = "@US_007_Verify_Patient_PhoneNumber",
         dryRun = false
 )
 public class Runner {
