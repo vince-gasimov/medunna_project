@@ -12,6 +12,7 @@ import java.io.IOException;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertTrue;
+import static utilities.Authentication.generateToken;
 import static utilities.US_007_TXTWriter.saveUiRegistrantData;
 
 public class US_007_AppointmentsApiSteps {
@@ -21,11 +22,16 @@ public class US_007_AppointmentsApiSteps {
     public void user_sends_a_get_request_for_user_s_data() {
         response = given().
                 headers("Authorization",
-                        "Bearer " + ConfigurationReader.getProperty("us_007_api_token"),
+                        "Bearer " + generateToken(),
                         "Content-Type", ContentType.JSON,
                         "Accept", ContentType.JSON).
                 when().get(ConfigurationReader.getProperty("us_007_get_appointments_api"));
-        response.prettyPrint();
+//        response.prettyPrint(); ==> this prints all get request
+    }
+    @Then("status code should be {string}")
+    public void status_code_should_be(String string) {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
     }
     @Given("user deserializes the user's data to java")
     public void user_deserializes_the_user_s_data_to_java() throws Exception {
