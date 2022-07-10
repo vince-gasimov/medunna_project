@@ -26,5 +26,6 @@ public class US_015_DB_Patients {
         List<Object> allColumnData = DBUtils.getColumnData("select * from "+"",column);
         System.out.println(allColumnData);
         Assert.assertTrue(allColumnData.contains(data));
+
     }
 }
