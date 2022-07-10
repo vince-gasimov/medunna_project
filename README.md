@@ -1,4 +1,4 @@
-<h1 align="center">Medunna Health Project</h1>
+<h1 align="center">Medunna Project</h1>
 
 <br/>
 
