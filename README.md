@@ -39,3 +39,26 @@ ___
 <a href="https://postman.com" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="postman" width="40" height="40"/> </a> 
 <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> 
 </p>
+
+
+
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Collaborative Text Editor</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="/css/app.css" rel="stylesheet"></link>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header__h1">Online Collab Edit</h1>
+    </header>
+    <div class="doc">
+      <div class="doc__background-ribbon"></div>
+      <div class="doc__text-editor hidden"></div>
+    </div>
+  </body>
+</html>
