@@ -2,19 +2,19 @@
 
 <br/>
 
-<h3 align=“left”> Team collaboration on testing medunna website </h4>
+<h3 align=“left”> 🔭 Team collaboration on testing medunna website </h4>
 
 ___
 
-- 🔭 Link to the project: [medunna.com](https://medunna.com/)
+- Link to the project: [medunna.com](https://medunna.com/)
 <p align="left">
 </p>
 
-- ⚡ Reported all bugs to Jira <img src="https://github.com/devicons/devicon/blob/master/icons/jira/jira-original-wordmark.svg" title="Jira" alt="Jira" width="40" height="40"/>&nbsp; 
+- Reported all bugs to Jira <img src="https://github.com/devicons/devicon/blob/master/icons/jira/jira-original-wordmark.svg" title="Jira" alt="Jira" width="40" height="40"/>&nbsp; 
 - Tested website 
 <br/>
 
- <h3 align=“left”> Test Executions </h4>
+ <h3 align=“left”> ⚡ Test Executions </h4>
 
 ---
 
