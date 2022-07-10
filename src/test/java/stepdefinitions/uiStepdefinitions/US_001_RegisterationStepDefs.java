@@ -32,7 +32,7 @@ public class US_001_RegisterationStepDefs {
 
         ssn = faker.idNumber().ssnValid();
         Driver.waitAndSendText(registerPage.ssnBox, ssn);
-        US01Registrant.setString(ssn);
+        US01Registrant.setSsn(ssn);
 
     }
     @Given("user does not send SSN number")

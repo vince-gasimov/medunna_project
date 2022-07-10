@@ -14,6 +14,8 @@ import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static utilities.Authentication.generateToken;
+import static utilities.US_001_TXTWriter.saveApiNewRegistrantData;
+import static utilities.US_001_TXTWriter.saveUiRegistrantsData;
 
 public class US_001_API_Get_Registrant_Data {
 
@@ -42,30 +44,7 @@ public class US_001_API_Get_Registrant_Data {
         ObjectMapper obj = new ObjectMapper();
         registrants = obj.readValue(response.asString(), US_01_Registrant[].class);
 
-//        System.out.println(registrants.length);
-//        System.out.println(registrants[6].getFirstName());
-//        System.out.println(registrants[6].getLastName());
-//        System.out.println(registrants[6].getEmail());
-//        System.out.println(registrants[6].getSsn());
 
-
-//        boolean flag = false;
-//        for (int i = 0; i < registrants.length; i++) {
-//
-//            if (registrants[i].getFirstName().contains("Team")) {
-//                System.out.println(registrants[i].getFirstName());
-//                System.out.println(registrants[i].getSsn());
-//                flag = true;
-//                break;
-//            }
-//        }
-//        assertTrue(flag);
-
-
-//        for (US_01_Registrant registrant : registrants) {
-//            List<String> list = Arrays.asList(registrant.getAuthorities());
-//            System.out.println(list);
-//        }
     }
 
     @Then("user saves the data to the files and validates")
