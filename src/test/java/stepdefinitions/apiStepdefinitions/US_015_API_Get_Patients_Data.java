@@ -14,6 +14,7 @@ import java.io.IOException;
 
 import static io.restassured.RestAssured.given;
 import static utilities.Authentication.generateToken;
+import static utilities.US_001_TXTWriter.saveApiAllPatientsData;
 
 public class US_015_API_Get_Patients_Data {
 
