@@ -371,6 +371,8 @@ public class US_014_MyInpatientsUpdateStepDefs {
     public void doctorVerifiesStayingInpatientsStatusCanBeChangedToDischarged() {
         Assert.assertTrue(doctorPage.updatedMessage.isDisplayed());
     }
+
+
 }
 
 //    @Given("doctor finds the patients status {string} and clicks edit button")
