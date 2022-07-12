@@ -10,7 +10,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import pages.HomePage;
 import pages.US_007_AppointmentPage;
-import pojos.US_007_Appointments;
+import pojos.US_007_AppointmentsPojo;
 import utilities.ConfigurationReader;
 import utilities.Date;
 import utilities.Driver;
@@ -25,7 +25,7 @@ public class US_007_AppointmentStepDefs {
     US_007_AppointmentPage appointment = new US_007_AppointmentPage();
     Faker faker = new Faker();
     Actions actions = new Actions(Driver.getDriver());
-    US_007_Appointments appointmentPojo = new US_007_Appointments();
+    US_007_AppointmentsPojo appointmentPojo = new US_007_AppointmentsPojo();
     LocalDate todaysData;
     String path = "./src/test/resources/testdata/mysmoketestdata.xlsx";
 
@@ -48,6 +48,7 @@ public class US_007_AppointmentStepDefs {
         Driver.waitForVisibility(appointment.successMessage,10);
         Assert.assertTrue(appointment.successMessage.isDisplayed());
         saveUiRegistrantData(appointmentPojo);
+        System.out.println(appointmentPojo);
     }
     @Then("user sees Appointment date can not be past date! warning on date field")
     public void userSeesAppointmentDateCanNotBePastDateWarningOnDateField() {
@@ -61,7 +62,7 @@ public class US_007_AppointmentStepDefs {
     }
     @Then("close the application")
     public void closeTheApplication() {
-        Driver.getDriver().close();
+        Driver.closeDriver();
     }
     @When("user enters valid future date")
     public void userEntersValidFutureDate() {
