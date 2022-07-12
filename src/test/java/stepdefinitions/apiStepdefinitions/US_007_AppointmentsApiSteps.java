@@ -21,7 +21,7 @@ public class US_007_AppointmentsApiSteps {
     Response response;
     US_007_AppointmentsPojo appointments;
 
-    @Given("user sends a post request for user's data")
+    @Given("user sends a post request for users' data  US_007")
     public void user_sends_a_post_request_for_user_s_data() {
         response = given().
                 headers("Authorization",
@@ -49,11 +49,11 @@ public class US_007_AppointmentsApiSteps {
 //        }
 //        assertTrue(flag);
 //    }
-    @Then("user saves the users' data to correspondent files and validates")
+    @Then("user saves the users' data to correspondent files and validates US_007")
     public void user_saves_the_users_data_to_correspondent_files_and_validates() {
         saveUiRegistrantData(appointments);
     }
-    @Given("user deserializes appointments api response")
+    @Given("user deserializes appointments api response US_007")
     public void user_deserializes_appointments_api_response() throws IOException {
         ObjectMapper obj = new ObjectMapper();
         appointments = obj.readValue(response.asString(), US_007_AppointmentsPojo.class);
