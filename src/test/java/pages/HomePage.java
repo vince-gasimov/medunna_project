@@ -23,11 +23,29 @@ public class HomePage {
     public WebElement itemsAndTitlesButton;
     @FindBy(xpath = "//a[@href='/patient']")
     public WebElement patientButton;
+
+
+
+
+
+
+
+
+
+
+
+    @FindBy(xpath = "//*[@id='account-menu']")
+    public WebElement profil;
+
+    @FindBy(xpath = "//div[@class='invalid-feedback']")
+    public WebElement invalidmessage;
+
     @FindBy(linkText = "SIGN IN AGAIN")
     public WebElement signInAgain;
     @FindBy(xpath = "//*[@id='hero']/div/h1")
     public WebElement homePage;
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement signInBox;
+
 
 }

@@ -17,6 +17,7 @@ import static utilities.Authentication.generateToken;
 import static utilities.US_007_TXTWriter.saveUiRegistrantData;
 
 public class US_007_AppointmentsApiSteps {
+
     Response response;
     US_007_AppointmentsPojo appointments;
 
@@ -52,9 +53,14 @@ public class US_007_AppointmentsApiSteps {
     public void user_saves_the_users_data_to_correspondent_files_and_validates() {
         saveUiRegistrantData(appointments);
     }
+<<<<<<< HEAD
     @Given("user deserializes appointments api response")
     public void user_deserializes_appointments_api_response() throws IOException {
         ObjectMapper obj = new ObjectMapper();
         appointments = obj.readValue(response.asString(), US_007_AppointmentsPojo.class);
     }
+=======
+
+>>>>>>> master
 }
+
