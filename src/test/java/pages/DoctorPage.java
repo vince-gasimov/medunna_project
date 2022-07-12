@@ -22,7 +22,7 @@ public class DoctorPage {
 
     //note:web elements of my inpatients page
 
-    @FindBy(xpath = "(//tbody/tr/td)[1]")   //td 1 ve 11 i gorse yeter diycem ama bulmuyor
+    @FindBy(xpath = "(//tbody/tr/td)[1]")
     public WebElement id;
 
     @FindBy(xpath = "(//tbody/tr/td)[2]")
@@ -49,6 +49,9 @@ public class DoctorPage {
     @FindBy(xpath = "(//tbody/tr/td)[9]")
     public WebElement patient;
 
+    @FindBy(xpath = "//table[@class='table']" )
+    public WebElement entireTable;
+
     @FindBy(xpath = "(//span)[37]")
     public WebElement edit;
 
@@ -60,6 +63,37 @@ public class DoctorPage {
 
 
 //note: web elements of updating page
+
+    @FindBy(xpath="//input[@name='description']")
+    public WebElement descriptionBox;
+
+    @FindBy(xpath="//input[@id='in-patient-createdDate']")
+    public WebElement createdDateEdit;
+
+    @FindBy(xpath = "//select[@id='in-patient-status']")
+    public WebElement statusEdit;
+
+    @FindBy(xpath ="//select[@id='in-patient-room']")
+    public WebElement roomEdit;
+
+    @FindBy(xpath = "//button[@id='save-entity']")
+    public WebElement save;
+
+    @FindBy(xpath ="//*[contains (text(),'The In Patient is updated with identifier')]")
+    public WebElement updatedMessage;
+
+    @FindBy(xpath ="//*[contains (text(),'InPatient status can not be changed ')]")
+    public WebElement canNotBeUpdatedMessage;
+
+    @FindBy(xpath ="//*[contains (text(),'Such a room not found')]")
+    public WebElement suchARoomNotFoundMessage;
+
+    @FindBy(xpath ="//*[contains (text(),'The room already reserved')]")
+    public WebElement theRoomAlreadyReservedMessage;
+
+
+
+
 
 
 }
