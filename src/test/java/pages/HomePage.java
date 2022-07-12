@@ -46,6 +46,8 @@ public class HomePage {
     public WebElement homePage;
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement signInBox;
+    @FindBy(xpath = "(//span)[10]")
+    public WebElement contact;
 
 
 }
