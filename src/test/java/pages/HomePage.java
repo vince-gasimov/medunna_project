@@ -23,4 +23,19 @@ public class HomePage {
     public WebElement itemsAndTitlesButton;
     @FindBy(xpath = "//a[@href='/patient']")
     public WebElement patientButton;
+
+
+
+
+
+
+
+
+
+
+    @FindBy(xpath = "//*[@id='account-menu']")
+    public WebElement profil;
+
+    @FindBy(xpath = "//div[@class='invalid-feedback']")
+    public WebElement invalidmessage;
 }
