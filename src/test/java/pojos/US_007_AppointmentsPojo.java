@@ -20,6 +20,19 @@ public class US_007_AppointmentsPojo {
 }
      */
 
+    public US_007_AppointmentsPojo() {
+
+    }
+
+    public US_007_AppointmentsPojo(String firstName, String lastName, String ssn, String email, String phone, int startDate) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.ssn = ssn;
+        this.email = email;
+        this.phone = phone;
+        this.startDate = startDate;
+    }
+
     private String firstName;
     private String lastName;
     private String ssn;
