@@ -60,7 +60,7 @@ public class US_007_AppointmentStepDefs {
         Driver.waitForVisibility(appointment.errorMessage,10);
         Assert.assertTrue(appointment.errorMessage.isDisplayed());
     }
-    @Then("close the application")
+    @Then("close the application US_015")
     public void closeTheApplication() {
         Driver.closeDriver();
     }
@@ -128,7 +128,7 @@ public class US_007_AppointmentStepDefs {
         appointment.ssn.sendKeys(ssn);
         email = faker.internet().emailAddress();
         appointment.email.sendKeys(email);
-        phone = faker.phoneNumber().cellPhone();
+        phone = faker.numerify("###-###-####");
         appointment.phone.sendKeys(phone);
     }
     @When("user enters {string} date")
