@@ -14,6 +14,7 @@ import utilities.ReusableMethods;
 
 import static utilities.US_001_TXTWriter.saveUiRegistrantData;
 
+
 public class US_001_RegisterationStepDefs {
 
     HomePage homePage = new HomePage();
