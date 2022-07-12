@@ -15,6 +15,7 @@ import static org.junit.Assert.assertTrue;
 import static utilities.US_007_TXTWriter.saveUiRegistrantData;
 
 public class US_007_AppointmentsApiSteps {
+
     Response response;
     US_007_AppointmentsPojo[] appointments;
     @Given("user sends a get request for user's data")
@@ -45,4 +46,6 @@ public class US_007_AppointmentsApiSteps {
     public void user_saves_the_users_data_to_correspondent_files_and_validates() {
         saveUiRegistrantData(appointments);
     }
+
 }
+
