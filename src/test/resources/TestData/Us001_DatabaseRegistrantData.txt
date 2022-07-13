@@ -1,0 +1,1 @@
+US_01_Registrant{firstName='Team83_Marg', lastName='Konopelski_Team83', ssn='763-33-7237', login='Team83_dominique.mayert', langKey='null', password='37uusglq25fy', email='Team83_murray.lockman@hotmail.com', id=0, activated=false, authorities=null}
