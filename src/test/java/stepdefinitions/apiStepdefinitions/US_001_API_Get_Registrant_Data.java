@@ -15,8 +15,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static utilities.Authentication.generateToken;
 
-import static utilities.US_001_TXTWriter.saveApiNewRegistrantData;
-import static utilities.US_001_TXTWriter.saveUiRegistrantsData;
+import static utilities.US_001_TXTWriter.*;
+
 
 
 public class US_001_API_Get_Registrant_Data {
