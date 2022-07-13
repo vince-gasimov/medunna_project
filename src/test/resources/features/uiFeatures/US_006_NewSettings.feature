@@ -47,9 +47,9 @@ Feature: testing_of_settings_functionality
 
   @US_006_Scenario_4
   Scenario Outline: negative_scenario
-    Given doctor enters a valid first name as "Ahmet"
-    Then doctor enters a valid last name as "Mehmet"
-    Then user enters a invalid email as "<email>"
+    Given user should enter a valid first name as "Ahmet"
+    Then user should enter a valid last name as "Mehmet"
+    Then user should enter an invalid email as "<email>"
     Then close the browser
 
     Examples:
