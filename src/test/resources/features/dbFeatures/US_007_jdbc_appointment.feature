@@ -6,13 +6,16 @@ Feature: database_appointments
 
   @US_007_Read_All_Data
   Scenario: read_all_patient_table
-    When user gets the "*" data from "patient" table
+    When user gets the "*" data from "appointment" table
     And close the database connection
 
   @US_007_015
-  Scenario: read_all_patient_table
-    Then verify "patient" table "first_name" column contains "ksjjkbsefkjebfkbse" data
+  Scenario Outline: read_all_patient_table
+    Then verify "patient" table "first_name" column contains "<name>" data
     And close the database connection
+    Examples: name
+    |name|
+    |ksjjkbsefkjebfkbse|
 
   @US_007_db_firstname_table
   Scenario: TC01_read_customer_ssn_information
@@ -38,9 +41,12 @@ Feature: database_appointments
     Then close the database connection
 
   @US_007_db_phone_verify
-  Scenario: TC03_read_customer_address_information
-    Then verify "patient" table "phone" column contains "123-123-1234" data
+  Scenario Outline: TC03_read_customer_address_information
+    Then verify "patient" table "phone" column contains "<phone>" data
     Then close the database connection
+    Examples: phone
+    |phone|
+    |123-123-1234|
 
   @US_007_db_firstname_verify
   Scenario: TC03_read_customer_address_information
