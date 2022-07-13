@@ -97,4 +97,3 @@ Feature: Make Appointment
     Examples: valid credentials
       |firstName|lastName|ssn        |email             |phone       |
       |George   |Orwell  |273-23-5435|book1994@gmail.com|273-236-5435|
-
