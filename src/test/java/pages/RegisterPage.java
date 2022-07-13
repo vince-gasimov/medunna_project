@@ -50,4 +50,8 @@ public class RegisterPage {
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement registerButton;
 
+    @FindBy(xpath = "//div[contains(text(),'Registration Saved')]")
+    public WebElement registrationSuccessMessage;
+
+
 }

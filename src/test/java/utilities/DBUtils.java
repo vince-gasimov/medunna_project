@@ -1,7 +1,5 @@
 package utilities;
 
-import org.postgresql.util.PSQLException;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -23,9 +21,11 @@ public class DBUtils {
      * DBUtils.createConnection(); -> to connect to teh database
      */
     public static void createConnection() {
-        String url = "jdbc:postgresql://medunna.com:5432/medunna_db";
-        String username = "medunnadb_user";
-        String password = "Medunnadb_@129";
+
+        String url = ConfigurationReader.getProperty("db_credentials_url");
+        String username=ConfigurationReader.getProperty("db_username");
+        String password=ConfigurationReader.getProperty("db_password");
+
         try {
             connection = DriverManager.getConnection(url, username, password);
         } catch (SQLException e) {
