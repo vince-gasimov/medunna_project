@@ -42,7 +42,7 @@ public class Hooks {
         Driver.getDriver().get("https://medunna.com/account/register");
     }
 
-    @Before(order=4, value ="@US_007_GetRequest")
+    @Before(order=4, value ="@Api")
     public void beforeApi(){
         medunnaSetup();
     }

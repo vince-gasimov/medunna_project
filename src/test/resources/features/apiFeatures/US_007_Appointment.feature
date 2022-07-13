@@ -1,7 +1,8 @@
 Feature: test the appointment with api
 
-  @US_007_GetRequest
+  @Api
 
+  @US_007_GetRequest
   Scenario: get the appointment with get request
     Given generate the token US007
     And user makes an appointment request with API US007
