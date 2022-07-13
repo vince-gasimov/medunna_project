@@ -10,8 +10,6 @@ Feature:Doctor_Views_inPatients_info
     And    doctor clicks on MY PAGES
     Then   doctor clicks on My Inpatients
 
-
-
   Scenario: TC_001_verify_id_is_visible
     When doctor verifies the ID of the inpatient is visible
     And doctor closes the application
@@ -46,4 +44,8 @@ Feature:Doctor_Views_inPatients_info
 
   Scenario: TC_009_verify_patient_is_visible
     When doctor verifies the Patient is visible
+    And doctor closes the application
+
+  Scenario: TC_010_verify_entire_table_is_visible
+    When doctor verifies she can see all the info of patients
     And doctor closes the application
