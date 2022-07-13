@@ -2,13 +2,20 @@ package pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import utilities.Driver;
 
 import javax.xml.xpath.XPath;
 
 public class ContactPage {
+
+    public ContactPage(){
+        PageFactory.initElements(Driver.getDriver(), this);
+    }
+
     @FindBy(xpath = "//div[@class='container']")
     public WebElement contactTitle;
-    @FindBy(xpath = "//input[@id='name']")
+    @FindBy(xpath = "//input[@placeholder='Name']")
     public WebElement name;
     @FindBy(xpath ="//input[@id='email']" )
     public WebElement email;

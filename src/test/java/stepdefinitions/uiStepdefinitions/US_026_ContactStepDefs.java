@@ -46,11 +46,9 @@ public class US_026_ContactStepDefs {
         actions.sendKeys(Keys.PAGE_DOWN).perform();
         Thread.sleep(2000);
         contactPage.name.sendKeys("filiz");
-//        Thread.sleep(3000);
-//        contactPage.email.sendKeys("filizonatce@gmail.com");
-//        Thread.sleep(3000);
-//        contactPage.subject.sendKeys("I can not see my appointment");
-//        Thread.sleep(3000);
+        contactPage.email.sendKeys("filizonatce@gmail.com");
+        contactPage.subject.sendKeys("I can not see my appointment");
+
     }
 
 
