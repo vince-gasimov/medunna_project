@@ -10,11 +10,11 @@ import java.sql.SQLException;
 
 public class db_Us_009_stepdefs {
 
-    @Given("user connects to the database")
-    public void user_connects_to_the_database() {
-        DBUtils.createConnection();
-
-    }
+//    @Given("user connects to the database")
+//    public void user_connects_to_the_database() {
+//        DBUtils.createConnection();
+//
+//    }
     @Given("user gets the {string} from {string} table with the {string} of {string}")
     public void user_gets_the_from_table(String column, String table, String idColumn,String actualId) {
         String query ="select " + column +" from " + table + " where " + idColumn + "=" + actualId;
@@ -23,10 +23,10 @@ public class db_Us_009_stepdefs {
     //    @Given("user reads all of the {string} column data")
 //    public void user_reads_all_of_the_column_data(String string) {
 //    }
-    @Then("close the database connection")
-    public void close_the_database_connection() {
-        DBUtils.closeConnection();
-    }
+//    @Then("close the database connection")
+//    public void close_the_database_connection() {
+//        DBUtils.closeConnection();
+//    }
     @Then("the {string} of the person should be {string}")
     public void the_of_the_person_with_the_id_of_should_be(String firstNameColumn, String actualFirstName) throws SQLException {
 
