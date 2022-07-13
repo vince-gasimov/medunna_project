@@ -1,20 +1,14 @@
 package pages;
 
-
-
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-
 public class US_006_Pages {
 
     public US_006_Pages() {
-
         PageFactory.initElements(Driver.getDriver(), this);
-
-
     }
 
     @FindBy(xpath = "//*[@data-icon='user']")
@@ -41,10 +35,8 @@ public class US_006_Pages {
     @FindBy(xpath = "//*[contains(text(),'User settings for')]")
     public WebElement userSettingsForText;
 
-
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement signInButton2;
-
 
     @FindBy(xpath = "//*[@id='firstName']")
     public WebElement firstName;
@@ -69,8 +61,6 @@ public class US_006_Pages {
 
     @FindBy(xpath = "//*[text()='Settings saved!']")
     public WebElement popup;
-
-
 }
 
 
