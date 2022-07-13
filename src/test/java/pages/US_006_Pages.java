@@ -1,22 +1,27 @@
 package pages;
 
+
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
 
-public class UserSettingsPage {
+public class US_006_Pages {
 
-    public UserSettingsPage() {
+    public US_006_Pages() {
 
         PageFactory.initElements(Driver.getDriver(), this);
 
+
     }
 
+    @FindBy(xpath = "//*[@data-icon='user']")
+    public WebElement userIcon;
 
-    @FindBy(xpath = "//a[@aria-haspopup='true']")
-    public WebElement userIconButton;
+    @FindBy(xpath = "//*[text()='Sign in']")
+    public WebElement signInButton;
 
     @FindBy(id = "User settings for")
     public WebElement userSettingsFor;
@@ -27,46 +32,45 @@ public class UserSettingsPage {
     @FindBy(xpath = "//input[@name='password']")
     public WebElement passwordBox;
 
-    @FindBy(xpath = "//a[@class='dropdown-item']")
-    public WebElement signInButton;
-
-    @FindBy(xpath = "//a[@aria-haspopup='true']")  // userIconButton'la ayni ???
+    @FindBy(xpath = "//li[@id='account-menu']")
     public WebElement registratedUserButton;
 
-    @FindBy(xpath = "(//span['Settings'])[24]")  // ??? x path or ???
+    @FindBy(xpath = "//*[text()='Settings']")
     public WebElement settingsButton;
 
-    @FindBy(className = "User settings for")
-    public WebElement userSettingsForButton;
+    @FindBy(xpath = "//*[contains(text(),'User settings for')]")
+    public WebElement userSettingsForText;
 
 
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement signInButton2;
 
 
-    @FindBy(xpath = "//input[@name='firstName']")
+    @FindBy(xpath = "//*[@id='firstName']")
     public WebElement firstName;
 
     @FindBy(xpath = "(//div[@class='invalid-feedback'])[1]")
     public WebElement firstNameError;
 
-    @FindBy(xpath = "//input[@name='lastName']")
+    @FindBy(xpath = "//input[@id='lastName']")
     public WebElement lastName;
 
-    @FindBy(xpath = "(//div[@class='invalid-feedback'])[2]")
+    @FindBy(xpath = "(//*[@class='text-danger form-group'])[2]")
     public WebElement lastNameError;
 
-    @FindBy(xpath = "//input[@name='email']")
+    @FindBy(xpath = "//input[@id='email']")
     public WebElement eMail;
 
-    @FindBy(xpath = "(//div[@class='invalid-feedback'])[3]")
+    @FindBy(xpath = "(//*[@class='text-danger form-group'])[3]")
     public WebElement eMailError;
 
-    @FindBy(xpath = "// button[@type='submit']")
+    @FindBy(xpath = "//button[@type='submit']")
     public WebElement saveButton;
 
-    @FindBy(xpath = "//div[@role='alert']")
+    @FindBy(xpath = "//*[text()='Settings saved!']")
     public WebElement popup;
 
 
 }
+
+
