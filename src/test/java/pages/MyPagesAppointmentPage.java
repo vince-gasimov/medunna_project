@@ -16,8 +16,8 @@ public class MyPagesAppointmentPage {
     @FindBy(id = "login-item")
     public WebElement signIn;
 
- @FindBy(xpath = "//*[text()='MY PAGES']")
-  public WebElement myPages;
+    @FindBy(xpath = "//*[text()='MY PAGES']")
+    public WebElement myPages;
 
     @FindBy(xpath = "//*[@class='svg-inline--fa fa-calendar-week fa-w-14 fa-fw ']")
     public WebElement myAppointments;
@@ -28,19 +28,19 @@ public class MyPagesAppointmentPage {
     @FindBy(xpath = "//*[@id='hospitalmsappfrontendApp.appointment.home.createOrEditLabel']/span")
     public WebElement createEditAppointmentText;
 
-    @FindBy(name = "id")
+    @FindBy(xpath = "//*[text()='ID']")
     public WebElement id;
 
     @FindBy(xpath = "//*[@class='table']/tbody/tr[1]/td[1]")
     public WebElement appointmentID;
 
-    @FindBy(name = "startDate")
+    @FindBy(xpath = "//*[text()='Start DateTime']")
     public WebElement startDate;
 
-    @FindBy(name = "endDate")
+    @FindBy(xpath = "//*[text()='End DateTime']")
     public WebElement endDate;
 
-    @FindBy(name = "status")
+    @FindBy(xpath = "//*[text()='Status']")
     public WebElement status;
 
     @FindBy(name = "physician.id")
