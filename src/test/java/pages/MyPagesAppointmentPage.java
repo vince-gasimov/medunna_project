@@ -16,8 +16,8 @@ public class MyPagesAppointmentPage {
     @FindBy(id = "login-item")
     public WebElement signIn;
 
- @FindBy(xpath = "//*[text()='MY PAGES']")
-  public WebElement myPages;
+    @FindBy(xpath = "//*[text()='MY PAGES']")
+    public WebElement myPages;
 
     @FindBy(xpath = "//*[@class='svg-inline--fa fa-calendar-week fa-w-14 fa-fw ']")
     public WebElement myAppointments;

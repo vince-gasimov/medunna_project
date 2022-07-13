@@ -1,18 +1,24 @@
 @appointmentsList
 Feature: appointments_List
 
-  Background: user is on the home page
-    Given user navigates to medunna.com
+  Scenario: doctor can see their appointments list and time slots on My Appointments
+
+  Background: doctor is on the home page
+    Given doctor navigates to medunna.com
+    And doctor clicks on the user icon button
+    And doctor clicks on the Sign in button
+
 
 @US_010_TC001
   Scenario: TC_001_user_in_Appointments_List
-    Given user clicks on the user icon
-    And user clicks on the Sign in button
-    And user enters valid username and password
-    And user clicks on Sign in button
-    And user clicks on Items&Titles button
-    Then user clicks on Appointments button
-    And user should see Appointments list and time slots
+
+    And doctor writes a valid username
+    And doctor writes a valid password
+    And doctor clicks on Sign in button
+    And doctor clicks on My Pages button
+    And doctor clicks on Appointments button
+    And doctor selects Appointment date from datefrom and dateto
+    And doctor should see Appointments list and time slots
 
 
   Scenario: TC_002_user_sign_in_invalid_username
