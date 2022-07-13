@@ -116,8 +116,6 @@
             <artifactId>postgresql</artifactId>
             <version>42.2.8</version>
         </dependency>
-
-
     </dependencies>
 
     <build>
