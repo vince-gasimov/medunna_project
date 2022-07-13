@@ -124,20 +124,20 @@ public class US_006_StepDefs {
         actions.sendKeys(Keys.TAB).build().perform();
     }
 
-    @Given("doctor enters a valid first name as {string}")
-    public void doctorEntersAValidFirstNameAs(String firstname) {
+    @Given("user should enter a valid first name as {string}")
+    public void user_should_enter_a_valid_first_name_as(String firstname) {
         ReusableMethods.waitForVisibility(us006Pages.firstName, 3).clear();
         Driver.waitAndSendText(us006Pages.firstName, firstname);
     }
 
-    @Then("doctor enters a valid last name as {string}")
-    public void doctorEntersAValidLastNameAs(String lastname) {
+    @Then("user should enter a valid last name as {string}")
+    public void user_should_enter_a_valid_last_name_as(String lastname) {
         ReusableMethods.waitForVisibility(us006Pages.lastName, 3).clear();
         Driver.waitAndSendText(us006Pages.lastName, lastname);
     }
 
-    @Then("user enters a invalid email as {string}")
-    public void userEntersAInvalidEmailAs(String email) {
+    @Then("user should enter an invalid email as {string}")
+    public void user_should_enter_an_invalid_email_as(String email) {
         ReusableMethods.waitForVisibility(us006Pages.eMail, 3).clear();
         Driver.waitAndSendText(us006Pages.eMail, email);
     }
