@@ -6,7 +6,7 @@ Feature: database_appointments
 
   @US_007_Read_All_Data
   Scenario: read_all_patient_table
-    When user gets the "*" data from "patient" table
+    When user gets the "*" data from "appointment" table
     And close the database connection
 
   @US_007_015
