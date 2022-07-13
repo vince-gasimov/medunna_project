@@ -107,14 +107,14 @@ public class US_011_AppointmentbyDoctor_StepDefs {
             Assert.assertEquals(expectedPhysician,actualPhysician);
         }
     }
-    @Then("user verifies patient's name is visible")
-    public void user_verifies_patient_s_name_is_visible() {
 
 
 
 
 
-    }
+
+
+
     @Then("user fills in required fields, anemnesis, treatment, diagnosis")
     public void user_fills_in_required_fields_anemnesis_treatment_diagnosis() {
         ReusableMethods.waitFor(2);
