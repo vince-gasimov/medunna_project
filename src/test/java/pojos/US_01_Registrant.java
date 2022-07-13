@@ -7,20 +7,20 @@ import java.util.Arrays;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class US_01_Registrant {
     /*
-    {
+{
   "activated": true,
   "authorities": [
     "string"
   ],
   "createdBy": "string",
-  "createdDate": "2022-07-02T13:40:05.931Z",
+  "createdDate": "2022-07-03T18:52:11.111Z",
   "email": "string",
   "firstName": "string",
   "id": 0,
   "imageUrl": "string",
   "langKey": "string",
   "lastModifiedBy": "string",
-  "lastModifiedDate": "2022-07-02T13:40:05.931Z",
+  "lastModifiedDate": "2022-07-03T18:52:11.111Z",
   "lastName": "string",
   "login": "string",
   "password": "string",
@@ -28,9 +28,23 @@ public class US_01_Registrant {
 }
      */
 
+    public US_01_Registrant() {
+    }
+
+    public US_01_Registrant(String firstName, String lastName, String ssn, String login, String langKey, String password, String email, boolean activated) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.ssn = ssn;
+        this.login = login;
+        this.langKey = langKey;
+        this.password = password;
+        this.email = email;
+        this.activated = activated;
+    }
+
     private String firstName;
     private String lastName;
-    private String snn;
+    private String ssn;
     private String login;
     private String langKey;
     private String password;
@@ -55,12 +69,12 @@ public class US_01_Registrant {
         this.lastName = lastName;
     }
 
-    public String getSnn() {
-        return snn;
+    public String getSsn() {
+        return ssn;
     }
 
-    public void setSnn(String snn) {
-        this.snn = snn;
+    public void setSsn(String ssn) {
+        this.ssn = ssn;
     }
 
     public String getLogin() {
@@ -121,10 +135,10 @@ public class US_01_Registrant {
 
     @Override
     public String toString() {
-        return "Registrant{" +
+        return "US_01_Registrant{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", snn='" + snn + '\'' +
+                ", ssn='" + ssn + '\'' +
                 ", login='" + login + '\'' +
                 ", langKey='" + langKey + '\'' +
                 ", password='" + password + '\'' +
@@ -134,4 +148,12 @@ public class US_01_Registrant {
                 ", authorities=" + Arrays.toString(authorities) +
                 '}';
     }
+
+
+
+
+
+
+
+
 }

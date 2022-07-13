@@ -59,7 +59,7 @@ Feature: user_signin
     And user clicked the user's account and clicked the signed out
     When  user should click signinAgain box
     And user clicked on username box
-    And username should automatically see existing password
+    And username should automatically see existing username
     Then close the application
 
     Examples: customer credentials
