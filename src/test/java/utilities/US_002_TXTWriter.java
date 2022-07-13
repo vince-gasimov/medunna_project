@@ -9,7 +9,7 @@ public class US_002_TXTWriter {
 
         try{
             //File creation ==>> First parameter is the path of the file.that will be created.
-            FileWriter fw= new FileWriter(ConfigurationReader.getProperty("applicant_data"),false);
+            FileWriter fw= new FileWriter(ConfigurationReader.getProperty("US_002_applicant_data"),false);
             // true ==>> This file will not be deleted and re-updated. It will just overload in the same file again and again.
             //If we have new record it will be overloaded.
             // false ==>> It will delete the existing file and will recreate a new file, so it will update our file.
@@ -43,7 +43,6 @@ public class US_002_TXTWriter {
         }
     }
 
-    //From Kadir
     public static String readFile(String filepath)
     {
         String returnFileContent="";
