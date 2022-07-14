@@ -11,14 +11,8 @@ public class US_006_Pages {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(xpath = "//*[@data-icon='user']")
-    public WebElement userIcon;
-
     @FindBy(xpath = "//*[text()='Sign in']")
     public WebElement signInButton;
-
-    @FindBy(id = "User settings for")
-    public WebElement userSettingsFor;
 
     @FindBy(xpath = "//input[@name='username']")
     public WebElement usernameBox;
