@@ -68,7 +68,7 @@ public class US_001_TXTWriter {
 
     }
 
-    public static void saveApiAllPatientsData(List<Object> US015Patients) throws IOException {
+    public static void saveApiListPatientsData(List<Object> US015Patients) throws IOException {
         try {
             FileWriter fw = new FileWriter(ConfigurationReader.getProperty("us_015_patients_data"), true);
 
