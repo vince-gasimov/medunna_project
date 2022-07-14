@@ -6,6 +6,7 @@ import pojos.US_01_Registrant;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.List;
 
 public class US_001_TXTWriter {
 
@@ -67,15 +68,15 @@ public class US_001_TXTWriter {
 
     }
 
-    public static void saveApiAllPatientsData(US_015_Patient_Pojo[] US015Patients) throws IOException {
+    public static void saveApiAllPatientsData(List<Object> US015Patients) throws IOException {
         try {
             FileWriter fw = new FileWriter(ConfigurationReader.getProperty("us_015_patients_data"), true);
 
             BufferedWriter bw = new BufferedWriter(fw);
 
-            for (int i = 0; i < US015Patients.length; i++) {
+            for (int i = 0; i < US015Patients.size(); i++) {
 
-                bw.append(US015Patients[i].toString() + "\n");
+                bw.append(US015Patients.get(i) + "\n");
             }
             bw.close();
         } catch (Exception e) {
