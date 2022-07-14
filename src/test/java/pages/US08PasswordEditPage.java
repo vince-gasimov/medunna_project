@@ -25,12 +25,22 @@ public class US08PasswordEditPage {
     public WebElement passwordButtonLoginPage;
     @FindBy(xpath="/html[1]/body[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/h2[1]/span[1]")
     public WebElement passwordPage;
+    @FindBy(xpath = "(//li[@class='point'])[1]")
+    public WebElement passwordStrength1;
+    @FindBy(xpath = "(//li[@class='point'])[2]")
+    public WebElement passwordStrength2;
+    @FindBy(xpath = "(//li[@class='point'])[3]")
+    public WebElement passwordStrength3;
+    @FindBy(xpath = "(//li[@class='point'])[4]")
+    public WebElement passwordStrength4;
+    @FindBy(xpath = "(//li[@class='point'])[5]")
+    public WebElement passwordStrength5;
     @FindBy(xpath="//input[@id='currentPassword']")
     public WebElement currentPassword;
     @FindBy(xpath="//input[@id='newPassword']")
     public WebElement newPassword;
     @FindBy(xpath="//input[@id='confirmPassword']")
-    public WebElement newPasswordConfrm;
+    public WebElement newPasswordConfirm;
     @FindBy(xpath="//span[normalize-space()='Save']")
     public WebElement saveButton ;
     @FindBy(xpath="//div[@class='Toastify__toast Toastify__toast--success toastify-toast']")

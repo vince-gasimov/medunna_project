@@ -5,7 +5,7 @@ Feature:   US008_password_update
     Given user navigates to Url
     And user clicks on Account menu
     And user clicks on Sign in button
-    And user enters "team87user01" as username and "1234567" as password
+    And user enters "sedatarslan" as username and "1234567" as password
     And user clicks on the Signin button
     And verify the login is successful
     And user clicks on account menu on the account page
@@ -39,7 +39,7 @@ Feature:   US008_password_update
     And user verifies the password strength bar is four
     Examples:
       | new password | add character |
-      | 1234560      | C             |
+      | 1234560a      | C             |
   @US08_TC_0004
   Scenario Outline: for stronger password adding one DIGIT character
     And user cleans the new password part
