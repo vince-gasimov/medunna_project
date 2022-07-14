@@ -5,6 +5,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.cucumber.plugin.event.Node;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
@@ -47,8 +48,8 @@ public class US_007_AppointmentStepDefs {
     public void verifyUserCanMakeAnAppointmentSuccessfully() {
         Driver.waitForVisibility(appointment.successMessage,10);
         Assert.assertTrue(appointment.successMessage.isDisplayed());
-        saveUiRegistrantData(appointmentPojo);
-        System.out.println(appointmentPojo);
+//        saveUiRegistrantData(appointmentPojo);
+//        System.out.println(appointmentPojo);
     }
     @Then("user sees Appointment date can not be past date! warning on date field")
     public void userSeesAppointmentDateCanNotBePastDateWarningOnDateField() {
@@ -60,7 +61,7 @@ public class US_007_AppointmentStepDefs {
         Driver.waitForVisibility(appointment.errorMessage,10);
         Assert.assertTrue(appointment.errorMessage.isDisplayed());
     }
-    @Then("close the application")
+    @Then("close the application US_015")
     public void closeTheApplication() {
         Driver.closeDriver();
     }
@@ -107,6 +108,8 @@ public class US_007_AppointmentStepDefs {
         appointment.email.sendKeys(email);
         appointmentPojo.setPhone(phone);
         appointment.phone.sendKeys(phone);
+        saveUiRegistrantData(appointmentPojo);
+        System.out.println("Vusal");
     }
     @When("user enters tomorrow's date")
     public void userEntersTomorrowSDate() {
@@ -120,16 +123,28 @@ public class US_007_AppointmentStepDefs {
     @When("user types valid {string}, {string}, {string}, {string}, {string}")
     public void user_types_valid(String firstName, String lastName, String ssn, String email, String phone) {
         Driver.waitForVisibility(appointment.firstName,10);
+        appointmentPojo.setFirstName(firstName);
         firstName = faker.name().firstName();
+        System.out.println(firstName);
         appointment.firstName.sendKeys(firstName);
+        appointmentPojo.setLastName(lastName);
+        System.out.println(lastName);
         lastName = faker.name().lastName();
         appointment.lastName.sendKeys(lastName);
+        System.out.println();
+        appointmentPojo.setSsn(ssn);
         ssn = faker.idNumber().ssnValid();
+        System.out.println(ssn);
         appointment.ssn.sendKeys(ssn);
+        appointmentPojo.setEmail(email);
         email = faker.internet().emailAddress();
         appointment.email.sendKeys(email);
-        phone = faker.phoneNumber().cellPhone();
+        appointmentPojo.setPhone(phone);
+        phone = faker.numerify("###-###-####");
         appointment.phone.sendKeys(phone);
+        System.out.println(appointmentPojo);
+        saveUiRegistrantData(appointmentPojo);
+        System.out.println("Vusal");
     }
     @When("user enters {string} date")
     public void user_enters_date(String today) {

@@ -12,30 +12,18 @@ public class US_015_Patients {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(xpath = "//span[.='Items&Titles']")
-    public WebElement itemsTitles;
-    @FindBy(xpath = "//span[.='Patient']")
-    public WebElement patient;
-    @FindBy(xpath = "//a[@id='jh-create-entity']")
-    public WebElement createNewPatient;
     @FindBy(xpath = "(//a[@class='btn btn-primary btn-sm'])[1]")
     public WebElement editPatient;
     @FindBy(xpath = "//*[contains (text(),'Patient is updated')]")
     public WebElement patientUpdatedMessage;
-    @FindBy(xpath = "//a[@class='btn btn-danger btn-sm']")
+    @FindBy(xpath = "(//a[@class='btn btn-danger btn-sm'])[1]")
     public WebElement deletePatient;
     @FindBy(xpath = "//button[@class='btn btn-danger']")
     public WebElement confirmDelete;
-    @FindBy(xpath = "//button[@class='btn btn-secondary']")
-    public WebElement cancelDelete;
-    @FindBy(xpath = "(//a[@class='page-link'])[9]")
-    public WebElement lastPage;
     @FindBy(xpath = "//span[.='First Name']")
     public WebElement firstNameButton;
     @FindBy(xpath = "//span[.='Last Name']")
     public WebElement lastNameButton;
-    @FindBy(xpath = "//a[.='109504']")
-    public WebElement patientiId;
     @FindBy(xpath = "//td[.='839-97-7135']")
     public WebElement patientSsn;
     @FindBy(xpath = "(//*[text()='0000001Team83'])[1]")
