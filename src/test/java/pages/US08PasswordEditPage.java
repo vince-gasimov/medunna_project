@@ -18,11 +18,11 @@ public class US08PasswordEditPage {
     @FindBy(xpath="//input[@id='password']")
     public WebElement passwordTextBox;
     @FindBy(xpath="//button[@type='submit']//span[contains(text(),'Sign in')]")
-    public WebElement secondSignInButton;
-    @FindBy(xpath="//span[normalize-space()='team87user02 team87user02']")
-    public WebElement userNameLoginPage;
+    public WebElement signInPageSignInButton;
+    @FindBy(xpath="//*[text()='SEDAT ARSLAN']")
+    public WebElement loginPageAccountMenu;
     @FindBy(xpath="//span[normalize-space()='Password']")
-    public WebElement passwordButtonLoginPage;
+    public WebElement loginPagePasswordButton;
     @FindBy(xpath="/html[1]/body[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/h2[1]/span[1]")
     public WebElement passwordPage;
     @FindBy(xpath = "(//li[@class='point'])[1]")
@@ -40,9 +40,9 @@ public class US08PasswordEditPage {
     @FindBy(xpath="//input[@id='newPassword']")
     public WebElement newPassword;
     @FindBy(xpath="//input[@id='confirmPassword']")
-    public WebElement newPasswordConfirm;
+    public WebElement confirmationPassword;
     @FindBy(xpath="//span[normalize-space()='Save']")
     public WebElement saveButton ;
-    @FindBy(xpath="//div[@class='Toastify__toast Toastify__toast--success toastify-toast']")
-    public WebElement passChangeMessage ;
+    @FindBy(xpath="//*[contains (text(),'Password changed!')]")
+    public WebElement successMessage ;
 }
