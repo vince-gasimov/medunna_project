@@ -1,7 +1,9 @@
 package runners;
+
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
+
 @RunWith(Cucumber.class)
 @CucumberOptions(
         plugin = {
@@ -13,8 +15,9 @@ import org.junit.runner.RunWith;
         },
         features = "./src/test/resources/features",
         glue = {"stepdefinitions", "hooks"},
-        tags = "@US007_TC001",
-        dryRun =false
+        tags = "@US_003_TC_007",
+        dryRun = false
         )
+
 public class Runner {
 }
