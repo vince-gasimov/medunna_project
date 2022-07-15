@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
         },
         features = "./src/test/resources/features",
         glue = {"stepdefinitions", "hooks"},
-        tags = "@US13",
+        tags = "@US_08_user_password_segment",
         dryRun = false
 )
 public class Runner {
