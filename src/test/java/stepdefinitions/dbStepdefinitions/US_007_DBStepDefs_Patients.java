@@ -10,7 +10,7 @@ import java.util.List;
 
 public class US_007_DBStepDefs_Patients {
 
-    @Given("user connects to database")
+    @Given("user connects to database 007")
     public void user_connects_to_database() {
         DBUtils.createConnection();
     }
@@ -25,7 +25,7 @@ public class US_007_DBStepDefs_Patients {
         System.out.println(allColumnData);
         Assert.assertTrue(allColumnData.contains(data));
     }
-    @Then("close the database connection")
+    @Then("close the database connection 007")
     public void close_the_database_connection() {
         // Write code here that turns the phrase above into concrete actions
         DBUtils.closeConnection();
