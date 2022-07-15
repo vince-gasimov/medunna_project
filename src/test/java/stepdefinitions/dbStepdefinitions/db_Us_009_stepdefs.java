@@ -10,42 +10,28 @@ import java.sql.SQLException;
 
 public class db_Us_009_stepdefs {
 
-    @Given("user connects to the database")
-    public void user_connects_to_the_database() {
-        DBUtils.createConnection();
 
-    }
     @Given("user gets the {string} from {string} table with the {string} of {string}")
-    public void user_gets_the_from_table(String column, String table, String idColumn,String actualId) {
-        String query ="select " + column +" from " + table + " where " + idColumn + "=" + actualId;
+    public void user_gets_the_from_table(String column, String table, String idColumn, String actualId) {
+        String query = "select " + column + " from " + table + " where " + idColumn + "=" + actualId;
         DBUtils.executeQuery(query);
     }
-    //    @Given("user reads all of the {string} column data")
-//    public void user_reads_all_of_the_column_data(String string) {
-//    }
-    @Then("close the database connection")
-    public void close_the_database_connection() {
-        DBUtils.closeConnection();
-    }
+
+
     @Then("the {string} of the person should be {string}")
     public void the_of_the_person_with_the_id_of_should_be(String firstNameColumn, String actualFirstName) throws SQLException {
 
-        DBUtils.getResultset().next() ;
-//        System.out.println(DBUtils.getResultset().getObject("FIRST_NAME"));
+        DBUtils.getResultset().next();
 
-//        for (DBUtils.getResultset().next();DBUtils.getResultset().next() ;DBUtils.getResultset().next()){
-//            if(DBUtils.getResultset().getObject(idColumn).toString() == actualId){break;}
-//            System.out.println(DBUtils.getResultset().getObject(idColumn).toString());
-//        }
-//        System.out.println(DBUtils.getResultset().getObject(idColumn));
-        Assert.assertEquals(DBUtils.getResultset().getObject(firstNameColumn),actualFirstName);
+        Assert.assertEquals(DBUtils.getResultset().getObject(firstNameColumn), actualFirstName);
     }
 
     @When("Admin gets the {string} from {string} table with the {string} of {string}")
-    public void admin_gets_the_from_table_with_the_of(String column, String table, String idColumn , String actualId) {
-        String query ="select " + column +" from " + table + " where " + idColumn + "=" + actualId;
+    public void admin_gets_the_from_table_with_the_of(String column, String table, String idColumn, String actualId) {
+        String query = "select " + column + " from " + table + " where " + idColumn + "=" + actualId;
         DBUtils.executeQuery(query);
     }
+
     @Then("Admin delete  the {string} of the patient with {string} of {string}")
     public void admin_delete_the_of_the_patient_with_of(String string, String string2, String string3) {
     }
@@ -60,14 +46,14 @@ public class db_Us_009_stepdefs {
     public void user_deletes_the_patient_with_the_of_from_the_table(String idColumn, String actualId, String table) {
         //String query ="delete from appointment where ID=115277";
 
-        String query ="delete from " + table + " where " + idColumn + "=" + actualId;
+        String query = "delete from " + table + " where " + idColumn + "=" + actualId;
         DBUtils.executeUpdate(query);
     }
 
     @Then("user should not be able to get the {string} from {string} table with the {string} of {string}")
-    public void user_should_not_be_able_to_get_the_from_table_with_the_of(String column, String table, String idColumn,String actualId) throws SQLException {
+    public void user_should_not_be_able_to_get_the_from_table_with_the_of(String column, String table, String idColumn, String actualId) throws SQLException {
 
-        String query ="select " + column +" from " + table + " where " + idColumn + "='" + actualId + "'";
+        String query = "select " + column + " from " + table + " where " + idColumn + "='" + actualId + "'";
 
         //Assert.assertThrows(SQLException.class, ()-> DBUtils.executeQuery(query));
         DBUtils.executeQuery(query);
