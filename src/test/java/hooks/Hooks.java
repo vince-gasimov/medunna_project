@@ -10,7 +10,8 @@ import org.openqa.selenium.TakesScreenshot;
 import utilities.ConfigurationReader;
 import utilities.Driver;
 
-import java.io.IOException;
+
+import static base_url_setup.MedunnaBaseUrl.medunnaSetup;
 
 public class Hooks {
 //    What is hooks class in cucumber?
@@ -40,6 +41,11 @@ public class Hooks {
         Driver.getDriver().get("https://medunna.com/account/register");
     }
 
+    @Before(order=4, value ="@Api")
+    public void beforeApi(){
+        medunnaSetup();
+    }
+
 
 
 //    @After(order=3, value="@UIregistration")
@@ -57,14 +63,14 @@ public class Hooks {
 
 
 
-//    @After ()
-//    public void tearDown(Scenario scenario){
-//
-//        if (scenario.isFailed()) {
-//            final byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
-//            scenario.attach(screenshot, "image/png", "screenshots");
-//
 
+    @After
+    public void tearDown(Scenario scenario) {
 
-//}}
+        if (scenario.isFailed()) {
+            final byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
+            scenario.attach(screenshot, "image/png", "screenshots");
+        }
+    }
+
 }

@@ -1,0 +1,1 @@
+Registrant{firstName='Elwanda', lastName='Hessel', ssn='422-48-6740', login='ElwandaHessel', langKey='null', password='MmxSld3I9s@9', email='ElwandaHessel@gmail.com', activated=false, authorities=null}
