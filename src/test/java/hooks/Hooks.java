@@ -10,7 +10,6 @@ import org.openqa.selenium.TakesScreenshot;
 import utilities.ConfigurationReader;
 import utilities.Driver;
 
-import java.io.IOException;
 
 import static base_url_setup.MedunnaBaseUrl.medunnaSetup;
 
@@ -64,6 +63,7 @@ public class Hooks {
 
 
 
+
     @After
     public void tearDown(Scenario scenario) {
 
@@ -72,4 +72,5 @@ public class Hooks {
             scenario.attach(screenshot, "image/png", "screenshots");
         }
     }
+
 }
