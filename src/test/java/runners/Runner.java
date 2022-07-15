@@ -13,9 +13,8 @@ import org.junit.runner.RunWith;
         },
         features = "./src/test/resources/features",
         glue = {"stepdefinitions", "hooks"},
-        tags = "  @US_007_db_firstname_verify",
-        dryRun = false
-)
-
+        tags = "@US_003_TC_007",
+        dryRun =false
+        )
 public class Runner {
 }

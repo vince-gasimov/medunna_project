@@ -83,16 +83,12 @@ public class US_001_API_Get_Registrant_Data {
 
         assertEquals(requestBody.getFirstName(), actual.getFirstName());
 
-        assertTrue(actual.getFirstName().contains("Team83_"));
-
-        assertTrue(actual.getLogin().contains("Team83"));
 
         System.out.println(actual.getFirstName());
 
         System.out.println(actual.getSsn()); //print the ssn to the console to see if it is correct
 
         saveApiNewRegistrantData(new US_01_Registrant[]{actual}); //save the new registrant to the file
-
 
 
     }
