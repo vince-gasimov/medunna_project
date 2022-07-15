@@ -8,4 +8,3 @@ Feature: registrant_data_api_test
     Then user saves the patients data to the file and validates
 
 
-
