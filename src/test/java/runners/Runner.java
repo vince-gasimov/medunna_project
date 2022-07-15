@@ -15,10 +15,8 @@ import org.junit.runner.RunWith;
         },
         features = "./src/test/resources/features",
         glue = {"stepdefinitions", "hooks"},
-        tags = "@database_medunna_patient_info",
+        tags = "@US13",
         dryRun = false
 )
-
-
 public class Runner {
 }
