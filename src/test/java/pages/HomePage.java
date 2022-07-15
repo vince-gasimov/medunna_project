@@ -46,6 +46,14 @@ public class HomePage {
     public WebElement homePage;
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement signInBox;
+    @FindBy(xpath = "(//span)[10]")
+    public WebElement contact;
 
+
+
+    @FindBy(xpath = "//a[@aria-haspopup=\"true\"]")
+    public WebElement icon;
+    @FindBy(xpath = "//div[@class=\"container\"]//h1")
+    public WebElement welcomeToMedunnaText;
 
 }

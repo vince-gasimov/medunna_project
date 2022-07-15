@@ -153,7 +153,7 @@ public class US_005_AppointmentStepDefs {
         Assert.assertTrue(homePage.invalidmessage.isDisplayed());
     }
 
-    @Given("user connects to the database")
+    @Given("user connects to the database 005")
     public void userConnectsToTheDatabase() {
         
     }
