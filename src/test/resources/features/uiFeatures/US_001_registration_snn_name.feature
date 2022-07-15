@@ -4,7 +4,7 @@ Feature: user_registration
 
   Background: user is on the home page & registration page
     Given user is on the registration page
-
+    @Us_01
   Scenario: TC_01_user_registration_testing
 
     Given user enters a valid SSN number as "ssn"
@@ -16,7 +16,7 @@ Feature: user_registration
     And user clicks on the register button
     Then user should see the registration success message
     And saves the records
-#    Then close the browser
+    Then close the browser
 
   Scenario: TC_02 user_registration_ssn_blank
 
