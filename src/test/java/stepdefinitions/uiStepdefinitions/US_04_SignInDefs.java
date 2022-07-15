@@ -76,8 +76,8 @@ public class US_04_SignInDefs {
 
     }
 
-    @When("username should automatically see existing password")
-    public void username_should_automatically_see_existing_password() {
+    @When("username should automatically see existing username")
+    public void username_should_automatically_see_existing_username() {
         Assert.assertTrue(loginPage.shownUserName.isDisplayed());
     }
 
