@@ -53,20 +53,29 @@ public class RegisterPage {
     @FindBy(xpath = "//div[contains(text(),'Registration Saved')]")
     public WebElement registrationSuccessMessage;
 
-    @FindBy(xpath = "//*[@id='strengthBar']/li[contains(@style,'rgb(255, 0, 0)')]")
+    @FindBy(xpath = "//*[@style='background-color: rgb(255, 0, 0);']")
     public static WebElement passwordStrength1;
 
-    @FindBy(xpath = "//*[@id='strengthBar']/li[contains(@style,'rgb(255, 153, 0)')]")
+    @FindBy(xpath = "(//*[@style='background-color: rgb(153, 255, 0);'])[2]")
     public static WebElement passwordStrength2;
 
-    @FindBy(xpath = "//*[@id='strengthBar']/li[contains(@style,'rgb(153, 255, 0)')]")
+    @FindBy(xpath = "(//*[@style='background-color: rgb(153, 255, 0);'])[3]")
     public static WebElement passwordStrength3;
 
-    @FindBy(xpath = "//*[@id='strengthBar']/li[contains(@style,'rgb(0, 255, 0)')]")
+    @FindBy(xpath = "(//*[@style='background-color: rgb(153, 255, 0);'])[4]")
     public static WebElement passwordStrength4;
 
-    @FindBy(xpath = "//div[@class='invalid-feedback']")
-    public WebElement invalidMessage;
+    @FindBy(xpath = "(//*[@style='background-color: rgb(153, 255, 0);'])[5]")
+    public static WebElement passwordStrength5;
+
+    @FindBy(xpath = "//*[@style='background-color: rgb(221, 221, 221);']")
+    public static WebElement fifthPasswordBarGray;
+
+    @FindBy(xpath = "//*[@class='invalid-feedback']")
+    public static WebElement passwordErrorMessage;
+
+    @FindBy(xpath = "//input[@id='firstPassword']")
+    public static WebElement newPasswordBoxStatic;
 
 
 }
