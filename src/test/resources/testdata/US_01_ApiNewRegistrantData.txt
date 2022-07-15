@@ -1,0 +1,5 @@
+US_01_Registrant{firstName='Team83', lastName='Team83', ssn='859-85-9685', login='team83_893', langKey='en', password='null', email='team8833@gmail.com', id=110345, activated=false, authorities=[]}
+US_01_Registrant{firstName='Team83', lastName='postrequest', ssn='899-85-9685', login='team83_993', langKey='en', password='null', email='team8933@gmail.com', id=110346, activated=false, authorities=[]}
+US_01_Registrant{firstName='Team83_Oren', lastName='PostRequest_Christiansen', ssn='854-10-4724', login='team83_emile.schinner@gmail.com', langKey='en', password='null', email='team83_randal.steuber@gmail.com', id=110348, activated=false, authorities=[]}
+US_01_Registrant{firstName='Team83_Floyd', lastName='PostRequest_Berge', ssn='816-76-5720', login='team83_brian.vandervort@hotmail.com', langKey='en', password='null', email='team83_kandi.beahan@gmail.com', id=111559, activated=false, authorities=[]}
+US_01_Registrant{firstName='Team83_Lang', lastName='PostRequest_Rau', ssn='009-88-3807', login='team83_ryan.dach', langKey='en', password='null', email='team83_jude.greenholt@gmail.com', id=112653, activated=false, authorities=[]}
