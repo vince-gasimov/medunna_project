@@ -2,7 +2,7 @@
 Feature: database_read_patient
 
   Background: Prerequisite_Connect_to_The_Server
-    Given user connects to database
+    Given user connects to the database 005
 
   @US_005_Read_All_Data
   Scenario: TC01_read_patient_information

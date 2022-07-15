@@ -2,12 +2,12 @@
 Feature: database_appointments
 
   Background: Prerequisite_Connect_to_the_server
-    Given user connects to database
+    Given user connects to database 007
 
   @US_007_Read_All_Data
   Scenario: read_all_patient_table
     When user gets the "*" data from "appointment" table
-    And close the database connection
+    And close the database connection 007
 
   @US_007_015
   Scenario Outline: read_all_patient_table
