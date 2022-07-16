@@ -45,10 +45,25 @@ public class US_011_AppointmentbyDoctor_StepDefs {
     public void user_clicks_on_my_appointments() {
         ReusableMethods.waitFor(2);
         myPagesAppointmentPage.myAppointments.click();
+        ReusableMethods.waitFor(2);
+
+        myPagesAppointmentPage.fromDateAppointment.click();
+        actions.sendKeys("2022").perform();
+        actions.sendKeys(Keys.TAB);
+        actions.sendKeys("07").perform();
+        actions.sendKeys("01").perform();
+        actions.sendKeys(Keys.TAB).perform();
+
+        ReusableMethods.waitFor(3);
+        actions.sendKeys("2022").perform();
+        actions.sendKeys(Keys.TAB);
+        actions.sendKeys("07").perform();
+        actions.sendKeys("15").perform();
+
     }
     @Then("user clicks on Edit button")
     public void user_clicks_on_edit_button() {
-        ReusableMethods.waitFor(2);
+        ReusableMethods.waitFor(5);
         myPagesAppointmentPage.editButton.click();
 
     }
@@ -107,8 +122,6 @@ public class US_011_AppointmentbyDoctor_StepDefs {
             Assert.assertEquals(expectedPhysician,actualPhysician);
         }
     }
-
-
 
 
 
