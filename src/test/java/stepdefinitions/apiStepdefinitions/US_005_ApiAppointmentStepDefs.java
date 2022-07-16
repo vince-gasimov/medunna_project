@@ -36,7 +36,7 @@ public class US_005_ApiAppointmentStepDefs {
     @Given("user deserializes the users' data to java")
     public void user_deserializes_the_users_data_to_java() throws Exception{
         ObjectMapper obj = new ObjectMapper();
-        us_005_appointments = obj.readValue(response.asString(),US_005_Appointment[].class);
+        us_005_appointments = obj.readValue(response.asString(), US_005_Appointment[].class);
         System.out.println("Size of the actual elements: " + us_005_appointments.length);
 
         boolean flag = false;
