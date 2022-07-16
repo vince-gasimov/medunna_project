@@ -1,1 +1,1 @@
-Registrant{firstName='Gaylord', lastName='Carroll', ssn='184-31-0796', login='GaylordCarroll', langKey='null', password='P&O&6oo3*', email='GaylordCarroll@gmail.com', activated=false, authorities=null}
+Registrant{firstName='Sunny', lastName='Romaguera', ssn='292-50-1477', login='SunnyRomaguera', langKey='null', password='oV6#qwT8^GA@', email='SunnyRomaguera@gmail.com', activated=false, authorities=null}
