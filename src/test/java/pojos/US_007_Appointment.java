@@ -1,5 +1,8 @@
 package pojos;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class US_007_Appointment {
 
     /*
@@ -19,7 +22,6 @@ public class US_007_Appointment {
 
     private String createdBy;
     private String createdDate;
-    private int id;
     private String startDate;
     private String endDate;
     private String status;
@@ -27,15 +29,12 @@ public class US_007_Appointment {
     private String treatment;
     private String diagnosis;
     private String prescription;
+    private int id;
     private US_007_Patient patient;
 
-    public US_007_Appointment() {
-    }
-
-    public US_007_Appointment(String createdBy, String createdDate, int id, String startDate, String endDate, String status, String anamnesis, String treatment, String diagnosis, String prescription, US_007_Patient patient) {
+    public US_007_Appointment(String createdBy, String createdDate, String startDate, String endDate, String status, String anamnesis, String treatment, String diagnosis, String prescription, US_007_Patient patient) {
         this.createdBy = createdBy;
         this.createdDate = createdDate;
-        this.id = id;
         this.startDate = startDate;
         this.endDate = endDate;
         this.status = status;
@@ -44,6 +43,9 @@ public class US_007_Appointment {
         this.diagnosis = diagnosis;
         this.prescription = prescription;
         this.patient = patient;
+    }
+
+    public US_007_Appointment() {
     }
 
     public String getCreatedBy() {
@@ -60,14 +62,6 @@ public class US_007_Appointment {
 
     public void setCreatedDate(String createdDate) {
         this.createdDate = createdDate;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getStartDate() {
@@ -139,7 +133,6 @@ public class US_007_Appointment {
         return "US_007_Appointment{" +
                 "createdBy='" + createdBy + '\'' +
                 ", createdDate='" + createdDate + '\'' +
-                ", id=" + id +
                 ", startDate='" + startDate + '\'' +
                 ", endDate='" + endDate + '\'' +
                 ", status='" + status + '\'' +
@@ -147,6 +140,7 @@ public class US_007_Appointment {
                 ", treatment='" + treatment + '\'' +
                 ", diagnosis='" + diagnosis + '\'' +
                 ", prescription='" + prescription + '\'' +
+                ", id=" + id +
                 ", patient=" + patient +
                 '}';
     }

@@ -6,7 +6,7 @@ Feature: Make Appointment
     When user clicks Make an Appointment button
 
   @US007_TC001
-  Scenario Outline:
+  Scenario Outline: TC_001_Valid_credentials
     When user enters valid "<firstName>", "<lastName>", "<ssn>", "<email>", "<phone>"
     And user does not enter anything on date box and clicks Send and Appointment Request
     And verify user can make an appointment successfully
