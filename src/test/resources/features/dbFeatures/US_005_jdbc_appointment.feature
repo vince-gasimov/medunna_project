@@ -12,8 +12,13 @@ Feature: database_read_patient
 
   @US_005_db_firstname_table
   Scenario: TC02_read_patient_name
+
+    And verify "patient" table "first_name" column contains "Doctor" data
+    And close the database connection 007
+
     And verify "patient" table "first_name" column contains "a" data
     Then close the database connection 007
+
 
   @US_005_db_lastname_table
   Scenario: TC03_read_patient_lastname
