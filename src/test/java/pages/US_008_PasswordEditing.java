@@ -23,8 +23,8 @@ public class US_008_PasswordEditing {
     public WebElement login2;
     @FindBy (xpath = "(//a[@class='dropdown-item'])[2]")
     public WebElement password2;
-    @FindBy (xpath = "//input[@name='currentPassword']")
-    public WebElement currentPassword;
+    //@FindBy (xpath = "//input[@name='currentPassword']")
+    //public WebElement currentPassword;
     @FindBy (xpath = "//input[@name='newPassword']")
     public WebElement newPassword;
     @FindBy(xpath = "(//li[@class='point'])[1]")
