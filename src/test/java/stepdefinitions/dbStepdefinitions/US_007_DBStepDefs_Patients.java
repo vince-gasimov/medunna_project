@@ -19,6 +19,7 @@ public class US_007_DBStepDefs_Patients {
     public void user_gets_the_from_table(String column, String table) {
         String query = "Select " + column + " from " + table + "";
         DBUtils.executeQuery(query);
+
     }
 
     @Then("verify {string} table {string} column contains {string} data")
@@ -26,6 +27,8 @@ public class US_007_DBStepDefs_Patients {
         List<Object> allColumnData = DBUtils.getColumnData("select * from " + table + "", column);
         System.out.println(allColumnData);
         Assert.assertTrue(allColumnData.contains(data));
+        System.out.println(data);
+
     }
     @Then("close the database connection 007")
 
