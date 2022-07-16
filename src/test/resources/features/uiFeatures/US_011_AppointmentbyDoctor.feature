@@ -10,11 +10,11 @@ Feature: US_011 My Appointments Edit portal by Physician(Doctor)
     And user clicks on Edit button
     And user verifies the website shows the Create or Edit an Appointment text
 
-  @US011_TC001
+  @US011_TC001 @smoke
   Scenario: TC_001 Check Patient's id
     And user verifies patient's info id is visible
     And closes the page
-  @US011_TC002
+  @US011_TC002 @smoke
   Scenario:TC_002 Check Patient's start date
     And user verifies patient's start date is visible
     And closes the page
