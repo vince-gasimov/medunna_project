@@ -4,7 +4,6 @@ Feature: user_registration
 
   Background: user is on the home page & registration page
     Given user is on the registration page
-
     @smoke
   Scenario: TC_01_user_registration_testing
 
