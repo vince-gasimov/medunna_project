@@ -6,7 +6,7 @@ Feature: appointments_List
     And doctor clicks on the user icon button
     And doctor clicks on the Sign in button
 
-
+  @smoke
 @US_010_TC001
   Scenario: TC_001_user_in_Appointments_List
 

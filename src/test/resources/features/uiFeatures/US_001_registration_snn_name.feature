@@ -4,7 +4,7 @@ Feature: user_registration
 
   Background: user is on the home page & registration page
     Given user is on the registration page
-    @Us_01
+    @smoke
   Scenario: TC_01_user_registration_testing
 
     Given user enters a valid SSN number as "ssn"
