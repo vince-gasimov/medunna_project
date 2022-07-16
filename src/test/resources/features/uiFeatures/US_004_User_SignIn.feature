@@ -14,7 +14,7 @@ Feature: user_signin
     And  user should entered a valid password   "<password>" on the sign in page
     When  user should click sign in box
     Then  user should verify signed in "<signedInUserName>" successful
-    Then close the application
+    Then close the browser
 
 
     Examples: customer credentials
@@ -30,7 +30,7 @@ Feature: user_signin
     And  user should entered a valid password   "<password>" on the sign in page
     When  user should click sign in box
     Then  user should verify fail message
-    Then close the application
+    Then close the browser
 
     Examples: customer credentials
       | username     | password  |
@@ -43,7 +43,7 @@ Feature: user_signin
     And  user should entered a invalid password   "<password>" on the sign in page
     When  user should click sign in box
     Then  user should verify fail message
-    Then close the application
+    Then close the browser
     Examples: customer credentials
       | username        | password |
       | Team83-kubra123 | asdFJ12  |
@@ -59,7 +59,7 @@ Feature: user_signin
     And user clicked the user's account and clicked the signed out
     When  user should click signinAgain box
     And user clicked on username box
-    And username should automatically see existing password
+    And username should automatically see existing username
     Then close the application
 
     Examples: customer credentials
