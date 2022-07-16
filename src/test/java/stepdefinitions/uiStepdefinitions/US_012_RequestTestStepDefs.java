@@ -1,4 +1,5 @@
 package stepdefinitions.uiStepdefinitions;
+
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -11,6 +12,7 @@ import pages.LoginPage;
 import pages.MyPagesAppointmentPage;
 import pages.RequestTestPage;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 import java.util.List;
 
@@ -51,13 +53,14 @@ public class US_012_RequestTestStepDefs {
 
     @And("doctor should click on Save button")
     public void doctorShouldClickOnSaveButton() {
-        Driver.waitForVisibility(requestTestPage.noTestItemsFound,10);
+        ReusableMethods.waitForClickablility(requestTestPage.requestTestSaveButton, 10);
     }
+
     @And("doctor should see No Test Items Found message")
     public void doctorShouldSeeNoTestItemsFoundMessage() {
         Assert.assertTrue(requestTestPage.noTestItemsFound.isDisplayed());
     }
-    
+
     @And("doctor clicks on checkmark box of Sodium")
     public void doctorClicksOnCheckmarkBoxOfSodium() {
         requestTestPage.sodiumCheckBox.click();
@@ -107,18 +110,19 @@ public class US_012_RequestTestStepDefs {
 
         Select select = new Select(requestTestPage.table);
         List<WebElement> allOptions = select.getOptions();
-        boolean flag=false;
+        boolean flag = false;
         for (WebElement eachOption : allOptions) {
             if (!eachOption.getText().contains("Glucose")) {
-                flag=true;
+                flag = true;
 
             }
 
         }
-        Assert.assertFalse(flag=false);
+        Assert.assertFalse(flag = false);
 
 
-    }}
+    }
+}
 
 
 

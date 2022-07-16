@@ -6,7 +6,7 @@ Feature: user_signin
     When user  clicks  to icon on top right corner US002
     And user clicks signInLocation button
 
-
+  @smoke
   @US004_TC01
   Scenario Outline: TC01_signin_user_profile_testing
 
@@ -129,6 +129,7 @@ Feature: user_signin
       | username        | password |
       | Team83-kubra123 | asdFJ12  |
 
+  @smoke
   @US004_TC11
   Scenario: Need to to navigate to "cancel login"
     When user left blank username and password field

@@ -5,6 +5,7 @@ Feature: Make Appointment
     Given user is navigated to medunna.com
     When user clicks Make an Appointment button
 
+  @smoke
   @US007_TC001
   Scenario Outline: TC_001_Valid_credentials
     When user enters valid "<firstName>", "<lastName>", "<ssn>", "<email>", "<phone>"
