@@ -14,3 +14,5 @@ US_007_Appointments{firstName='Steve', lastName='Jobs', ssn='783-32-9834', email
 US_007_Appointments{firstName='firstName', lastName='lastName', ssn='ssn', email='email', phone='phone', startDate=0}
 US_007_Appointments{firstName='Lev', lastName='Tolstoy', ssn='653-24-3425', email='annakarenina@gmail.com', phone='653-204-3425', startDate=0}
 US_007_Appointments{firstName='Lev', lastName='Tolstoy', ssn='653-24-3425', email='annakarenina@gmail.com', phone='653-204-3425', startDate=0}
+US_007_Appointments{firstName='Lev', lastName='Tolstoy', ssn='653-24-3425', email='annakarenina@gmail.com', phone='653-204-3425', startDate=0}
+US_007_Appointments{firstName='Lev', lastName='Tolstoy', ssn='653-24-3425', email='annakarenina@gmail.com', phone='653-204-3425', startDate=0}
