@@ -17,6 +17,7 @@ Feature: testing_of_settings_functionality
     Then User settings for page should include First Name, Last Name, and Email options
     Then close the browser
 
+  @smoke
   @US_006_Scenario_2
   Scenario Outline: positive scenario
 
