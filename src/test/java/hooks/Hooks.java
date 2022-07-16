@@ -5,10 +5,18 @@ import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;
+
+import org.apache.groovy.parser.antlr4.util.PositionConfigureUtils;
+import pages.LoginPage;
+
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+
 import utilities.ConfigurationReader;
 import utilities.Driver;
 
-import java.io.IOException;
+
+import static base_url_setup.MedunnaBaseUrl.medunnaSetup;
 
 public class Hooks {
 //    What is hooks class in cucumber?
@@ -28,9 +36,12 @@ public class Hooks {
 
 
 
-    @Before(order=1, value="@UIlogin")
+    @Before(order=1, value="@Login")
     public void beforeScenario() {
-
+        Driver.getDriver().get(ConfigurationReader.getProperty("medunna_url"));
+        LoginPage login = new LoginPage();
+        Driver.waitAndClick(login.signInAndRegistrationPortal);
+        Driver.waitAndClick(login.signIn);
     }
 
     @Before(order=3, value="@UIregistration")
@@ -38,11 +49,16 @@ public class Hooks {
         Driver.getDriver().get("https://medunna.com/account/register");
     }
 
+    @Before(order=4, value ="@Api")
+    public void beforeApi(){
+        medunnaSetup();
+    }
 
 
-    @After(order=3, value="@UIregistration")
-    public void tearDown(Scenario scenario) throws IOException {
-        System.out.println();
+
+//    @After(order=3, value="@UIregistration")
+//    public void tearDown(Scenario scenario) throws IOException {
+//        System.out.println();
 //////        System.out.println("This is hooks after method");
 //////        Getting the screenshot: getScreenshotAs method takes the screenshot
 //        final byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
@@ -52,5 +68,17 @@ public class Hooks {
 //            scenario.attach(screenshot, "image/png", "Screenshot");
 //        }
 
+
+
+
+
+    @After
+    public void tearDown(Scenario scenario) {
+
+        if (scenario.isFailed()) {
+            final byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
+            scenario.attach(screenshot, "image/png", "screenshots");
+        }
     }
+
 }

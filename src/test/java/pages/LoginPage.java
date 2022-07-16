@@ -7,7 +7,7 @@ import utilities.Driver;
 
 public class LoginPage {
 
-    public LoginPage() {
+    public LoginPage () {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
@@ -23,6 +23,13 @@ public class LoginPage {
 
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement signInButton;
+
+    @FindBy(id="account-menu")
+    public WebElement signInAndRegistrationPortal;
+
+    @FindBy(id="login-item")
+    public WebElement signIn;
+
 
     @FindBy(xpath = "//*[@id='account-menu']")
     public WebElement signedInUserName;
@@ -49,3 +56,4 @@ public class LoginPage {
     public WebElement cancelButton;
 
 }
+

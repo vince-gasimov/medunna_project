@@ -73,10 +73,11 @@ public class US_04_SignInDefs {
     public void user_clicked_the_user_s_account_and_clicked_the_signed_out() {
         loginPage.signedInUserName.click();
         loginPage.signOutButton.click();
+
     }
 
-    @When("username should automatically see existing password")
-    public void username_should_automatically_see_existing_password() {
+    @When("username should automatically see existing username")
+    public void username_should_automatically_see_existing_username() {
         Assert.assertTrue(loginPage.shownUserName.isDisplayed());
     }
 
@@ -103,7 +104,7 @@ public class US_04_SignInDefs {
 
     @And("user should double click to Did you forget your password")
     public void userShouldDoubleClickToDidYouForgetYourPassword() {
-        loginPage.didYouForgetPasswd.click();
+       loginPage.didYouForgetPasswd.click();
         loginPage.didYouForgetPasswd.click();
     }
 
