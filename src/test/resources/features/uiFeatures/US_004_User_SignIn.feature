@@ -3,10 +3,12 @@ Feature: user_signin
 
   Background: user_is_on_the_Medunna_page
     Given  user is on the Medunna page
-    And user clicks on the user icongit add
+    And user  clicks  to icon on top right corner US002
+    And user clicks signInLocation button
+    When user  clicks  to icon on top right corner US002
     And user clicks signInLocation button
 
-  @Smoke
+  @smoke
   @US004_TC01
   Scenario Outline: TC01_signin_user_profile_testing
 
@@ -30,7 +32,7 @@ Feature: user_signin
     And  user should entered a valid password   "<password>" on the sign in page
     When  user should click sign in box
     Then  user should verify fail message
-    Then close the application
+    Then close the browser
 
     Examples: customer credentials
       | username     | password  |
@@ -43,7 +45,7 @@ Feature: user_signin
     And  user should entered a invalid password   "<password>" on the sign in page
     When  user should click sign in box
     Then  user should verify fail message
-    Then close the application
+    Then close the browser
     Examples: customer credentials
       | username        | password |
       | Team83-kubra123 | asdFJ12  |
@@ -60,7 +62,7 @@ Feature: user_signin
     When  user should click signinAgain box
     And user clicked on username box
     And username should automatically see existing username
-    Then close the application
+    Then close the browser
 
     Examples: customer credentials
       | username       | password  | signedInUserName
@@ -72,7 +74,7 @@ Feature: user_signin
     And  user should click to remember me button
     And  user should click sign in box
     Then user verify failed message
-    Then close the application
+    Then close the browser
 
 
   @US004_TC06
@@ -81,7 +83,7 @@ Feature: user_signin
     And user entered valid email "<valid email address>"
     When user clicked reset password
     Then user verify the  message "Check your emails for details on how to reset your password" message
-    Then close the application
+    Then close the browser
 
     Examples: customer credentials
       | valid email address   |
@@ -93,7 +95,7 @@ Feature: user_signin
     And user entered invalid format email address"<invalid email address>"
     And user clicked reset password
     Then user verify the invalid character message "This field is invalid"
-    Then close the application
+    Then close the browser
 
     Examples: customer credentials
       | invalid email address |
@@ -105,7 +107,7 @@ Feature: user_signin
     And user entered a non-registered "<non-registered email>"  email adress
     When user clicked reset password
     Then user verify the  message "Check your emails for details on how to reset your password" message
-    Then close the application
+    Then close the browser
 
     Examples: customer credentials
       | non-registered email |
@@ -115,7 +117,7 @@ Feature: user_signin
   Scenario: Need  to  to navigate to registration page if not registered yet
     When user should click to " You don't have an account yet? Register a new account"
     And user verify to navigate registration page
-    Then close the application
+    Then close the browser
 
   @US004_TC10
   Scenario Outline:Need to to navigate to "cancel login"
@@ -123,15 +125,16 @@ Feature: user_signin
     And  user should entered a valid password   "<password>" on the sign in page
     When user should click to cancel button
     Then user verify that  successfully to switch to home page
-    Then close the application
+    Then close the browser
 
     Examples: customer credentials
       | username        | password |
       | Team83-kubra123 | asdFJ12  |
-@smoke
+
+  @smoke
   @US004_TC11
   Scenario: Need to to navigate to "cancel login"
     When user left blank username and password field
     And user should double click to cancel button
     Then user verify that  successfully to switch to home page
-    Then close the application
+    Then close the browser
