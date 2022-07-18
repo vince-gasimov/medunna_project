@@ -41,4 +41,8 @@ public class US_021_App_Page {
     @FindBy(xpath = "//div[@role='alert']")
     public WebElement popup;
 
+    @FindBy(xpath = "(//*[text()='Show Tests'])[2]")
+    public WebElement ShowTests;
+
+
 }
