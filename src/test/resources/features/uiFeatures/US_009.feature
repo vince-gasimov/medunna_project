@@ -10,6 +10,7 @@ Feature: view and edit patient portal
     And User (Admin & Staff) clicks on Patients button
     Then User should be able to see patients
 
+  @smoke
   Scenario: As an admin I should able to edit Pateients info name surname
     Given User (Admin & Staff) goes to Medunna URL
     And User Admin should enter  valid credentials

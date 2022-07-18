@@ -3,7 +3,7 @@ Feature: user_appointment
 
 
 @appointment
-
+@smoke
   Scenario: login_user_make_appointment
     Given user should navigate to medunna
     When user clicks on Make an Appointment button

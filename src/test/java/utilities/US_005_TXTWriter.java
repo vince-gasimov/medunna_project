@@ -24,7 +24,7 @@ public class US_005_TXTWriter {
             FileWriter fw = new FileWriter(ConfigurationReader.getProperty("applicants_api_data"), true);
             BufferedWriter bw = new BufferedWriter(fw);
             for (int i = 0; i < appointments.length; i++){
-                bw.append(appointments.toString() + "\n");
+                bw.append(appointments[i].toString() + "\n");
             }
             bw.close();
         }catch (Exception e){
