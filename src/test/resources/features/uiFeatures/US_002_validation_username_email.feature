@@ -10,6 +10,7 @@ Feature:US002_valid_username_email
     When user enters a valid SSN number US002
     And user enters valid first name and last name US002
 
+  @smoke
   @valid_username_email
   Scenario:TC01_username_email_validation
     And user enters valid username US002
