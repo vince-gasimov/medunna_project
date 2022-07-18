@@ -3,7 +3,7 @@ Feature: request_test
 
   Background: user_is_on_the_Medunna_page
     Given  user is on the Medunna page
-    And user clicks on the user icon
+    And user  clicks  to icon on top right corner US002
     And user clicks signInLocation button
 
   @TC01
@@ -63,7 +63,7 @@ Feature: request_test
     And doctor clicks on checkmark box of Creatinin
     And doctor clicks on checkmark box of Total Protein
     And doctor clicks on checkmark box of Potassium
-    And doctor clicks Save button
+    And doctor should click on Save button
     And doctor verifies A New Test Created message
 
 

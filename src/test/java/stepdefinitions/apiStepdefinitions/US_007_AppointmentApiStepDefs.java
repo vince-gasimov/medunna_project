@@ -27,7 +27,7 @@ public class US_007_AppointmentApiStepDefs {
     @Given("user makes an appointment request with API US007")
     public void user_makes_an_appointment_request_with_api_us() {
         response = getRequest(token, endPoint);
-        //response.prettyPrint();
+//        response.prettyPrint();
     }
     @When("user deserializes the appointments data US007")
     public void user_deserializes_the_appointments_data_us() throws Exception {
