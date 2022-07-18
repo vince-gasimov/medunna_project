@@ -3,10 +3,10 @@ Feature: user_signin
 
   Background: user_is_on_the_Medunna_page
     Given  user is on the Medunna page
-    And user clicks on the user icon
+    And user clicks on the user icongit add
     And user clicks signInLocation button
 
-
+  @Smoke
   @US004_TC01
   Scenario Outline: TC01_signin_user_profile_testing
 
@@ -14,7 +14,7 @@ Feature: user_signin
     And  user should entered a valid password   "<password>" on the sign in page
     When  user should click sign in box
     Then  user should verify signed in "<signedInUserName>" successful
-    Then close the application
+    Then close the browser
 
 
     Examples: customer credentials
@@ -128,7 +128,7 @@ Feature: user_signin
     Examples: customer credentials
       | username        | password |
       | Team83-kubra123 | asdFJ12  |
-
+@smoke
   @US004_TC11
   Scenario: Need to to navigate to "cancel login"
     When user left blank username and password field
