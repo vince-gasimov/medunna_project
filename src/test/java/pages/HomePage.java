@@ -40,4 +40,10 @@ public class HomePage {
     public WebElement contact;
 
 
+
+    @FindBy(xpath = "//a[@aria-haspopup=\"true\"]")
+    public WebElement icon;
+    @FindBy(xpath = "//div[@class=\"container\"]//h1")
+    public WebElement welcomeToMedunnaText;
+
 }

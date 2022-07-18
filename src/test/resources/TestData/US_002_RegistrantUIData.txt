@@ -1,0 +1,5 @@
+
+Registrant{firstName='Sunny', lastName='Romaguera', ssn='292-50-1477', login='SunnyRomaguera', langKey='null', password='oV6#qwT8^GA@', email='SunnyRomaguera@gmail.com', activated=false, authorities=null}
+
+Registrant{firstName='Delisa', lastName='Rutherford', ssn='629-68-5249', login='DelisaRutherford', langKey='null', password='T&0*n&&d', email='DelisaRutherford@gmail.com', activated=false, authorities=null}
+
