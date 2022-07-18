@@ -6,6 +6,7 @@ Feature: Registration_page_should_restrict_password
     When user  clicks  to icon on top right corner US002
     And user clicks on Register button US002
 
+  @smoke
   @US_003_TC_001
   Scenario Outline:TC_001 User enters four charts passwords
     Then User enters a four characters random "<password>"

@@ -1,6 +1,7 @@
 @US_08_user_password_segment
 Feature:   US008_password_update
 
+  @smoke
   @US08_TC_0001
   Scenario Outline: The new password should be confirmed
     Given user navigates to Url

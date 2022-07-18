@@ -14,12 +14,10 @@ import org.junit.runner.RunWith;
                 "rerun:target/failedRerun.txt"
         },
         features = "./src/test/resources/features",
+        glue = {"stepdefinitions", "hooks"},
 
-        glue = "stepdefinitions",
-
-        tags = "@GetApiAppointmentStep",
-        dryRun =false
-
+        tags = "@US_021_Scenario_2",
+        dryRun = false
 )
 public class Runner {
 }
