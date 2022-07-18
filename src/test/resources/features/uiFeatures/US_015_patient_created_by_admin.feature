@@ -9,9 +9,8 @@ Feature: patient_by_admin
     Then user clicks on sign in button US_015
     Given user clicks on Items&Titles button US_015
     Then user clicks on Patients button US_015
-    Then close the application US_015
 
-@US_015_Create_New_Patient
+@US_015_Create_New_Patient @smoke
   Scenario: TC 001_creating_new_patient US_015
     And user clicks on create new patient button US_015
     And user enters valid patient credential and clicks save button US_015
