@@ -24,16 +24,6 @@ public class HomePage {
     @FindBy(xpath = "//a[@href='/patient']")
     public WebElement patientButton;
 
-
-
-
-
-
-
-
-
-
-
     @FindBy(xpath = "//*[@id='account-menu']")
     public WebElement profil;
 
