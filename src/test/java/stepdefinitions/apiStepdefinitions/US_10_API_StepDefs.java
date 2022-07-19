@@ -9,6 +9,7 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Assert;
 import pojos.US_10_AppointmentPojo;
+import pojos.US_10_PhysicianPojo;
 import utilities.ConfigurationReader;
 
 
@@ -21,7 +22,8 @@ import static utilities.Authentication.generateToken;
 public class US_10_API_StepDefs {
 
     Response response;
-
+    US_10_AppointmentPojo  appointmentPojo;
+    US_10_PhysicianPojo physicianPojo;
     String token;
     String endPoint = ConfigurationReader.getProperty("US_010_appointmentsListApi");
 
@@ -52,6 +54,7 @@ public class US_10_API_StepDefs {
 
         assertTrue(physicianId.contains(94228));
         assertTrue(appointmentId.contains(20739));
+
 
     }
 
