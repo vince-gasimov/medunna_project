@@ -7,14 +7,16 @@ Feature: Make Appointment
 
   @smoke
   @US007_TC001
-  Scenario Outline: TC_001_Valid_credentials
-    When user enters valid "<firstName>", "<lastName>", "<ssn>", "<email>", "<phone>"
+  Scenario: TC_001_Valid_credentials
+#    When user enters valid "<firstName>", "<lastName>", "<ssn>", "<email>", "<phone>"
+    When user types valid "firstName", "lastName", "ssn", "email", "phone"
+    And save the records us007
     And user does not enter anything on date box and clicks Send and Appointment Request
     And verify user can make an appointment successfully
     Then close the application US_015
-    Examples: valid credentials
-      |firstName|lastName|ssn        |email                 |phone       |
-      |Lev      |Tolstoy |653-24-3425|annakarenina@gmail.com|653-204-3425|
+#    Examples: valid credentials
+#      |firstName|lastName|ssn        |email                 |phone       |
+#      |Lev      |Tolstoy |653-24-3425|annakarenina@gmail.com|653-204-3425|
 
   @US007_TC003
   Scenario: TC_004_Passed_Date
