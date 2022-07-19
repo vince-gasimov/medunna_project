@@ -13,7 +13,7 @@ import utilities.ReusableMethods;
 
 import java.io.IOException;
 
-public class US08_UserPasswordStepDefs {
+public class US_08_UserPasswordStepDefs {
 
     US08PasswordEditPage userPassword = new US08PasswordEditPage();
 
