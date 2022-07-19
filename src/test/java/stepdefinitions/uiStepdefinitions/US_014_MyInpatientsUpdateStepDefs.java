@@ -9,11 +9,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.SourceType;
 import org.openqa.selenium.support.ui.Select;
 import pages.DoctorPage;
 import utilities.Date;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
+import java.io.IOException;
 import java.util.List;
 
 public class US_014_MyInpatientsUpdateStepDefs {
@@ -23,7 +26,7 @@ public class US_014_MyInpatientsUpdateStepDefs {
 
     @Given("doctor finds the first UNAPPROVED inpatient and clicks edit button")
     public void doctorFindsTheFirstUNAPPROVEDInpatientAndClicksEditButton() throws InterruptedException {
-        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        actions.sendKeys(Keys.ARROW_DOWN).perform();
         Thread.sleep(2000);
 
         try {
@@ -46,7 +49,7 @@ public class US_014_MyInpatientsUpdateStepDefs {
 
     @When("doctor deletes description box and writes a new description for the inpatient")
     public void doctorDeletesDescriptionBoxAndWritesANewDescriptionForTheInpatient() {
-        doctorPage.descriptionBox.sendKeys(" ");
+       // doctorPage.descriptionBox.sendKeys(" ");
         doctorPage.descriptionBox.sendKeys("new description");
     }
 
@@ -62,8 +65,9 @@ public class US_014_MyInpatientsUpdateStepDefs {
     }
 
     @And("doctor closes the browser")
-    public void doctorClosesTheBrowser() {
-        Driver.getDriver().close();
+    public void doctorClosesTheBrowser() throws InterruptedException {
+        Driver.closeDriver();
+        Thread.sleep(2000);
     }
 
     @Given("doctor finds the first STAYING inpatient and clicks edit button")
@@ -166,9 +170,10 @@ public class US_014_MyInpatientsUpdateStepDefs {
     }
 
     @Then("doctor verifies Unapproved inpatients' created date can not be changed to an earlier date")
-    public void doctorVerifiesUnapprovedInpatientsCreatedDateCanNotBeChangedToAnEarlierDate() {
-        Assert.assertFalse(doctorPage.updatedMessage.isDisplayed());
-    }
+    public void doctorVerifiesUnapprovedInpatientsCreatedDateCanNotBeChangedToAnEarlierDate() throws IOException {
+           Assert.assertFalse(doctorPage.updatedMessage.isDisplayed());
+           ReusableMethods.getScreenshot("US014_TC012_");
+        }
 
     @Then("doctor verifies Discharged inpatients' created date can not be changed to an earlier date")
     public void doctorVerifiesDischargedInpatientsCreatedDateCanNotBeChangedToAnEarlierDate() {

@@ -22,7 +22,6 @@ Feature: user_signin
       | Team83-kubraoz | Esra2014. | Kubra Ozyasar
 
 
-
   @US004_TC02
   Scenario Outline: TC02_signin_user_profile_negative_testing
 
