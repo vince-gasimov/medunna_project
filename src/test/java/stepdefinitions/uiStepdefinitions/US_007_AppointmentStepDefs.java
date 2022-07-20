@@ -95,30 +95,6 @@ public class US_007_AppointmentStepDefs {
                 sendKeys(Keys.TAB).sendKeys(day)
                 .sendKeys(Keys.TAB).sendKeys(year).build().perform();
     }
-    @When("user enters valid {string}, {string}, {string}, {string}, {string}")
-    public void userEntersValid(String firstName, String lastName, String ssn, String email, String phone) {
-        firstName = faker.name().firstName();
-
-        appointment.firstName.sendKeys(firstName);
-        appointmentPojo.setFirstName(firstName);
-        appointmentPojo.setLastName(lastName);
-        lastName = faker.name().lastName();
-        appointment.lastName.sendKeys(lastName);
-        System.out.println();
-        appointmentPojo.setSsn(ssn);
-        ssn = faker.idNumber().ssnValid();
-        System.out.println(ssn);
-        appointment.ssn.sendKeys(ssn);
-        appointmentPojo.setEmail(email);
-        email = faker.internet().emailAddress();
-        appointment.email.sendKeys(email);
-        appointmentPojo.setPhone(phone);
-        phone = faker.numerify("###-###-####");
-        appointment.phone.sendKeys(phone);
-        System.out.println(appointmentPojo);
-//        saveUiRegistrantData(appointmentPojo);
-        System.out.println("Gasimov");
-    }
     @When("user enters tomorrow's date")
     public void userEntersTomorrowSDate() {
         appointment.date.sendKeys(Date.tomorrowsDate());
@@ -127,33 +103,6 @@ public class US_007_AppointmentStepDefs {
     public void userEntersPassedDate(String date) {
         date = Date.passedDate();
         appointment.date.sendKeys(date);
-    }
-    @When("user types valid {string}, {string}, {string}, {string}, {string}")
-    public void user_types_valid(String firstName, String lastName, String ssn, String email, String phone) {
-        Driver.waitForVisibility(appointment.firstName,10);
-
-//        firstName = faker.name().firstName();
-//        appointmentPojo.setFirstName(firstName);
-//        System.out.println(firstName);
-//        appointment.firstName.sendKeys(firstName);
-//        appointmentPojo.setLastName(lastName);
-//        System.out.println(lastName);
-//        lastName = faker.name().lastName();
-//        appointment.lastName.sendKeys(lastName);
-//        System.out.println();
-//        appointmentPojo.setSsn(ssn);
-//        ssn = faker.idNumber().ssnValid();
-//        System.out.println(ssn);
-//        appointment.ssn.sendKeys(ssn);
-//        appointmentPojo.setEmail(email);
-//        email = faker.internet().emailAddress();
-//        appointment.email.sendKeys(email);
-//        appointmentPojo.setPhone(phone);
-//        phone = faker.numerify("###-###-####");
-//        appointment.phone.sendKeys(phone);
-//        System.out.println(appointmentPojo);
-//        saveUiRegistrantData(appointmentPojo);
-//        System.out.println("Gasimov");
     }
     @When("user enters {string} date")
     public void user_enters_date(String today) {
@@ -178,5 +127,27 @@ public class US_007_AppointmentStepDefs {
     @And("save the records us007")
     public void saveTheRecordsUs() {
         saveUiRegistrantData(appointmentPojo);
+    }
+
+    @When("user enters valid {string}, {string}, {string}, {string}, {string} us007")
+    public void userTypesValid(String firstName, String lastName, String ssn, String email, String phone) {
+
+        Driver.waitForVisibility(appointment.firstName, 5);
+
+        firstName = faker.name().firstName();
+        appointment.firstName.sendKeys(firstName);
+        appointmentPojo.setFirstName(firstName);
+        lastName = faker.name().lastName();
+        appointment.lastName.sendKeys(lastName);
+        appointmentPojo.setLastName(lastName);
+        ssn = faker.idNumber().ssnValid();
+        appointment.ssn.sendKeys(ssn);
+        appointmentPojo.setSsn(ssn);
+        email = faker.internet().emailAddress();
+        appointment.email.sendKeys(email);
+        appointmentPojo.setEmail(email);
+        phone = faker.numerify("###-###-####");
+        appointment.phone.sendKeys(phone);
+        appointmentPojo.setPhone(phone);
     }
 }
