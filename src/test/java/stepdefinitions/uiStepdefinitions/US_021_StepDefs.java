@@ -2,8 +2,13 @@ package stepdefinitions.uiStepdefinitions;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import pages.US_006_Pages;
@@ -116,34 +121,105 @@ public class US_021_StepDefs {
     }
 //********************************************************************************************************************
 
-//    @Then("staff clicks Status box")
-//    public void staff_clicks_status_box() {
-//      //  ReusableMethods.waitForClickablility(us_021_app_page.status, 3).click();
-//    }
+
 
     @Then("staff may change {string}")
-    public void staffMayChange(String status) {ReusableMethods.waitForVisibility(us_021_app_page.status, 3);
+    public void staffMayChange(String status) {
+        ReusableMethods.waitForVisibility(us_021_app_page.status, 3);
         Select select = new Select(us_021_app_page.status);
         select.selectByVisibleText(status);
-        actions.sendKeys(Keys.PAGE_DOWN).perform();
     }
 
 
     @Then("staff cannot change Status as COMPLETED")
     public void staff_cannot_change_status_as_completed() {
-
+        ReusableMethods.waitForVisibility(us_021_app_page.completed, 3).click();
     }
+
+//***************************************************************************************************************
+    @Then("Staff leave Anamnesis button as Blank")
+    public void staff_leave_anamnesis_button_as_blank() {
+        ReusableMethods.waitForClickablility(us_021_app_page.anamnesis, 1).clear();
+        actions.sendKeys(Keys.ARROW_DOWN).perform();
+    }
+
+
+    @Then("Staff leave Treatment button as Blank")
+    public void staff_leave_treatment_button_as_blank() {
+        ReusableMethods.waitForClickablility(us_021_app_page.treatment, 1).clear();
+        actions.sendKeys(Keys.ARROW_DOWN).perform();
+    }
+
+
+    @Then("Staff leave Diagnosis button as Blank")
+    public void staff_leave_diagnosis_button_as_blank() {
+        ReusableMethods.waitForClickablility(us_021_app_page.diagnosis, 1).clear();
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+    }
+
+//***************************************************************************************************************
 
     @Then("staff should select the current doctor")
     public void staff_should_select_the_current_doctor() {
-
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        ReusableMethods.waitFor(2);
+        Select select = new Select(us_021_app_page.physician);
+        select.selectByValue(ConfigurationReader.getProperty("us_021_Physician"));
     }
+
+//*************************************************************************************************************
 
 
     @Then("Staff clicks Show Tests button")
     public void staff_clicks_show_tests_button() {
-      us_021_app_page.ShowTests.click();
+        ReusableMethods.waitForClickablility(us_021_app_page.ShowTests, 1).click();
     }
 
+
+
+    @Then("Staff clicks View Results button")
+    public void staff_clicks_view_results_button() {
+        ReusableMethods.waitForClickablility(us_021_app_page.viewResults, 1).click();
+    }
+
+
+
+    @Then("Staff shows Test Result text")
+    public void staff_shows_test_result_text() {
+        Assert.assertTrue(ReusableMethods.waitForVisibility(us_021_app_page.TestResultsText, 3).isDisplayed());
+    }
+
+//******************************************************************************************************
+
+    @Then("Staff updates date as past")
+    public void staff_updates_date_as_past() {
+        ReusableMethods.waitForClickablility(us_021_app_page.startDate, 3).sendKeys(Date.passedDate());
+        ReusableMethods.waitForClickablility(us_021_app_page.endDate, 3).sendKeys(Date.passedDate());
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+    }
+
+
+    @Then("Staff should not show The appointment is updated with identifier popup")
+    public void staff_should_not_show_the_appointment_is_updated_with_identifier_popup() {
+        Assert.assertTrue(ReusableMethods.waitForVisibility(us_021_app_page.popup, 3).isDisplayed());
+    }
+
+    //*************************************************************************************************
+
+    WebDriver driver;
+    @Then("Staff leaves the physician box as blank")
+    public void staff_leaves_the_physician_box_as_blank() {
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+      //  ReusableMethods.waitForClickablility(us_021_app_page.physician, 1).click();
+
+
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver = new ChromeDriver();
+        WebElement dropdown = driver.findElement(By.xpath("//select[@name='physician.id']"));
+        Select select = new Select(dropdown);
+        select.selectByIndex(0);
+
+    }
 
 }
