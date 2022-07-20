@@ -13,6 +13,7 @@ import java.util.List;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertTrue;
+import static utilities.Authentication.generateToken;
 import static utilities.US_005_TXTWriter.saveUIAppointmentData;
 
 
@@ -24,19 +25,18 @@ public class US_005_ApiAppointmentStepDefs {
     public void user_sends_a_get_request_for_users_data() {
         response = given().headers(
                 "Authorization",
-                "Bearer " + ConfigurationReader.getProperty("005_token"),
-                "Content-Type",
-                ContentType.JSON,
-                "Accept",
-                ContentType.JSON
+                "Bearer " + generateToken(),
+                "Content-Type", ContentType.JSON,
+                "Accept", ContentType.JSON
         ).when().get(ConfigurationReader.getProperty("api_users"));
-//response.prettyPrint();
+
+        response.prettyPrint();
     }
 
     @Given("user deserializes the users' data to java")
     public void user_deserializes_the_users_data_to_java() throws Exception{
         ObjectMapper obj = new ObjectMapper();
-        us_005_appointments = obj.readValue(response.asString(),US_005_Appointment[].class);
+        us_005_appointments = obj.readValue(response.asString(), US_005_Appointment[].class);
         System.out.println("Size of the actual elements: " + us_005_appointments.length);
 
         boolean flag = false;
