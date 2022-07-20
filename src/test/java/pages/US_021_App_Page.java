@@ -5,6 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.security.cert.X509Certificate;
+
 public class US_021_App_Page {
 
     public US_021_App_Page() {
@@ -44,5 +46,16 @@ public class US_021_App_Page {
     @FindBy(xpath = "(//*[text()='Show Tests'])[2]")
     public WebElement ShowTests;
 
+    @FindBy(xpath = "(//span[@class='d-none d-md-inline'])[1]")
+    public WebElement viewResults;
+
+    @FindBy(xpath = "//h2[@id='c-test-result-heading']")
+    public  WebElement TestResultsText;
+
+    @FindBy(xpath = "//select[@id='appointment-status']/option[2]")
+    public WebElement pending;
+
+    @FindBy(xpath = "//select[@id='appointment-status']/option[3]")
+    public WebElement completed;
 
 }
