@@ -47,7 +47,7 @@ Feature: testing_of_some_capability_of_a_staff
   Scenario:Testing_of_Anamnesis_Treatment_and_Diagnosis_fields_as_blank
 
 #      | CANCELLED  |
-      | PENDING    |
+#      | PENDING    |
 
 
   @US_021_Scenario_3
