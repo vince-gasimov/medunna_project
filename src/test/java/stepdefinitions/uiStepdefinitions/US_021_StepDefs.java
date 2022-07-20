@@ -91,7 +91,6 @@ public class US_021_StepDefs {
     public void staff_updates_appointment() {
         ReusableMethods.waitForClickablility(us_021_app_page.startDate, 3).sendKeys(Date.tomorrowsDate());
         ReusableMethods.waitForClickablility(us_021_app_page.endDate, 3).sendKeys(Date.tomorrowsDate());
-        actions.sendKeys(Keys.PAGE_DOWN).perform();
     }
 
 
@@ -122,27 +121,33 @@ public class US_021_StepDefs {
 //    }
 
     @Then("staff may change {string}")
-    public void staffMayChange(String status) {ReusableMethods.waitForVisibility(us_021_app_page.status, 3);
+    public void staffMayChange(String status) throws InterruptedException {
+        ReusableMethods.waitForVisibility(us_021_app_page.status, 3);
         Select select = new Select(us_021_app_page.status);
         select.selectByVisibleText(status);
-        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        Thread.sleep(3000);
+
     }
 
 
     @Then("staff cannot change Status as COMPLETED")
     public void staff_cannot_change_status_as_completed() {
+        us_021_page.pendingOption.click();
 
     }
 
     @Then("staff should select the current doctor")
     public void staff_should_select_the_current_doctor() {
+        ReusableMethods.waitForVisibility(us_021_app_page.physician, 3);
+        Select select = new Select(us_021_app_page.physician);
+        select.selectByVisibleText("94211:fatma seher sudan:NEUROLOGY");
 
     }
 
 
     @Then("Staff clicks Show Tests button")
     public void staff_clicks_show_tests_button() {
-      us_021_app_page.ShowTests.click();
+        us_021_app_page.ShowTests.click();
     }
 
 
