@@ -34,7 +34,7 @@ public class US_001_API_Get_Registrant_Data {
                 "Bearer " + generateToken(),
                 "Content-Type", ContentType.JSON,
                 "Accept", ContentType.JSON
-        ).when().get(ConfigurationReader.getProperty("registrant_endpoint"));
+        ).when().get(ConfigurationReader.getProperty("registrant_endpoint"));//https://medunna.com/api/users?=size=2000
 
              response.prettyPrint();
 
@@ -82,7 +82,6 @@ public class US_001_API_Get_Registrant_Data {
         assertEquals(requestBody.getSsn(), actual.getSsn());//asserting the ssn
 
         assertEquals(requestBody.getFirstName(), actual.getFirstName());
-
 
         System.out.println(actual.getFirstName());
 
