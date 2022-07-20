@@ -5,12 +5,16 @@ import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;
+
+import org.apache.groovy.parser.antlr4.util.PositionConfigureUtils;
+import pages.LoginPage;
+
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+
 import utilities.ConfigurationReader;
 import utilities.Driver;
 
-import java.io.IOException;
 
 import static base_url_setup.MedunnaBaseUrl.medunnaSetup;
 
@@ -32,9 +36,12 @@ public class Hooks {
 
 
 
-    @Before(order=1, value="@UIlogin")
+    @Before(order=1, value="@Login")
     public void beforeScenario() {
-
+        Driver.getDriver().get(ConfigurationReader.getProperty("medunna_url"));
+        LoginPage login = new LoginPage();
+        Driver.waitAndClick(login.signInAndRegistrationPortal);
+        Driver.waitAndClick(login.signIn);
     }
 
     @Before(order=3, value="@UIregistration")
@@ -64,6 +71,7 @@ public class Hooks {
 
 
 
+
     @After
     public void tearDown(Scenario scenario) {
 
@@ -72,4 +80,5 @@ public class Hooks {
             scenario.attach(screenshot, "image/png", "screenshots");
         }
     }
+
 }

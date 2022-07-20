@@ -25,6 +25,7 @@ public class US_005_Appointment {
     private String email;
     private String gender;
     private String phone;
+    private US_007_Patient patient;
 
     public String getFirstName() {
         return firstName;
