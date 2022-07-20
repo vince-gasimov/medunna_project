@@ -6,6 +6,7 @@ import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import pages.HomePage;
 import pages.US_002_RegistrationPage;
+import pages.US_028_AdminHomePage;
 import pojos.US_002_RegistrantPojo;
 import utilities.ConfigurationReader;
 import utilities.Driver;
@@ -19,14 +20,24 @@ public class US_002_ValidationUsernameEmailStepDefs {
     US_002_RegistrationPage registerPage= new US_002_RegistrationPage();
     US_002_RegistrantPojo registrant= new US_002_RegistrantPojo(); //Pojo class
     Faker faker= new Faker();
+    US_028_AdminHomePage adminHomePage= new US_028_AdminHomePage();
 
     @Given("user navigates to url US002")
     public void user_navigates_to_url_US002() {
         Driver.getDriver().get(ConfigurationReader.getProperty("medunna_url"));
+//        try{
+//            adminHomePage.adminAdminLast.click();
+//            adminHomePage.signOut.click();
+//            Driver.wait(3);
+//        }catch(Exception e){
+//
+//        }
     }
     @When("user  clicks  to icon on top right corner US002")
     public void user_clicks_to_icon_on_top_right_corner_US002() {
-        homePage.icon.click();
+//            Driver.waitForVisibility(homePage.icon,3);
+            homePage.icon.click();
+
     }
     @When("user clicks on Register button US002")
     public void user_clicks_on_register_button_US002() {
