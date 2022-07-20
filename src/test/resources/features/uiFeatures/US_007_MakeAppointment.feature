@@ -5,8 +5,9 @@ Feature: Make Appointment
     Given user is navigated to medunna.com
     When user clicks Make an Appointment button
 
+  @smoke
   @US007_TC001
-  Scenario Outline:
+  Scenario Outline: TC_001_Valid_credentials
     When user enters valid "<firstName>", "<lastName>", "<ssn>", "<email>", "<phone>"
     And user does not enter anything on date box and clicks Send and Appointment Request
     And verify user can make an appointment successfully
@@ -17,7 +18,7 @@ Feature: Make Appointment
 
   @US007_TC003
   Scenario: TC_004_Passed_Date
-    When user types valid "firstName", "lastName", "ssn", "email", "phone"
+    When user types valid "firstName", "lastName", "ssn", "email", "phgit cheone"
     Then user enters passed date "date"
     Then user sees Appointment date can not be past date! warning on date field
     And user clicks Send and Appointment Request
