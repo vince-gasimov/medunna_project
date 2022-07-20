@@ -3,6 +3,7 @@ package utilities;
 import pojos.US_002_RegistrantPojo;
 
 import java.io.*;
+import java.util.Map;
 
 public class US_002_TXTWriter {
     public static void saveUIRegistrantData(US_002_RegistrantPojo registrant){
@@ -68,6 +69,16 @@ public class US_002_TXTWriter {
             bw.close();
 
         }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+    public static void saveMapToFile(Map<String, String> map){
+        try {
+            FileWriter fw = new FileWriter(ConfigurationReader.getProperty("US_028_country_ui_data"),false);
+            BufferedWriter bw= new BufferedWriter(fw);
+            bw.append(map+"\n");
+            bw.close();
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
