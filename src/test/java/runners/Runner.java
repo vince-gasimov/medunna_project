@@ -15,7 +15,7 @@ import org.junit.runner.RunWith;
         },
         features = "./src/test/resources/features",
         glue = {"stepdefinitions", "hooks"},
-        tags = "@US_021_Scenario_2",
+        tags = "@US_021_Scenario_4",
         dryRun = false
 
 )

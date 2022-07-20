@@ -34,9 +34,8 @@ Feature: testing_of_some_capability_of_a_staff
     Then Staff enters SSN in the Patient SSN: box
     Then Staff clicks Show Appointments button
     Then Staff clicks Edit button
-#    Then staff clicks Status box
     Then staff may change "<status>"
-   # Then staff cannot change Status as COMPLETED
+    Then staff cannot change Status as COMPLETED
     Then Staff clicks Save button
     Then Staff close the browser
     Examples:
