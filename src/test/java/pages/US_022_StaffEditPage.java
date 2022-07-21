@@ -40,6 +40,9 @@ public class US_022_StaffEditPage {
     @FindBy(xpath = "(//a[@class='btn btn-primary btn-sm'])[1]")
     public WebElement EditOnView;
 
+    @FindBy(xpath = "//*[@id='hospitalmsappfrontendApp.cTestResult.home.createOrEditLabel']/span")
+    public WebElement CreateOrEditTestResult;
+
     @FindBy(xpath = "//*[@id='c-test-result-result']")
     public  WebElement ResultOnEdit;
 
