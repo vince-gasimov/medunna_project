@@ -19,6 +19,8 @@ import utilities.Date;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
+import java.security.Key;
+
 public class US_021_StepDefs {
 
     US_021_Page us_021_page = new US_021_Page();
@@ -179,11 +181,15 @@ public class US_021_StepDefs {
 //***************************************************************************************************************
     @Then("staff should select the current doctor")
     public void staff_should_select_the_current_doctor() throws InterruptedException {
+        Thread.sleep(2000);
         actions.sendKeys(Keys.PAGE_DOWN).perform();
-        Thread.sleep(1000);
-        Select select = new Select(us_021_app_page.physician);
-        Thread.sleep(1000);
-        select.selectByIndex(((int) (Math.random() * 10)+1));
+        Thread.sleep(2000);
+        us_021_app_page.physician.click();
+        Thread.sleep(10000);
+        actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).perform();
+
+
+
 
 
     }
@@ -223,22 +229,5 @@ public class US_021_StepDefs {
     @Then("Staff should not show The appointment is updated with identifier popup")
     public void staff_should_not_show_the_appointment_is_updated_with_identifier_popup() {
         Assert.assertFalse(ReusableMethods.waitForVisibility(us_021_app_page.popup, 3).isDisplayed());
-    }
-
-    //*************************************************************************************************
-
-    WebDriver driver;
-    @Then("Staff leaves the physician box as blank")
-    public void staff_leaves_the_physician_box_as_blank() {
-        actions.sendKeys(Keys.PAGE_DOWN).perform();
-        actions.sendKeys(Keys.PAGE_DOWN).perform();
-      //  ReusableMethods.waitForClickablility(us_021_app_page.physician, 1).click();
-
-
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
-        WebElement dropdown = driver.findElement(By.xpath("//select[@name='physician.id']"));
-        Select select = new Select(dropdown);
-        select.selectByIndex(0);
     }
 }
