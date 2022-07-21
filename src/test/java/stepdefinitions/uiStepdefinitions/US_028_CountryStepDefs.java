@@ -32,7 +32,6 @@ public class US_028_CountryStepDefs {
 
     @When("user clicks to Sign in button US028")
     public void user_clicks_to_sign_in_button_US028() {
-//        Driver.waitForVisibility(homePage.signInButton,3);
         homePage.signInButton.click();
     }
     @Then("user verifies sign in pop up US028")
