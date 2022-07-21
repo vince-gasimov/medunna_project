@@ -47,8 +47,8 @@ Feature: testing_of_some_capability_of_a_staff
     Then Staff close the browser
     Examples:
       | status     |
-      | UNAPPROVED |
       | PENDING    |
+      | UNAPPROVED |
     # | CANCELLED  |
 
 
@@ -68,7 +68,7 @@ Feature: testing_of_some_capability_of_a_staff
 
 
   @US_021_Scenario_5
-  Scenario: testing_of_selecting_phisician
+  Scenario: testing_of_selecting_physician
     Then Staff enters SSN in the Patient SSN: box
     Then Staff clicks Show Appointments button
     Then Staff clicks Edit button
@@ -101,12 +101,3 @@ Feature: testing_of_some_capability_of_a_staff
 
 
 
-  @US_021_Scenario_8
-  Scenario: testing_of_selecting_physician
-    Then Staff enters SSN in the Patient SSN: box
-    Then Staff clicks Show Appointments button
-    Then Staff clicks Edit button
-    Then Staff leaves the physician box as blank
-    Then Staff clicks Save button
-    Then Staff should not show The appointment is updated with identifier popup
-    Then Staff close the browser
