@@ -5,8 +5,7 @@ Feature: user_signin
     Given  user is on the Medunna page
     And user  clicks  to icon on top right corner US002
     And user clicks signInLocation button
-    When user  clicks  to icon on top right corner US002
-    And user clicks signInLocation button
+
 
   @smoke
   @US004_TC01
