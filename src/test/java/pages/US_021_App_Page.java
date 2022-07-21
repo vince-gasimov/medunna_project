@@ -58,4 +58,7 @@ public class US_021_App_Page {
     @FindBy(xpath = "//select[@id='appointment-status']/option[3]")
     public WebElement completed;
 
+    @FindBy(xpath = "//*[text()='UNAPPROVED']")
+    public WebElement actualStatus;
+
 }
