@@ -40,7 +40,7 @@ public class US_021_StepDefs {
 
     @Then("Staff clicks signs in button")
     public void staff_clicks_signs_in_button() {
-        us_021_page.signInButton.click();
+        ReusableMethods.waitForClickablility(us_021_page.signInButton, 5).click();
     }
 
 
@@ -122,7 +122,6 @@ public class US_021_StepDefs {
 //********************************************************************************************************************
 
 
-
     @Then("staff may change {string}")
     public void staffMayChange(String status) {
         ReusableMethods.waitForVisibility(us_021_app_page.status, 3);
@@ -136,7 +135,7 @@ public class US_021_StepDefs {
         ReusableMethods.waitForVisibility(us_021_app_page.completed, 3).click();
     }
 
-//***************************************************************************************************************
+    //***************************************************************************************************************
     @Then("Staff leave Anamnesis button as Blank")
     public void staff_leave_anamnesis_button_as_blank() {
         ReusableMethods.waitForClickablility(us_021_app_page.anamnesis, 1).clear();
@@ -160,11 +159,14 @@ public class US_021_StepDefs {
 //***************************************************************************************************************
 
     @Then("staff should select the current doctor")
-    public void staff_should_select_the_current_doctor() {
+    public void staff_should_select_the_current_doctor() throws InterruptedException {
+        Thread.sleep(2000);
         actions.sendKeys(Keys.PAGE_DOWN).perform();
-        ReusableMethods.waitFor(2);
+        Thread.sleep(2000);
         Select select = new Select(us_021_app_page.physician);
-        select.selectByValue(ConfigurationReader.getProperty("us_021_Physician"));
+        Thread.sleep(2000);
+        select.selectByIndex(((int) (Math.random() * 10)+1));
+
     }
 
 //*************************************************************************************************************
@@ -176,12 +178,10 @@ public class US_021_StepDefs {
     }
 
 
-
     @Then("Staff clicks View Results button")
     public void staff_clicks_view_results_button() {
         ReusableMethods.waitForClickablility(us_021_app_page.viewResults, 1).click();
     }
-
 
 
     @Then("Staff shows Test Result text")
@@ -206,19 +206,15 @@ public class US_021_StepDefs {
 
     //*************************************************************************************************
 
-    WebDriver driver;
+
     @Then("Staff leaves the physician box as blank")
-    public void staff_leaves_the_physician_box_as_blank() {
+    public void staff_leaves_the_physician_box_as_blank() throws InterruptedException {
+        Thread.sleep(1000);
         actions.sendKeys(Keys.PAGE_DOWN).perform();
-        actions.sendKeys(Keys.PAGE_DOWN).perform();
-      //  ReusableMethods.waitForClickablility(us_021_app_page.physician, 1).click();
-
-
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
-        WebElement dropdown = driver.findElement(By.xpath("//select[@name='physician.id']"));
-        Select select = new Select(dropdown);
-        select.selectByIndex(0);
+        Thread.sleep(1000);
+        Select select = new Select(us_021_app_page.physician);
+        select.getFirstSelectedOption();
+//        select.selectByIndex(0);
 
     }
 
