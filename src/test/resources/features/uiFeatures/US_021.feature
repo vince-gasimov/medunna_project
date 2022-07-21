@@ -54,6 +54,7 @@ Feature: testing_of_some_capability_of_a_staff
 
 
   @US_021_Scenario_4
+
   Scenario: testing_of_anamnesis_treatment_and_diagnosis_fields
     Then Staff enters SSN in the Patient SSN: box
     Then Staff clicks Show Appointments button
