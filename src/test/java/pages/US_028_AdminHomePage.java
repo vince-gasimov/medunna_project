@@ -21,7 +21,7 @@ public class US_028_AdminHomePage {
     @FindBy(xpath = "//a[@href=\"/c-state\"]//span")
     public WebElement stateCityLink;
 
-    @FindBy(id = "account-menu")
+    @FindBy(xpath = "//span[.='Admin Adminlast']")
     public WebElement adminAdminLast;
 
     @FindBy(xpath = "//a[@href=\"/logout\"]")
