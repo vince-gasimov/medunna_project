@@ -25,17 +25,15 @@ public class US_002_ValidationUsernameEmailStepDefs {
     @Given("user navigates to url US002")
     public void user_navigates_to_url_US002() {
         Driver.getDriver().get(ConfigurationReader.getProperty("medunna_url"));
-//        try{
-//            adminHomePage.adminAdminLast.click();
-//            adminHomePage.signOut.click();
-//            Driver.wait(3);
-//        }catch(Exception e){
-//
-//        }
+        try{
+            adminHomePage.adminAdminLast.click();
+            adminHomePage.signOut.click();
+        }catch(Exception e){
+
+        }
     }
     @When("user  clicks  to icon on top right corner US002")
     public void user_clicks_to_icon_on_top_right_corner_US002() {
-//            Driver.waitForVisibility(homePage.icon,3);
             homePage.icon.click();
 
     }

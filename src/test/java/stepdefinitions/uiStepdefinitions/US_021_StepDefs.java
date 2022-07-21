@@ -19,11 +19,14 @@ import utilities.Date;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
+import java.security.Key;
+
 public class US_021_StepDefs {
 
     US_021_Page us_021_page = new US_021_Page();
     US_021_App_Page us_021_app_page = new US_021_App_Page();
     Actions actions = new Actions(Driver.getDriver());
+
 
 
     @Given("Staff goes to Medunna URL")
@@ -32,16 +35,19 @@ public class US_021_StepDefs {
     }
 
 
+
     @Then("Staff clicks on the icon on the top right corner")
     public void staff_clicks_on_the_icon_on_the_top_right_corner() {
         us_021_page.userIcon.click();
     }
 
 
+
     @Then("Staff clicks signs in button")
     public void staff_clicks_signs_in_button() {
-        us_021_page.signInButton.click();
+        ReusableMethods.waitForClickablility(us_021_page.signInButton, 3).click();
     }
+
 
 
     @Then("Staff enters username")
@@ -50,10 +56,12 @@ public class US_021_StepDefs {
     }
 
 
+
     @Then("Staff enters password")
     public void staff_enters_password() {
         us_021_page.passwordBox.sendKeys(ConfigurationReader.getProperty("us_021_password"));
     }
+
 
 
     @Then("Staff clicks on the sign in button on the right bottom")
@@ -62,10 +70,12 @@ public class US_021_StepDefs {
     }
 
 
+
     @Then("Staff clicks on the MY PAGES button")
     public void staff_clicks_on_the_my_pages_button() {
         ReusableMethods.waitForClickablility(us_021_page.myPagesButton, 3).click();
     }
+
 
 
     @Then("Staff clicks Search Patient button")
@@ -76,6 +86,7 @@ public class US_021_StepDefs {
 
     @Then("Staff enters SSN in the Patient SSN: box")
     public void staff_enters_ssn_in_the_patient_ssn_box() {
+        ReusableMethods.waitFor(2);
         us_021_page.patientSsnButton.sendKeys(ConfigurationReader.getProperty("us_021_SSN"));
     }
 
@@ -120,7 +131,20 @@ public class US_021_StepDefs {
         Driver.closeDriver();
     }
 //********************************************************************************************************************
+    @Then("staff selects COMPLETED option in the status box")
+    public void staff_selects_completed_option_in_the_status_box() {
+        ReusableMethods.waitForVisibility(us_021_app_page.status, 3);
+        Select select = new Select(us_021_app_page.status);
+        select.selectByVisibleText("COMPLETED");
+}
 
+    @Then("Staff shows status cannot update as COMPLETED")
+    public void staff_shows_status_cannot_update_as_completed() {
+       String expectedStatus = ConfigurationReader.getProperty("us_021_expectedStatus");
+       String actualStatus = us_021_app_page.actualStatus.getText();
+       Assert.assertEquals(actualStatus,expectedStatus);
+    }
+//*********************************************************************************************************************
 
 
     @Then("staff may change {string}")
@@ -131,10 +155,6 @@ public class US_021_StepDefs {
     }
 
 
-    @Then("staff cannot change Status as COMPLETED")
-    public void staff_cannot_change_status_as_completed() {
-        ReusableMethods.waitForVisibility(us_021_app_page.completed, 3).click();
-    }
 
 //***************************************************************************************************************
     @Then("Staff leave Anamnesis button as Blank")
@@ -151,6 +171,7 @@ public class US_021_StepDefs {
     }
 
 
+
     @Then("Staff leave Diagnosis button as Blank")
     public void staff_leave_diagnosis_button_as_blank() {
         ReusableMethods.waitForClickablility(us_021_app_page.diagnosis, 1).clear();
@@ -158,15 +179,20 @@ public class US_021_StepDefs {
     }
 
 //***************************************************************************************************************
-
     @Then("staff should select the current doctor")
-    public void staff_should_select_the_current_doctor() {
+    public void staff_should_select_the_current_doctor() throws InterruptedException {
+        Thread.sleep(2000);
         actions.sendKeys(Keys.PAGE_DOWN).perform();
-        ReusableMethods.waitFor(2);
-        Select select = new Select(us_021_app_page.physician);
-        select.selectByValue(ConfigurationReader.getProperty("us_021_Physician"));
-    }
+        Thread.sleep(2000);
+        us_021_app_page.physician.click();
+        Thread.sleep(10000);
+        actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).perform();
 
+
+
+
+
+    }
 //*************************************************************************************************************
 
 
@@ -199,27 +225,9 @@ public class US_021_StepDefs {
     }
 
 
+
     @Then("Staff should not show The appointment is updated with identifier popup")
     public void staff_should_not_show_the_appointment_is_updated_with_identifier_popup() {
-        Assert.assertTrue(ReusableMethods.waitForVisibility(us_021_app_page.popup, 3).isDisplayed());
+        Assert.assertFalse(ReusableMethods.waitForVisibility(us_021_app_page.popup, 3).isDisplayed());
     }
-
-    //*************************************************************************************************
-
-    WebDriver driver;
-    @Then("Staff leaves the physician box as blank")
-    public void staff_leaves_the_physician_box_as_blank() {
-        actions.sendKeys(Keys.PAGE_DOWN).perform();
-        actions.sendKeys(Keys.PAGE_DOWN).perform();
-      //  ReusableMethods.waitForClickablility(us_021_app_page.physician, 1).click();
-
-
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
-        WebElement dropdown = driver.findElement(By.xpath("//select[@name='physician.id']"));
-        Select select = new Select(dropdown);
-        select.selectByIndex(0);
-
-    }
-
 }
