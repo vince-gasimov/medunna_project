@@ -125,4 +125,9 @@ public class US_022_EditStaffStepDefs {
     public void staffEnteredOnDescription(String string) {
         staffEditPage.Description.sendKeys(string);
     }
+
+    @Then("Staff verifies to access Test Result Create or Edit Test Result")
+    public void staffVerifiesToAccessTestResultCreateOrEditTestResult() {
+        Assert.assertTrue(staffEditPage.CreateOrEditTestResult.isDisplayed());
+    }
 }

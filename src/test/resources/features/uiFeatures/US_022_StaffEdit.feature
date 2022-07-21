@@ -73,7 +73,7 @@ Feature: staff_edit
 
 
   @US22_TC04
-  Scenario Outline: TC03_staff_can_view_and_update_test_results
+  Scenario Outline: TC04_staff_can_view_and_update_test_results
 
     And  user should entered a valid username "<username>" on the sign in page
     And  user should entered a valid password   "<password>" on the sign in page
@@ -100,7 +100,7 @@ Feature: staff_edit
 
 
   @US22_TC05
-  Scenario Outline: TC03_staff_can_view_and_update_test_results
+  Scenario Outline: TC04_staff_can_view_and_update_test_results
 
     And  user should entered a valid username "<username>" on the sign in page
     And  user should entered a valid password   "<password>" on the sign in page
@@ -113,16 +113,13 @@ Feature: staff_edit
     And Staff clicks on View Results
     Then Staff verifies  to see test results on View Results
     And Staff clicks on Edit
-    And Staff clicks on ID
-    And Staff entered "<changed_info>" on Result
-    And Staff clicks on Save
-    Then Staff verifies Test Result updated message
+    Then Staff verifies to access Test Result Create or Edit Test Result
     Then close the application
 
     Examples: customer credentials
 
-      | username | password    |   SSN                | changed_info |
-      |  Harry   |  Potter2022.|   321-54-4567        |  negative    |
+      | username | password    |   SSN                |
+      |  Harry   |  Potter2022.|   321-54-4567        |
 
 
 
