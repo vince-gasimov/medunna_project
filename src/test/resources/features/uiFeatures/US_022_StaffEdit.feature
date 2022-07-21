@@ -63,7 +63,7 @@ Feature: staff_edit
     And Staff clicks on Result in Edit
     And Staff entered "<changed_info>" on Result
     And Staff clicks on Save
-    Then Staff verifies "Test Result updated message
+    Then Staff verifies Test Result updated message
     Then close the application
 
     Examples: customer credentials
@@ -89,7 +89,7 @@ Feature: staff_edit
     And Staff clicks on Description
     And Staff entered "<changed_info>" on Description
     And Staff clicks on Save
-    Then Staff verifies "Test Result updated message
+    Then Staff verifies Test Result updated message
     Then close the application
 
     Examples: customer credentials
@@ -116,7 +116,7 @@ Feature: staff_edit
     And Staff clicks on ID
     And Staff entered "<changed_info>" on Result
     And Staff clicks on Save
-    Then Staff verifies "Test Result updated message
+    Then Staff verifies Test Result updated message
     Then close the application
 
     Examples: customer credentials

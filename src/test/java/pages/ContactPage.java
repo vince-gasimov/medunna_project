@@ -2,13 +2,20 @@ package pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import utilities.Driver;
 
 import javax.xml.xpath.XPath;
 
 public class ContactPage {
+
+    public ContactPage(){
+        PageFactory.initElements(Driver.getDriver(), this);
+    }
+
     @FindBy(xpath = "//div[@class='container']")
     public WebElement contactTitle;
-    @FindBy(xpath = "//input[@id='name']")
+    @FindBy(xpath = "//input[@placeholder='Name']")
     public WebElement name;
     @FindBy(xpath ="//input[@id='email']" )
     public WebElement email;
@@ -18,14 +25,17 @@ public class ContactPage {
     public WebElement message;
     @FindBy(xpath ="//button[@id='register-submit']" )
     public WebElement sendButton;
-    @FindBy(xpath = "(//div[@class='invalid-feedback'])[1]")
+    @FindBy(xpath = "//*[text()='Name is required.']")
     public WebElement nameIsRequiredMessage;
-    @FindBy(xpath = "(//div[@class='invalid-feedback'])[2]")
+    @FindBy(xpath = "//*[text()='Your email is required.']")
     public WebElement yourEmailIsRequiredMessage;
-    @FindBy(xpath = "(//div[@class='invalid-feedback'])[3]")
+    @FindBy(xpath = "//*[text()='This field is required.']")
     public WebElement subjectThisFieldIsRequiredMessage;
     @FindBy(xpath ="//*[contains (text(),'Your message has been received')]" )
     public WebElement receivedMessage;
+    @FindBy(xpath = "//*[text()='This field is invalid']")
+    public WebElement thisFieldIsInvalidMessage;
+
 
 
 

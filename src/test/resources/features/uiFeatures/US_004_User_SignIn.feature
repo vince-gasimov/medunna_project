@@ -18,11 +18,9 @@ Feature: user_signin
     Then  user should verify signed in "<signedInUserName>" successful
     Then close the browser
 
-
     Examples: customer credentials
       | username       | password  | signedInUserName
       | Team83-kubraoz | Esra2014. | Kubra Ozyasar
-
 
 
   @US004_TC02
