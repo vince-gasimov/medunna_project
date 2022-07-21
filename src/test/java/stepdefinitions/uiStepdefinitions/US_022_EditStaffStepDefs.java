@@ -81,7 +81,7 @@ public class US_022_EditStaffStepDefs {
         staffEditPage.EditOnView.click();
     }
 
-    @Then("Staff verifies \"Test Result updated message")
+    @Then("Staff verifies Test Result updated message")
     public void staffVerifiesTestResultUpdatedMessage() throws Throwable {
         Driver.waitForVisibility(staffEditPage.ResultUpdatedmessage, 10);
         Assert.assertTrue(staffEditPage.ResultUpdatedmessage.isDisplayed());

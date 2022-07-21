@@ -11,7 +11,7 @@ import pages.PatientView;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class PatientViewStepDefs {
+public class US_009_PatientViewStepDefs {
 
     PatientView patientView = new PatientView();
 

@@ -44,12 +44,12 @@ Feature: testing_of_some_capability_of_a_staff
       | PENDING    |
       | UNAPPROVED |
 #      | CANCELLED  |
-
-
+      | PENDING    |
 
 
   @US_021_Scenario_3
   Scenario: testing_of_anamnesis_treatment_and_diagnosis_fields
+
   Scenario Outline: Anamnesis, Treatment, or Diagnosis fields as blank
     Given Staff goes to Medunna URL
     Then Staff clicks on the icon on the top right corner
@@ -68,11 +68,10 @@ Feature: testing_of_some_capability_of_a_staff
     Then Staff shows The appointment is updated with identifier popup
     Then Staff close the browser
     Examples:
-      | Blank     |
+      | blank     |
       | Anamnesis |
       | Treatment |
       | Diagnosis |
-
 
 
   @US_021_Scenario_4
@@ -93,8 +92,6 @@ Feature: testing_of_some_capability_of_a_staff
     Then Staff clicks Save button
     Then Staff shows The appointment is updated with identifier popup
     Then Staff close the browser
-
-
 
 
   @US_021_Scenario_5

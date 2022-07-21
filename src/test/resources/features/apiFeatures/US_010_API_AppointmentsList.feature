@@ -1,19 +1,12 @@
-@US_010_Validate_API_Testing
-Feature: test api appointments list
+@us_010_api
+Feature: US_010_appointmentsList
 
-  @US_010_Get_Api_AppointmentsList
-  Scenario: doctor should be able to see appointments list in api
-    Given Doctor sets Medunna base url
-#   "https://medunna.com/api/appointments"
-    When Doctor sends the GET request and GET the response
-    And Doctor provides patient id as a query parameter
-    And Doctor deserialize data json to java
-    And Doctor saves the patient data to correspondent files
-    And Doctor validates expected data with API
-#    Then Doctor validates patient id, start date, end date, status with expected data
-
-
-
+    @Api
+    @US_10_AppointmentsList
+  Scenario: TC_10_get_appointmentList
+    Given user sends GET request for appointments
+    When user receives response with status code 200
+    Then user verifies that response contains physicianID
 
 
 
