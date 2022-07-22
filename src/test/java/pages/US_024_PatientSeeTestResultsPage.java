@@ -14,12 +14,12 @@ public class US_024_PatientSeeTestResultsPage {
     public WebElement myPagesPatientButton;
 
     @FindBy(xpath = "//span[text()='My Appointments']")
-    public WebElement  myAppointmentsButton;
+    public WebElement myAppointmentsButton;
 
-    @FindBy(xpath = "//*[text()='Show Tests']")
+    @FindBy(xpath = "//*[@class='svg-inline--fa fa-th-list fa-w-16 ']")
     public WebElement showTestsButton;
 
-    @FindBy(xpath = "//*[text()='View Results']")
+    @FindBy(xpath = "//span[@class='d-none d-md-inline']")
     public WebElement viewResultsButton;
 
     @FindBy(xpath = "//*[text()='ID']")
@@ -28,10 +28,10 @@ public class US_024_PatientSeeTestResultsPage {
     @FindBy(xpath = "//*[text()='Name']")
     public WebElement nameButton;
 
-    @FindBy(xpath = "//*[text()='Default Min. Value']")
+    @FindBy(xpath = "//tbody/tr/td[4]")
     public WebElement defaultMinValueButton;
 
-    @FindBy(xpath = "///*[text()='Default Max. Value']")
+    @FindBy(xpath = "//tbody/tr/td[5]")
     public WebElement defaultMaxValueButton;
 
     @FindBy(xpath = "//*[text()='Description']")
@@ -40,16 +40,16 @@ public class US_024_PatientSeeTestResultsPage {
     @FindBy(xpath = "//*[text()='Date']")
     public WebElement dateButton;
 
-    @FindBy(xpath = "//*[text()='No Appointments found']")
+    @FindBy(xpath = "//span[text()='No Appointments found']")
     public WebElement noAppointmentsFoundMessage;
 
-    @FindBy(xpath = "//*[text()='No Tests found']")
+    @FindBy(xpath = "//div[@class='table-responsive']")
     public WebElement noTestFoundMessage;
 
     @FindBy(xpath = "//*[text()='Show Invoice']")
     public WebElement showInvoiceButton;
 
-    @FindBy(xpath = "//*[text()='INVOICE']")
+    @FindBy(xpath = "//th[normalize-space()='INVOICE']")
     public WebElement invoice;
 
 }
