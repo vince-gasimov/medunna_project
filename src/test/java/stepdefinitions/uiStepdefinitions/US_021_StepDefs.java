@@ -130,19 +130,19 @@ public class US_021_StepDefs {
     public void staff_close_the_browser() {
         Driver.closeDriver();
     }
-//********************************************************************************************************************
+    //********************************************************************************************************************
     @Then("staff selects COMPLETED option in the status box")
     public void staff_selects_completed_option_in_the_status_box() {
         ReusableMethods.waitForVisibility(us_021_app_page.status, 3);
         Select select = new Select(us_021_app_page.status);
         select.selectByVisibleText("COMPLETED");
-}
+    }
 
     @Then("Staff shows status cannot update as COMPLETED")
     public void staff_shows_status_cannot_update_as_completed() {
-       String expectedStatus = ConfigurationReader.getProperty("us_021_expectedStatus");
-       String actualStatus = us_021_app_page.actualStatus.getText();
-       Assert.assertEquals(actualStatus,expectedStatus);
+        String expectedStatus = ConfigurationReader.getProperty("us_021_expectedStatus");
+        String actualStatus = us_021_app_page.actualStatus.getText();
+        Assert.assertEquals(actualStatus,expectedStatus);
     }
 //*********************************************************************************************************************
 
@@ -156,7 +156,7 @@ public class US_021_StepDefs {
 
 
 
-//***************************************************************************************************************
+    //***************************************************************************************************************
     @Then("Staff leave Anamnesis button as Blank")
     public void staff_leave_anamnesis_button_as_blank() {
         ReusableMethods.waitForClickablility(us_021_app_page.anamnesis, 1).clear();
@@ -178,7 +178,7 @@ public class US_021_StepDefs {
         actions.sendKeys(Keys.PAGE_DOWN).perform();
     }
 
-//***************************************************************************************************************
+    //***************************************************************************************************************
     @Then("staff should select the current doctor")
     public void staff_should_select_the_current_doctor() throws InterruptedException {
         Thread.sleep(2000);
