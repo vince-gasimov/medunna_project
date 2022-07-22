@@ -10,7 +10,7 @@ ___
 <p align="left">
 </p>
 
-- Presented spark reports to PO :man_technologist:
+- Reports were generated and presented to PO :man_technologist:
 - Reported all bugs to Jira <img src="https://github.com/devicons/devicon/blob/master/icons/jira/jira-original-wordmark.svg" title="Jira" alt="Jira" width="40" height="40"/>&nbsp;
 - Bugs are fixed by developers and retested by testers
 <br/>
