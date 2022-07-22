@@ -6,8 +6,7 @@ Feature: patient_see_test_results
     And user  clicks  to icon on top right corner US002
     And user clicks signInLocation button
 
-
-    @TC01
+  @US_24_TC01
   Scenario Outline: TC024_patient_view_test_results
     And  user should entered a valid username "<username>" on the sign in page
     And  user should entered a valid password   "<password>" on the sign in page
@@ -17,14 +16,18 @@ Feature: patient_see_test_results
     And patient should click on My Appointments
     And patient should click on Show Test button
     And patient should click on View Results button
-    And Patient should verify id, name for test, default max and min value, test date and description
+    And Patient should verify id
+    And Patient should verify name
+    And Patient should verify default max value
+    And Patient should verify default min value
+    And Patient should verify description
+    And Patient should verify date
+    Then user closes the browser US002
+    Examples: customer credentials
+      | username             | password | signedInUserName |
+      | team83_yesimpatient2 | medunna  | zeynep4 ozturk   |
 
-      Examples: customer credentials
-      | username            | password  | signedInUserName|
-      | team83_yesimpatient1 | medunna | zeynep3 ozturk   |
-
-
-    @TC02
+  @US_24_TC02
   Scenario Outline: TC024_patient_can_not_find_appointments
     And  user should entered a valid username "<username>" on the sign in page
     And  user should entered a valid password   "<password>" on the sign in page
@@ -33,12 +36,13 @@ Feature: patient_see_test_results
     And patient should click on mypages
     And patient should click on My Appointments
     And patient should verify No Appointments found message
+    Then user closes the browser US002
 
-      Examples: customer credentials
-        | username            | password  | signedInUserName|
-        | team83_yesimpatient3 | medunna | zeynep6 ozturk   |
+    Examples: customer credentials
+      | username  | password | signedInUserName |
+      | ypatient5 | medunna  | patient5 ozturk  |
 
-  @TC03
+  @US_24_TC03
 
   Scenario Outline: TC024_patient_can_not_see_tests
     And  user should entered a valid username "<username>" on the sign in page
@@ -49,14 +53,13 @@ Feature: patient_see_test_results
     And patient should click on My Appointments
     And patient should click on Show Test button
     And patient should verify No Test Found message
-
-
+    Then user closes the browser US002
 
     Examples: customer credentials
-      | username            | password  | signedInUserName|
-      | team83_yesimpatient2 | medunna | zeynep4 ozturk   |
+      | username  | password | signedInUserName |
+      | ypatient4 | medunna  | patient4 ozturk  |
 
-  @TC04
+  @US_24_TC04
 
   Scenario Outline: TC024_patient_can_not_see_tests
     And  user should entered a valid username "<username>" on the sign in page
@@ -67,10 +70,10 @@ Feature: patient_see_test_results
     And patient should click on My Appointments
     And patient should click on Show Invoice button
     And patient should verify INVOICE page
-
+    Then user closes the browser US002
 
 
     Examples: customer credentials
-      | username            | password  | signedInUserName|
-      | team83_yesimpatient1 | medunna | zeynep3 ozturk   |
+      | username          | password          | signedInUserName             |
+      | team83_patient_11 | team83_patient_11 | team83_patient_11 patient_11 |
 
