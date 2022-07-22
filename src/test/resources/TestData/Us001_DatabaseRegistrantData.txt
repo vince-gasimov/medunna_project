@@ -5,11 +5,6 @@ US_01_Registrant{firstName='Team83_Jarod', lastName='Powlowski_Team83', ssn='424
 US_01_Registrant{firstName='Team83_Sandra', lastName='McLaughlin_Team83', ssn='682-56-1830', login='Team83_shon.fisher', langKey='null', password='bifch7vy', email='Team83_bethel.hermann@gmail.com', id=0, activated=false, authorities=null}
 US_01_Registrant{firstName='Team83_Angelo', lastName='Collier_Team83', ssn='660-06-4632', login='Team83_emogene.borer', langKey='null', password='1b15sbxgasf', email='Team83_davis.reichert@yahoo.com', id=0, activated=false, authorities=null}
 US_01_Registrant{firstName='Team83_Jannie', lastName='Johnston_Team83', ssn='180-03-4500', login='Team83_drucilla.mcdermott', langKey='null', password='5z4owtj9m1e', email='Team83_waylon.ritchie@gmail.com', id=0, activated=false, authorities=null}
-<<<<<<< HEAD
-US_01_Registrant{firstName='Team83_Kasie', lastName='Graham_Team83', ssn='651-78-5037', login='Team83_yvonne.prohaska', langKey='null', password='9eb0742uuwp45e', email='Team83_mafalda.harber@gmail.com', id=0, activated=false, authorities=null}
-US_01_Registrant{firstName='Team83_Ariel', lastName='Bode_Team83', ssn='789-39-4842', login='Team83_jacquelyn.bernhard', langKey='null', password='lf69a83rhdzw', email='Team83_ja.keebler@yahoo.com', id=0, activated=false, authorities=null}
-US_01_Registrant{firstName='Team83_Alonso', lastName='Beer_Team83', ssn='364-07-6069', login='Team83_domonique.emard', langKey='null', password='59frz0po6m', email='Team83_janeth.botsford@hotmail.com', id=0, activated=false, authorities=null}
-=======
 [Lpojos.US_01_Registrant;@9fe720a
 US_01_Registrant{firstName='Team83_Venessa', lastName='Fisher_Team83', ssn='640-57-0899', login='Team83_colby.wyman', langKey='null', password='ndf0q9qy', email='Team83_karl.quitzon@hotmail.com', id=0, activated=false, authorities=null}
->>>>>>> master
+US_01_Registrant{firstName='Team83_Mariano', lastName='Sawayn_Team83', ssn='280-59-6148', login='Team83_tamar.connelly', langKey='null', password='zdru4dbmfvgfiz', email='Team83_floyd.swift@yahoo.com', id=0, activated=false, authorities=null}
