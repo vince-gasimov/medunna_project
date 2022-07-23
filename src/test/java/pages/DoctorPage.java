@@ -91,9 +91,4 @@ public class DoctorPage {
     @FindBy(xpath ="//*[contains (text(),'The room already reserved')]")
     public WebElement theRoomAlreadyReservedMessage;
 
-
-
-
-
-
 }

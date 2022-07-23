@@ -27,6 +27,4 @@ public class ContactPage {
     @FindBy(xpath ="//*[contains (text(),'Your message has been received')]" )
     public WebElement receivedMessage;
 
-
-
 }
