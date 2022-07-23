@@ -6,6 +6,7 @@ Feature: request_test
     And user  clicks  to icon on top right corner US002
     And user clicks signInLocation button
 
+  @Smoke
   @TC01
   Scenario Outline: TC012_doctor_request_test
     And  user should entered a valid username "<username>" on the sign in page
@@ -23,9 +24,8 @@ Feature: request_test
       | username            | password  | signedInUserName
       | team83_yesimdoctor3 | medunna | zeynep7 ozturk
 
-
+  @Smoke
   @TC02
-
   Scenario Outline: TC012_doctor_see_noTestItemsFound
     And  user should entered a valid username "<username>" on the sign in page
     And  user should entered a valid password   "<password>" on the sign in page
