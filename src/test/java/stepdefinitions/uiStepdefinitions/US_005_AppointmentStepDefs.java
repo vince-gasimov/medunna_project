@@ -81,15 +81,16 @@ public class US_005_AppointmentStepDefs {
         us_007_appointmentPage.phone.sendKeys("");
     }
 
-    @And("User does not use {string} after {int}rd and {int}th digits in phone number")
-    public void userDoesNotUseAfterRdAndThDigitsInPhoneNumber(int arg0, int arg1) {
+    @When("User does not use '-' after 3rd and 6th digits in phone number")
+    public void user_does_not_use_after_3rd_and_6th_digits_in_phone_number() {
         us_007_appointmentPage.phone.sendKeys("1312420202");
+
+
     }
 
     @And("user enters icon to top right corner")
     public void userEntersIconToTopRightCorner() {
         homePage.userIcon.click();
-
     }
 
     // @And("user enters password again")
@@ -157,4 +158,6 @@ public class US_005_AppointmentStepDefs {
     public void userConnectsToTheDatabase() {
         
     }
+
+
 }
