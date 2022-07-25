@@ -74,4 +74,10 @@ public class US_021_Page {
     @FindBy(xpath = "//*[text()='Settings saved!']")
     public WebElement popup;
 
+    @FindBy(xpath = "//select[@id='appointment-status']/option[2]")
+    public WebElement pendingOption;
+
+    @FindBy(xpath = "//select[@id='appointment-status']/option[3]")
+    public WebElement completedOption;
+
 }
