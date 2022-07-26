@@ -77,7 +77,7 @@ Feature: user_appointment
 
   @wphone
 
-  Scenario: login_user_make_appointment_without_phone
+  Scenario: login_user_make_appointment_wrong_phone
 
 
     Given user should navigate to medunna
