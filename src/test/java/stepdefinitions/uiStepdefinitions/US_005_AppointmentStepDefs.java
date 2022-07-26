@@ -83,7 +83,7 @@ public class US_005_AppointmentStepDefs {
 
     @And("User does not use {string} after {int}rd and {int}th digits in phone number")
     public void userDoesNotUseAfterRdAndThDigitsInPhoneNumber(int arg0, int arg1) {
-        us_007_appointmentPage.phone.sendKeys("1312420202");
+        us_007_appointmentPage.phone.sendKeys("1112420202");
     }
 
     @And("user enters icon to top right corner")
@@ -153,8 +153,5 @@ public class US_005_AppointmentStepDefs {
         Assert.assertTrue(homePage.invalidmessage.isDisplayed());
     }
 
-    @Given("user connects to the database 005")
-    public void userConnectsToTheDatabase() {
-        
-    }
+
 }

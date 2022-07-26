@@ -74,4 +74,7 @@ public class US_021_Page {
     @FindBy(xpath = "//*[text()='Settings saved!']")
     public WebElement popup;
 
+
+
+
 }
