@@ -23,10 +23,10 @@ public class US_021_Page {
     @FindBy(xpath = "//input[@name='ssn']")
     public WebElement patientSsnButton;
 
-    @FindBy(xpath ="//*[text()='Show Appointments']")
+    @FindBy(xpath = "//*[text()='Show Appointments']")
     public WebElement showAppButton;
 
-    @FindBy (xpath = "(//*[text()='Edit'])[1]")
+    @FindBy(xpath = "(//*[text()='Edit'])[1]")
     public WebElement editButton;
 
     @FindBy(xpath = "//*[text()='Sign in']")
@@ -75,6 +75,14 @@ public class US_021_Page {
     public WebElement popup;
 
 
+
+
+
+    @FindBy(xpath = "//select[@id='appointment-status']/option[2]")
+    public WebElement pendingOption;
+
+    @FindBy(xpath = "//select[@id='appointment-status']/option[3]")
+    public WebElement completedOption;
 
 
 }

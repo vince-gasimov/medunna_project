@@ -35,6 +35,8 @@ public class US_007_AppointmentApiStepDefs {
         appointments = obj.readValue(response.asString(), US_007_Appointment[].class);
         System.out.println("Size: " + appointments.length);
         System.out.println(appointments[0].getCreatedDate());
+        System.out.println(appointments[2].getPatient().getFirstName());
+        System.out.println(appointments[2].getPatient().getUser().getLastName());
     }
     @Then("user saves the data US007")
     public void user_saves_the_data_us() {
