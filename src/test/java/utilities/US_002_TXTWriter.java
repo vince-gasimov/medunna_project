@@ -82,4 +82,15 @@ public class US_002_TXTWriter {
             e.printStackTrace();
         }
     }
+    public static void saveMapToFile(Map<String, Object> map, String path){
+        try {
+            FileWriter fw = new FileWriter(path,false);
+            BufferedWriter bw= new BufferedWriter(fw);
+            bw.append(map+"\n");
+            bw.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
