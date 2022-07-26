@@ -137,7 +137,8 @@ public class US_028_CountryStepDefs {
 
     @When("admin finds the new created country and clicks on Delete button US028")
     public void admin_finds_the_new_created_country_and_clicks_on_delete_button_US028() {
-        for(int i=1; i<300; i++){
+        List<WebElement> countryIds= Driver.getDriver().findElements(By.xpath("//tr//td[1]"));
+        for(int i= countryIds.size(); i>0; i--){
             String xpath= "//tr["+i+"]//td[1]";
             if(Driver.getDriver().findElement(By.xpath(xpath)).getText().equals(data.get("id"))){
                 WebElement deleteButton=Driver.getDriver().findElement(By.xpath("//tr["+i+"]//a[@class=\"btn btn-danger btn-sm\"]"));
