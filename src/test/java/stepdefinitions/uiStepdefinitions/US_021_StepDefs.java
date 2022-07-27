@@ -10,7 +10,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
+import pages.HomePage;
 import pages.US_006_Pages;
 import pages.US_021_App_Page;
 import pages.US_021_Page;
@@ -244,6 +246,7 @@ public class US_021_StepDefs {
         ReusableMethods.waitForClickablility(us_021_app_page.startDate, 3).sendKeys(Date.passedDate());
         ReusableMethods.waitForClickablility(us_021_app_page.endDate, 3).sendKeys(Date.passedDate());
         actions.sendKeys(Keys.PAGE_DOWN).perform();
+
     }
 
 
