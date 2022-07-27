@@ -10,7 +10,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
+import pages.HomePage;
 import pages.US_006_Pages;
 import pages.US_021_App_Page;
 import pages.US_021_Page;
@@ -57,6 +59,7 @@ public class US_021_StepDefs {
 
 
 
+
     @Then("Staff enters password")
     public void staff_enters_password() {
         us_021_page.passwordBox.sendKeys(ConfigurationReader.getProperty("us_021_password"));
@@ -71,10 +74,12 @@ public class US_021_StepDefs {
 
 
 
+
     @Then("Staff clicks on the MY PAGES button")
     public void staff_clicks_on_the_my_pages_button() {
         ReusableMethods.waitForClickablility(us_021_page.myPagesButton, 3).click();
     }
+
 
 
 
@@ -84,11 +89,15 @@ public class US_021_StepDefs {
     }
 
 
+
+
     @Then("Staff enters SSN in the Patient SSN: box")
     public void staff_enters_ssn_in_the_patient_ssn_box() {
         ReusableMethods.waitFor(2);
         us_021_page.patientSsnButton.sendKeys(ConfigurationReader.getProperty("us_021_SSN"));
     }
+
+
 
 
     @Then("Staff clicks Show Appointments button")
@@ -97,10 +106,14 @@ public class US_021_StepDefs {
     }
 
 
+
+
     @Then("Staff clicks Edit button")
     public void staff_clicks_edit_button() {
         ReusableMethods.waitForClickablility(us_021_page.editButton, 3).click();
     }
+
+
 
 
     @Then("Staff updates appointment")
@@ -111,12 +124,14 @@ public class US_021_StepDefs {
     }
 
 
+
     @Then("Staff clicks Save button")
     public void staff_clicks_save_button() {
         ReusableMethods.waitFor(2);
         //ReusableMethods.waitForClickablility(us_021_app_page.save, 3).click();
         Driver.clickWithJS(us_021_app_page.save);
     }
+
 
 
     @Then("Staff shows The appointment is updated with identifier popup")
@@ -130,7 +145,10 @@ public class US_021_StepDefs {
     public void staff_close_the_browser() {
         Driver.closeDriver();
     }
-//********************************************************************************************************************
+
+
+
+
     @Then("staff selects COMPLETED option in the status box")
     public void staff_selects_completed_option_in_the_status_box() {
         ReusableMethods.waitForVisibility(us_021_app_page.status, 3);
@@ -138,13 +156,16 @@ public class US_021_StepDefs {
         select.selectByVisibleText("COMPLETED");
 }
 
+
+
     @Then("Staff shows status cannot update as COMPLETED")
     public void staff_shows_status_cannot_update_as_completed() {
        String expectedStatus = ConfigurationReader.getProperty("us_021_expectedStatus");
        String actualStatus = us_021_app_page.actualStatus.getText();
        Assert.assertEquals(actualStatus,expectedStatus);
     }
-//*********************************************************************************************************************
+
+
 
 
     @Then("staff may change {string}")
@@ -156,12 +177,14 @@ public class US_021_StepDefs {
 
 
 
-//***************************************************************************************************************
+
+
     @Then("Staff leave Anamnesis button as Blank")
     public void staff_leave_anamnesis_button_as_blank() {
         ReusableMethods.waitForClickablility(us_021_app_page.anamnesis, 1).clear();
         actions.sendKeys(Keys.ARROW_DOWN).perform();
     }
+
 
 
     @Then("Staff leave Treatment button as Blank")
@@ -178,22 +201,22 @@ public class US_021_StepDefs {
         actions.sendKeys(Keys.PAGE_DOWN).perform();
     }
 
-//***************************************************************************************************************
+
+
     @Then("staff should select the current doctor")
     public void staff_should_select_the_current_doctor() throws InterruptedException {
         Thread.sleep(2000);
         actions.sendKeys(Keys.PAGE_DOWN).perform();
         Thread.sleep(2000);
         us_021_app_page.physician.click();
-        Thread.sleep(10000);
-        actions.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).perform();
-
-
-
-
-
+        Thread.sleep(15000);
+        Select select = new Select(us_021_app_page.physician);
+        select.selectByVisibleText(ConfigurationReader.getProperty("us_021_Physician"));
+        ReusableMethods.waitFor(1);
     }
-//*************************************************************************************************************
+
+
+
 
 
     @Then("Staff clicks Show Tests button")
@@ -215,13 +238,15 @@ public class US_021_StepDefs {
         Assert.assertTrue(ReusableMethods.waitForVisibility(us_021_app_page.TestResultsText, 3).isDisplayed());
     }
 
-//******************************************************************************************************
+
+
 
     @Then("Staff updates date as past")
     public void staff_updates_date_as_past() {
         ReusableMethods.waitForClickablility(us_021_app_page.startDate, 3).sendKeys(Date.passedDate());
         ReusableMethods.waitForClickablility(us_021_app_page.endDate, 3).sendKeys(Date.passedDate());
         actions.sendKeys(Keys.PAGE_DOWN).perform();
+
     }
 
 

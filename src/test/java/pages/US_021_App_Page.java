@@ -34,7 +34,7 @@ public class US_021_App_Page {
     @FindBy(xpath = "//textarea[@name='diagnosis']")
     public WebElement diagnosis;
 
-    @FindBy(xpath = "//select[@name='physician.id']")
+    @FindBy(xpath = "//*[@id='appointment-physician']")
     public WebElement physician;
 
     @FindBy(xpath = "//button[@type='submit']")

@@ -2,7 +2,8 @@
 Feature: database_read_patient
 
   Background: Prerequisite_Connect_to_The_Server
-    Given user connects to the database 005
+    Given user connects to database 007
+
 
   @US_005_Read_All_Data
   Scenario: TC01_read_patient_information
@@ -12,10 +13,6 @@ Feature: database_read_patient
 
   @US_005_db_firstname_table
   Scenario: TC02_read_patient_name
-
-    And verify "patient" table "first_name" column contains "Doctor" data
-    And close the database connection 007
-
     And verify "patient" table "first_name" column contains "a" data
     Then close the database connection 007
 
@@ -30,5 +27,7 @@ Feature: database_read_patient
   Scenario: TC04_read_patient_phone
     And verify "patient" table "phone" column contains "222-333-2322" data
     Then close the database connection 007
+
+
 
 

@@ -46,4 +46,7 @@ public class HomePage {
     @FindBy(xpath = "//div[@class=\"container\"]//h1")
     public WebElement welcomeToMedunnaText;
 
+
+
+
 }
