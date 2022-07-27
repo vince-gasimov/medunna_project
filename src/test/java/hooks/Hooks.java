@@ -6,7 +6,6 @@ import io.cucumber.java.Scenario;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;
 
-import org.apache.groovy.parser.antlr4.util.PositionConfigureUtils;
 import pages.LoginPage;
 
 import org.openqa.selenium.OutputType;

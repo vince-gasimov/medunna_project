@@ -15,11 +15,16 @@ import org.junit.runner.RunWith;
         },
         features = "./src/test/resources/features",
         glue = {"stepdefinitions", "hooks"},
+<<<<<<< HEAD
 
         tags = "@US_023",
         dryRun =true
 
 
+=======
+        tags = "@login",
+        dryRun =false
+>>>>>>> master
 )
 public class Runner {
 }
