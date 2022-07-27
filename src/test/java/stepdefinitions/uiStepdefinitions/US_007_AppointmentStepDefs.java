@@ -38,7 +38,7 @@ public class US_007_AppointmentStepDefs {
     @When("user clicks Make an Appointment button")
     public void user_clicks_make_an_appointment_button() throws InterruptedException {
         homePage.makeAnAppointment.click();
-        Thread.sleep(2);
+        Thread.sleep(1);
     }
     @When("user clicks Send and Appointment Request")
     public void user_clicks_send_and_appointment_request() {
