@@ -3,8 +3,9 @@ Feature: user_signin
 
   Background: user_is_on_the_Medunna_page
     Given  user is on the Medunna page
-    When user  clicks  to icon on top right corner US002
+    And user  clicks  to icon on top right corner US002
     And user clicks signInLocation button
+
 
   @smoke
   @US004_TC01
@@ -16,11 +17,9 @@ Feature: user_signin
     Then  user should verify signed in "<signedInUserName>" successful
     Then close the browser
 
-
     Examples: customer credentials
       | username       | password  | signedInUserName
       | Team83-kubraoz | Esra2014. | Kubra Ozyasar
-
 
 
   @US004_TC02
