@@ -15,14 +15,16 @@ public class US_009_API_stepdefs {
 
     Response response;
 
-    @Given("user sends a get request for patients  data")
-    public void user_sends_a_get_request_for_patients_data() {
+    @Given("user sends a get request for patients data with id {string}")
+    public void user_sends_a_get_request_for_patients_data(String id) {
+        String path = "US_009_get_patient_request";
+        //path = path + "/" + id;
         response = given().headers(
                 "Authorization",
                 "Bearer " + generateToken(),
                 "Content-Type", ContentType.JSON,
                 "Accept", ContentType.JSON
-        ).when().get(ConfigurationReader.getProperty("US_009_get_patient_request"));
+        ).when().get(ConfigurationReader.getProperty(path));
 
         response.prettyPrint();
 
@@ -57,7 +59,7 @@ public class US_009_API_stepdefs {
     public void user_validates_patient_id_firstname_ssn_email_with_expected_data() {
         JsonPath jsonpath=response.jsonPath();
         String actualName=jsonpath.getString("firstName");
-        Assert.assertEquals(actualName,"seval");
+        Assert.assertEquals(actualName,"Seval");
         String countryName=jsonpath.getString("country.name");
         Assert.assertEquals(countryName,"Bulgaria");
     }
