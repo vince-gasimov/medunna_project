@@ -15,9 +15,9 @@ import utilities.Driver;
 
 public class US_005_AppointmentStepDefs {
     HomePage homePage = new HomePage();
-    LoginPage loginPage=new LoginPage();
-    RegisterPage registerPage=new RegisterPage();
-    US_007_AppointmentPage us_007_appointmentPage=new US_007_AppointmentPage();
+    LoginPage loginPage = new LoginPage();
+    RegisterPage registerPage = new RegisterPage();
+    US_007_AppointmentPage us_007_appointmentPage = new US_007_AppointmentPage();
 
 
     @Given("user should navigate to medunna")
@@ -81,83 +81,86 @@ public class US_005_AppointmentStepDefs {
         us_007_appointmentPage.phone.sendKeys("");
     }
 
-    @When("User does not use '-' after 3rd and 6th digits in phone number")
-    public void user_does_not_use_after_3rd_and_6th_digits_in_phone_number() {
-        us_007_appointmentPage.phone.sendKeys("1312420202");
+
+
+        @When("User does not use '-' after 3rd and 6th digits in phone number")
+        public void user_does_not_use_after_3rd_and_6th_digits_in_phone_number () {
+            us_007_appointmentPage.phone.sendKeys("1312420202");
+
+
+        }
+
+        @And("user enters icon to top right corner")
+        public void userEntersIconToTopRightCorner () {
+            homePage.userIcon.click();
+        }
+
+        // @And("user enters password again")
+        // public void userEntersPasswordAgain() {
+        //  homePage.registerButton.click();
+        // }
+
+        @And("user enters valid data on ssn, firstname, lastname, username, email, password field")
+        public void userEntersValidDataOnSsnFirstnameLastnameUsernameEmailPasswordField () {
+            Actions actions = new Actions(Driver.getDriver());
+            actions.click(homePage.registerButton).perform();
+            registerPage.ssnBox.sendKeys("176-23-1234");
+            registerPage.firstNameBox.sendKeys("a");
+            registerPage.lastNameBox.sendKeys("C");
+            registerPage.usernameBox.sendKeys("gzsdakp");
+            registerPage.emailBox.sendKeys("gazkop12@hotmail.com");
+            registerPage.newPasswordBox.sendKeys("hst123.");
+
+        }
+
+        @And("user enters password again")
+        public void userEntersPasswordAgain () {
+            registerPage.confirmPasswordBox.sendKeys("hst123.");
+        }
+
+        @And("user enters Register button")
+        public void userEntersRegisterButton () {
+            registerPage.registerButton.submit();
+        }
+
+
+        @And("user enters sign in button")
+        public void userEntersSignInButton () {
+            homePage.signInButton.click();
+
+        }
+
+        @And("user enters valid username")
+        public void userEntersValidUsername () {
+            loginPage.usernameBox.sendKeys("gzsdakp");
+        }
+
+        @And("user enters valid password")
+        public void userEntersValidPassword () {
+            loginPage.passwordBox.sendKeys("hst123.");
+        }
+
+        @And("user enters last sign in button")
+        public void userEntersLastSignInButton () {
+            loginPage.signInButton.submit();
+        }
+
+        @And("users see their profile")
+        public void usersSeeTheirProfile () {
+            Assert.assertTrue(homePage.profil.isDisplayed());
+        }
+
+
+        @And("user should see the error message")
+        public void userShouldSeeTheErrorMessage () {
+            Assert.assertTrue(homePage.invalidmessage.isDisplayed());
+        }
+
+
+        @Given("user connects to the database 005")
+        public void userConnectsToTheDatabase () {
+
+        }
 
 
     }
-
-    @And("user enters icon to top right corner")
-    public void userEntersIconToTopRightCorner() {
-        homePage.userIcon.click();
-    }
-
-    // @And("user enters password again")
-    // public void userEntersPasswordAgain() {
-    //  homePage.registerButton.click();
-    // }
-
-    @And("user enters valid data on ssn, firstname, lastname, username, email, password field")
-    public void userEntersValidDataOnSsnFirstnameLastnameUsernameEmailPasswordField() {
-        Actions actions= new Actions(Driver.getDriver());
-        actions.click(homePage.registerButton).perform();
-        registerPage.ssnBox.sendKeys("176-23-1234");
-        registerPage.firstNameBox.sendKeys("a");
-        registerPage.lastNameBox.sendKeys("C");
-        registerPage.usernameBox.sendKeys("gzsdakp");
-        registerPage.emailBox.sendKeys("gazkop12@hotmail.com");
-        registerPage.newPasswordBox.sendKeys("hst123.");
-
-
-    }
-    @And("user enters password again")
-    public void userEntersPasswordAgain() {
-        registerPage.confirmPasswordBox.sendKeys("hst123.");
-    }
-
-    @And("user enters Register button")
-    public void userEntersRegisterButton() {
-        registerPage.registerButton.submit();
-    }
-
-
-    @And("user enters sign in button")
-    public void userEntersSignInButton() {
-        homePage.signInButton.click();
-
-    }
-
-    @And("user enters valid username")
-    public void userEntersValidUsername() {
-        loginPage.usernameBox.sendKeys("gzsdakp");
-    }
-
-    @And("user enters valid password")
-    public void userEntersValidPassword() {
-        loginPage.passwordBox.sendKeys("hst123.");
-    }
-
-    @And("user enters last sign in button")
-    public void userEntersLastSignInButton() {
-        loginPage.signInButton.submit();
-    }
-
-    @And("users see their profile")
-    public void usersSeeTheirProfile() {
-        Assert.assertTrue(homePage.profil.isDisplayed());
-    }
-
-
-    @And("user should see the error message")
-    public void userShouldSeeTheErrorMessage() {
-        Assert.assertTrue(homePage.invalidmessage.isDisplayed());
-    }
-
-    @Given("user connects to the database 005")
-    public void userConnectsToTheDatabase() {
-        
-    }
-
-
-}
