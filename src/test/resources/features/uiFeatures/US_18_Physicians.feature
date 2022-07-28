@@ -1,4 +1,4 @@
-
+@US_018ui
 Feature: admin_login_physicians
   Scenario: admin_valid_ssn
 
@@ -16,6 +16,7 @@ Feature: admin_login_physicians
     And User should click Search User
     And User see firstname,lastname,birh date
     And User see successfull message
+    Then user closes the browser
 
 
   Scenario: admin_change
@@ -40,6 +41,7 @@ Feature: admin_login_physicians
     And  User enters valid Exam fee
     And  User enters Save button
     And user see succesfull message
+    Then user closes the browser
 @Edit
 
   Scenario: admin_edit
@@ -58,6 +60,7 @@ Feature: admin_login_physicians
     And user should edit phone
     And User enters Save button
     And user see edit successful message
+    Then user closes the browser
 
 
   @Delete
@@ -76,6 +79,7 @@ Feature: admin_login_physicians
     And user should click delete box
     And user should click confirm delete box
     And user see Internal server error message
+    Then user closes the browser
 
 
 
