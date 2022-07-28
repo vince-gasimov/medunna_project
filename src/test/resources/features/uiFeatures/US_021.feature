@@ -82,6 +82,7 @@ Feature: testing_of_some_capability_of_a_staff
 
   @US_021_Scenario_6
   Scenario: testing_of_visibility_of_patients's_test_results
+    Then Staff enters SSN in the Patient SSN: box
     Then Staff clicks Show Appointments button
     Then Staff clicks Show Tests button
     Then Staff clicks View Results button
