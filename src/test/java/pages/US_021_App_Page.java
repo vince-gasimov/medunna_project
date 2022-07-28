@@ -43,7 +43,7 @@ public class US_021_App_Page {
     @FindBy(xpath = "//div[@role='alert']")
     public WebElement popup;
 
-    @FindBy(xpath = "(//*[text()='Show Tests'])[2]")
+    @FindBy(xpath = "//*[text()='Show Tests']")
     public WebElement ShowTests;
 
     @FindBy(xpath = "(//span[@class='d-none d-md-inline'])[1]")
