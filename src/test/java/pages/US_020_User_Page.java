@@ -60,5 +60,7 @@ public class US_020_User_Page {
     @FindBy(xpath = "//div[@class='Toastify__toast-body']")
     public WebElement successMessage;
 
+    @FindBy(xpath = "//div[@class='info jhi-item-count']")
+    public WebElement userCount;
 
 }
