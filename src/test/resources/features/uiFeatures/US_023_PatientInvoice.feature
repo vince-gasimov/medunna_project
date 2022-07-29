@@ -1,17 +1,17 @@
 @US_023
 Feature: Staff_sends_invoice_to_patient
 
-  Scenario: patient_gets_appoinment
+  Scenario: patient_gets_appointment
     Given Patient goes to Medunna URL
     And Patient clicks on the icon on the top right corner
     And Patient clicks signs in button
-    And Patient enters username
-    And Patient enters password
+    And Patient should entered a valid username on the sign in page
+    And Patient should entered a valid password on the sign in page
     And Patient clicks on the sign in button on the right bottom
     And Patient clicks on the MY PAGES button
-    And Patient clicks on My Appointments button
+    And Patient clicks on Make An Appointments button
     And Patient enters phone number
-    Then Patient sens request for an appointment
+    Then Patient sends request for an appointment
 
 @US_023
     Scenario: Staff_views_and_creates_an_invoice_to_patient
