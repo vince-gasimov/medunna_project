@@ -94,7 +94,7 @@ public class US_021_StepDefs {
     @Then("Staff enters SSN in the Patient SSN: box")
     public void staff_enters_ssn_in_the_patient_ssn_box() {
         ReusableMethods.waitFor(2);
-        us_021_page.patientSsnButton.sendKeys(ConfigurationReader.getProperty("us_023_SSN"));
+        us_021_page.patientSsnButton.sendKeys(ConfigurationReader.getProperty("us_021_SSN"));
     }
 
 
