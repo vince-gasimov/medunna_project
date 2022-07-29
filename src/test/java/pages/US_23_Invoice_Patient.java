@@ -5,14 +5,24 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class US_023_Invoice {
+public class US_23_Invoice_Patient {
 
-    public US_023_Invoice(){PageFactory.initElements(Driver.getDriver(), this);}
+    public US_23_Invoice_Patient(){PageFactory.initElements(Driver.getDriver(), this);}
 
     @FindBy(xpath = "//*[text()='Sign in']")
     public WebElement signInButton;
 
-    @FindBy(xpath = "//input[@name='username']")
+
+    //@FindBy(xpath = "//a[@aria-haspopup='true']")
+    //public WebElement userIcon;
+
+    //@FindBy(xpath = "//*[text()='MY PAGES']")
+   // public WebElement myPagesButton;
+
+    //@FindBy(xpath = "(//*[text()='Search Patient'])[1]")
+    //public WebElement searchPatientButton;
+
+    @FindBy(xpath = "//input[@id='username")
     public WebElement usernameBox;
 
     @FindBy(xpath = "//input[@name='password']")
@@ -24,7 +34,7 @@ public class US_023_Invoice {
     @FindBy(xpath = "//*[text()='MY PAGES(PATIENT)']")
     public WebElement myPages;
 
-    @FindBy(xpath = "//span[text()='My Appointments']")
+    @FindBy(xpath = "//span[contains(text(),'Make an Appointment')]")
     public WebElement Appointments;
 
     @FindBy(xpath = "//input[@id='phone']")
@@ -49,11 +59,11 @@ public class US_023_Invoice {
     @FindBy(xpath = "//input[@name='password']")
     public WebElement password;
 
-    @FindBy(xpath = "//*[text()='MY PAGES']")
-    public WebElement myPagesButton;
+  // @FindBy(xpath = "//*[text()='MY PAGES']")
+ //   public WebElement myPagesButton;
 
-    @FindBy(xpath = "(//*[text()='Search Patient'])[1]")
-    public WebElement searchPatientButton;
+  //  @FindBy(xpath = "(//*[text()='Search Patient'])[1]")
+  //  public WebElement searchPatientButton;
 
     @FindBy(xpath = "//input[@name='ssn']")
     public WebElement patientSsnButton;
