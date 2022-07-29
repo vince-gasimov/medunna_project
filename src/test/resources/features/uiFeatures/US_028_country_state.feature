@@ -1,3 +1,4 @@
+@US028
 @US028_UI
 Feature: US028_country_creation_update_read_delete
 
@@ -40,8 +41,7 @@ Feature: US028_country_creation_update_read_delete
     And admin enters Country name US028
     And admin clicks on Save button on country page US028
     Then admin verifies A new Country is created with new id number message US028
-    When admin saves new created country and id US028
-    And admin finds the new created country and clicks on Delete button US028
+    When admin finds the new created country and clicks on Delete button US028
     Then admin verifies the warning message US028
     When admin clicks on pop up on Delete button US028
     Then admin verifies Country is deleted successfully message US028

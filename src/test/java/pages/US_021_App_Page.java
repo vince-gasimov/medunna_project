@@ -34,7 +34,7 @@ public class US_021_App_Page {
     @FindBy(xpath = "//textarea[@name='diagnosis']")
     public WebElement diagnosis;
 
-    @FindBy(xpath = "//select[@name='physician.id']")
+    @FindBy(xpath = "//*[@id='appointment-physician']")
     public WebElement physician;
 
     @FindBy(xpath = "//button[@type='submit']")
@@ -43,7 +43,7 @@ public class US_021_App_Page {
     @FindBy(xpath = "//div[@role='alert']")
     public WebElement popup;
 
-    @FindBy(xpath = "(//*[text()='Show Tests'])[2]")
+    @FindBy(xpath = "//*[text()='Show Tests']")
     public WebElement ShowTests;
 
     @FindBy(xpath = "(//span[@class='d-none d-md-inline'])[1]")
