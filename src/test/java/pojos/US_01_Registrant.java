@@ -4,6 +4,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.util.Arrays;
 
+//@Getter //lombok
+//@Setter
+//@Builder
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class US_01_Registrant {
     /*
@@ -30,7 +33,6 @@ public class US_01_Registrant {
 
     public US_01_Registrant() {
     }
-
     public US_01_Registrant(String firstName, String lastName, String ssn, String login, String langKey, String password, String email, boolean activated) {
         this.firstName = firstName;
         this.lastName = lastName;
