@@ -21,18 +21,18 @@
             <version>4.1.1</version>
         </dependency>
 
+        <!--        &lt;!&ndash; https://mvnrepository.com/artifact/tech.grasshopper/extentreports-cucumber7-adapter &ndash;&gt;-->
+        <dependency>
+            <groupId>tech.grasshopper</groupId>
+            <artifactId>extentreports-cucumber7-adapter</artifactId>
+            <version>1.6.0</version>
+        </dependency>
+
         <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
             <version>5.0.3</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
-        <dependency>
-            <groupId>io.rest-assured</groupId>
-            <artifactId>rest-assured</artifactId>
-            <version>4.5.1</version>
-            <scope>test</scope>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
@@ -101,15 +101,6 @@
             <artifactId>jackson-databind</artifactId>
             <version>2.9.8</version>
         </dependency>
-
-
-        <!--        &lt;!&ndash; https://mvnrepository.com/artifact/tech.grasshopper/extentreports-cucumber7-adapter &ndash;&gt;-->
-        <!--        <dependency>-->
-        <!--            <groupId>tech.grasshopper</groupId>-->
-        <!--            <artifactId>extentreports-cucumber7-adapter</artifactId>-->
-        <!--            <version>1.2.0</version>-->
-        <!--        </dependency>-->
-
 
         <dependency>
             <groupId>org.postgresql</groupId>

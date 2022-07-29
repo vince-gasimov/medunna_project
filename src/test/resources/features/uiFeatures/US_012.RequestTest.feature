@@ -3,9 +3,10 @@ Feature: request_test
 
   Background: user_is_on_the_Medunna_page
     Given  user is on the Medunna page
-    And user clicks on the user icon
+    And user  clicks  to icon on top right corner US002
     And user clicks signInLocation button
 
+  @Smoke
   @TC01
   Scenario Outline: TC012_doctor_request_test
     And  user should entered a valid username "<username>" on the sign in page
@@ -23,9 +24,8 @@ Feature: request_test
       | username            | password  | signedInUserName
       | team83_yesimdoctor3 | medunna | zeynep7 ozturk
 
-
+  @Smoke
   @TC02
-
   Scenario Outline: TC012_doctor_see_noTestItemsFound
     And  user should entered a valid username "<username>" on the sign in page
     And  user should entered a valid password   "<password>" on the sign in page
@@ -63,7 +63,7 @@ Feature: request_test
     And doctor clicks on checkmark box of Creatinin
     And doctor clicks on checkmark box of Total Protein
     And doctor clicks on checkmark box of Potassium
-    And doctor clicks Save button
+    And doctor should click on Save button
     And doctor verifies A New Test Created message
 
 
