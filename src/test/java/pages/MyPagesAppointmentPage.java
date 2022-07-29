@@ -79,6 +79,10 @@ public class MyPagesAppointmentPage {
     @FindBy(xpath = "//*[@class='table']/tbody/tr[1]/td[4]/span")
     public WebElement statusCheck;
 
+    @FindBy(id = "fromDate")
+    public WebElement fromDateAppointment;
 
+    @FindBy(id = "toDate")
+    public WebElement toDateAppointment;
 
 }

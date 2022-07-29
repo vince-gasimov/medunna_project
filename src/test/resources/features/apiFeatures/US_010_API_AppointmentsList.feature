@@ -1,11 +1,13 @@
-@US_010_API_Testing
-Feature: test api appointments list
+@us_010_api
+Feature: US_010_appointmentsList
 
-  @US_010_Get_Api_AppointmentsList
-  Scenario: get request to "https://www.medunna.com/api/user"
-    Given user sends a get request for user's data
-    And user provides patient id as a query parameter
-    And user verifies status code is 200
-    Then user validates patient id, start date, end date, status with expected data
+    @Api
+    @US_10_AppointmentsList
+  Scenario: TC_10_get_appointmentList
+    Given user sends GET request for appointments
+    When user receives response with status code 200
+    Then user verifies that response contains physicianID
+
+
 
 

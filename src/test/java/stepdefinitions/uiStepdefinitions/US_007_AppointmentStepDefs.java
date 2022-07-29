@@ -38,7 +38,7 @@ public class US_007_AppointmentStepDefs {
     @When("user clicks Make an Appointment button")
     public void user_clicks_make_an_appointment_button() throws InterruptedException {
         homePage.makeAnAppointment.click();
-        Thread.sleep(2);
+        Thread.sleep(1);
     }
     @When("user clicks Send and Appointment Request")
     public void user_clicks_send_and_appointment_request() {
@@ -95,22 +95,6 @@ public class US_007_AppointmentStepDefs {
                 sendKeys(Keys.TAB).sendKeys(day)
                 .sendKeys(Keys.TAB).sendKeys(year).build().perform();
     }
-    @When("user enters valid {string}, {string}, {string}, {string}, {string}")
-    public void userEntersValid(String firstName, String lastName, String ssn, String email, String phone) {
-        Driver.waitForVisibility(appointment.firstName,10);
-        appointmentPojo.setFirstName(firstName);
-        appointment.firstName.sendKeys(firstName);
-        appointmentPojo.setLastName(lastName);
-        appointment.lastName.sendKeys(lastName);
-        appointmentPojo.setSsn(ssn);
-        appointment.ssn.sendKeys(ssn);
-        appointmentPojo.setEmail(email);
-        appointment.email.sendKeys(email);
-        appointmentPojo.setPhone(phone);
-        appointment.phone.sendKeys(phone);
-        saveUiRegistrantData(appointmentPojo);
-        System.out.println("Vusal");
-    }
     @When("user enters tomorrow's date")
     public void userEntersTomorrowSDate() {
         appointment.date.sendKeys(Date.tomorrowsDate());
@@ -119,32 +103,6 @@ public class US_007_AppointmentStepDefs {
     public void userEntersPassedDate(String date) {
         date = Date.passedDate();
         appointment.date.sendKeys(date);
-    }
-    @When("user types valid {string}, {string}, {string}, {string}, {string}")
-    public void user_types_valid(String firstName, String lastName, String ssn, String email, String phone) {
-        Driver.waitForVisibility(appointment.firstName,10);
-        appointmentPojo.setFirstName(firstName);
-        firstName = faker.name().firstName();
-        System.out.println(firstName);
-        appointment.firstName.sendKeys(firstName);
-        appointmentPojo.setLastName(lastName);
-        System.out.println(lastName);
-        lastName = faker.name().lastName();
-        appointment.lastName.sendKeys(lastName);
-        System.out.println();
-        appointmentPojo.setSsn(ssn);
-        ssn = faker.idNumber().ssnValid();
-        System.out.println(ssn);
-        appointment.ssn.sendKeys(ssn);
-        appointmentPojo.setEmail(email);
-        email = faker.internet().emailAddress();
-        appointment.email.sendKeys(email);
-        appointmentPojo.setPhone(phone);
-        phone = faker.numerify("###-###-####");
-        appointment.phone.sendKeys(phone);
-        System.out.println(appointmentPojo);
-        saveUiRegistrantData(appointmentPojo);
-        System.out.println("Vusal");
     }
     @When("user enters {string} date")
     public void user_enters_date(String today) {
@@ -164,5 +122,32 @@ public class US_007_AppointmentStepDefs {
     @When("user does not enter anything on date box and clicks Send and Appointment Request")
     public void user_does_not_enter_anything_on_date_box_and_clicks_send_and_appointment_request() {
         appointment.submitButton.submit();
+    }
+
+    @And("save the records us007")
+    public void saveTheRecordsUs() {
+        saveUiRegistrantData(appointmentPojo);
+    }
+
+    @When("user enters valid {string}, {string}, {string}, {string}, {string} us007")
+    public void userTypesValid(String firstName, String lastName, String ssn, String email, String phone) {
+
+        Driver.waitForVisibility(appointment.firstName, 5);
+
+        firstName = faker.name().firstName();
+        appointment.firstName.sendKeys(firstName);
+        appointmentPojo.setFirstName(firstName);
+        lastName = faker.name().lastName();
+        appointment.lastName.sendKeys(lastName);
+        appointmentPojo.setLastName(lastName);
+        ssn = faker.idNumber().ssnValid();
+        appointment.ssn.sendKeys(ssn);
+        appointmentPojo.setSsn(ssn);
+        email = faker.internet().emailAddress();
+        appointment.email.sendKeys(email);
+        appointmentPojo.setEmail(email);
+        phone = faker.numerify("###-###-####");
+        appointment.phone.sendKeys(phone);
+        appointmentPojo.setPhone(phone);
     }
 }

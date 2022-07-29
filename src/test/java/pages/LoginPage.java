@@ -55,5 +55,9 @@ public class LoginPage {
     @FindBy(xpath="//button[@class='btn btn-secondary']")
     public WebElement cancelButton;
 
+    @FindBy(xpath = "//h5[@class=\"modal-title\"]//span")
+    public WebElement signInText;
+
+
 }
 

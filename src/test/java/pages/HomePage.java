@@ -24,16 +24,6 @@ public class HomePage {
     @FindBy(xpath = "//a[@href='/patient']")
     public WebElement patientButton;
 
-
-
-
-
-
-
-
-
-
-
     @FindBy(xpath = "//*[@id='account-menu']")
     public WebElement profil;
 
@@ -55,5 +45,8 @@ public class HomePage {
     public WebElement icon;
     @FindBy(xpath = "//div[@class=\"container\"]//h1")
     public WebElement welcomeToMedunnaText;
+
+
+
 
 }

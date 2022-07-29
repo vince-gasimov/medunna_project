@@ -6,8 +6,14 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
+import pages.LoginPage;
+import pages.US_020_User_Page;
 import pojos.US_01_Registrant;
 import utilities.ConfigurationReader;
+import utilities.Driver;
+import utilities.ReusableMethods;
 
 import static hooks.Hooks.spec;
 import static io.restassured.RestAssured.given;
@@ -23,7 +29,7 @@ public class US_001_API_Get_Registrant_Data {
 
     Response response;
     US_01_Registrant[] registrants;
-
+    US_020_User_Page userPage = new US_020_User_Page();
     Faker faker = new Faker();
 
     @Given("user sends a get-request to get all registrants' data")
@@ -34,9 +40,9 @@ public class US_001_API_Get_Registrant_Data {
                 "Bearer " + generateToken(),
                 "Content-Type", ContentType.JSON,
                 "Accept", ContentType.JSON
-        ).when().get(ConfigurationReader.getProperty("registrant_endpoint"));
+        ).when().get(ConfigurationReader.getProperty("registrant_endpoint"));//https://medunna.com/api/users?=size=2000
 
-             response.prettyPrint();
+//             response.prettyPrint();
 
     }
 
@@ -45,13 +51,15 @@ public class US_001_API_Get_Registrant_Data {
 
         ObjectMapper obj = new ObjectMapper();
         registrants = obj.readValue(response.asString(), US_01_Registrant[].class);
-
+        System.out.println(registrants.length);
 
     }
 
     @Then("user saves the data to the files and validates")
     public void user_saves_the_data_to_the_files_and_validates() {
-        saveUiRegistrantsData(registrants);
+        US_01_Registrant actual = response.as(US_01_Registrant.class);
+        saveApiNewRegistrantData(new US_01_Registrant[]{actual}); //save the new registrant to the file
+
 
 
     }
@@ -83,13 +91,31 @@ public class US_001_API_Get_Registrant_Data {
 
         assertEquals(requestBody.getFirstName(), actual.getFirstName());
 
-
         System.out.println(actual.getFirstName());
 
         System.out.println(actual.getSsn()); //print the ssn to the console to see if it is correct
 
-        saveApiNewRegistrantData(new US_01_Registrant[]{actual}); //save the new registrant to the file
 
+
+
+    }
+
+    @Given("user on user-management page and gets the registrant number")
+    public void userOnUserManagementPageAndGetsTheRegistrantNumber() {
+        Actions actions = new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        ReusableMethods.waitForVisibility(userPage.userCount, 5);
+        String userCount = userPage.userCount.getText();
+
+    }
+
+    @Then("user validates the registrant number")
+    public void userValidatesTheRegistrantNumber() {
+        int i = Integer.parseInt(userPage.userCount.getText().replaceAll("\\D", ""));
+        int UIcount = i % 10000;
+
+        assertEquals(UIcount, registrants.length);
 
     }
 }
