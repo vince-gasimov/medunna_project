@@ -15,7 +15,7 @@ import org.junit.runner.RunWith;
         },
         features = "./src/test/resources/features",
         glue = {"stepdefinitions", "hooks"},
-        tags = "@US_08_user_password_segment",
+        tags = "   @US25_TC005",
         dryRun = false
 )
 public class Runner {
