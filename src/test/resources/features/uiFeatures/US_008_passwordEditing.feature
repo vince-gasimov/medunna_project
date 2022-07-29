@@ -32,7 +32,7 @@ Feature:   US008_password_update
       | new password | add character|
       | 123456       | a            |
 
-  @US08_TC_0003
+  @US08_TC_00Cu03
   Scenario Outline: for stronger password adding one UPPERCASE character
     And user cleans the new password part
     And user sends new password "<new password>" to new password part
