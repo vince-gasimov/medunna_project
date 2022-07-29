@@ -23,19 +23,6 @@ public class US_001_TXTWriter {
         }
     }
 
-    public static void saveUiRegistrantsData(US_01_Registrant[] US01Registrant) {
-        try {
-            FileWriter fw = new FileWriter(ConfigurationReader.getProperty("database_registrant_data"), true);
-
-            BufferedWriter bw = new BufferedWriter(fw);
-
-            bw.append(US01Registrant.toString() + "\n");
-            bw.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
     public static void saveApiAllRegistrantData(US_01_Registrant[] US01Registrants) {
         try {
             FileWriter fw = new FileWriter(ConfigurationReader.getProperty("api_all_registrant_data"), true);
