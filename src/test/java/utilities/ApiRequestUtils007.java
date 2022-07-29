@@ -17,4 +17,13 @@ public class ApiRequestUtils007 {
                 .when().get(endPoinnt);
         return response;
     }
+    public static Response getRequest(String endPoinnt){
+
+        Response response = given().headers("Authorization",
+                        "Bearer " + generateToken(),
+                        "Content-Type", ContentType.JSON,
+                        "Accept", ContentType.JSON)
+                .when().get(endPoinnt);
+        return response;
+    }
 }

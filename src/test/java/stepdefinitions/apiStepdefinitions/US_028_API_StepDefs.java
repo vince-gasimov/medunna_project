@@ -9,6 +9,7 @@ import io.cucumber.java.en.When;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Assert;
+import pages.HomePage;
 import utilities.ConfigurationReader;
 
 import java.io.IOException;
@@ -102,7 +103,7 @@ public class US_028_API_StepDefs {
                         "Accept",ContentType.JSON
                 ).
                 contentType(ContentType.JSON).body(expectedData).when().post("/{first}/{second}");
-//        response.prettyPrint();
+        response.prettyPrint();
     }
 
     @When("user deserializes country data")
