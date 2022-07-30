@@ -22,7 +22,7 @@ public class US_23_Invoice_Patient {
     //@FindBy(xpath = "(//*[text()='Search Patient'])[1]")
     //public WebElement searchPatientButton;
 
-    @FindBy(xpath = "//input[@id='username")
+    @FindBy(xpath = "//input[@name='username']")
     public WebElement usernameBox;
 
     @FindBy(xpath = "//input[@name='password']")
@@ -35,7 +35,7 @@ public class US_23_Invoice_Patient {
     public WebElement myPages;
 
     @FindBy(xpath = "//span[contains(text(),'Make an Appointment')]")
-    public WebElement Appointments;
+    public WebElement makeAnAppointment;
 
     @FindBy(xpath = "//input[@id='phone']")
     public WebElement Phone;

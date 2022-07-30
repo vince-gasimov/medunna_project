@@ -12,14 +12,14 @@ import utilities.ReusableMethods;
 public class US_023_InvoiceStepDefs {
     HomePage homePage = new HomePage();
     LoginPage loginPage = new LoginPage();
-    PatientPage patientPage = new PatientPage();
+    US_23_Invoice_Patient patientPage = new US_23_Invoice_Patient();
     Actions actions = new Actions(Driver.getDriver());
 
 
 
     @Given("Patient goes to Medunna URL")
     public void patient_goes_to_medunna_url() {
-        Driver.getDriver().get("https://medunna.com/login");
+        Driver.getDriver().get("https://medunna.com");
     }
 
     @Given("Patient clicks on the icon on the top right corner")
@@ -33,13 +33,14 @@ public class US_023_InvoiceStepDefs {
    }
 
    @Given("Patient should entered a valid username on the sign in page")
-    public void user_should_entered_a_valid_username_on_the_sign_in_page(String username) {
-        loginPage.usernameBox.sendKeys(ConfigurationReader.getProperty("team83_patient_02"));
+    public void user_should_entered_a_valid_username_on_the_sign_in_page() {
+
+        patientPage.usernameBox.sendKeys("team83_patient_02");
     }
 
     @Given("Patient should entered a valid password on the sign in page")
-    public void user_should_entered_a_valid_password_on_the_sign_in_page(String password) {
-        loginPage.passwordBox.sendKeys(ConfigurationReader.getProperty("patient_02"));
+    public void user_should_entered_a_valid_password_on_the_sign_in_page(){
+        loginPage.passwordBox.sendKeys("patient_02");
     }
 
     @Given("Patient clicks on the sign in button on the right bottom")
@@ -52,26 +53,24 @@ public class US_023_InvoiceStepDefs {
 
     @Given("Patient clicks on the MY PAGES button")
     public void patient_clicks_on_the_my_pages_button() {
-        ReusableMethods.waitForClickablility(LoginPage.myPagesButton, 3).click();
-
+        //ReusableMethods.waitForClickablility(LoginPage.myPagesButton, 3).click();
+        ReusableMethods.waitForClickablility(patientPage.myPages, 3).click();
     }
 
     @Given("Patient clicks on Make An Appointments button")
     public void patient_clicks_on_make_an_appointment_button() {
-        US_024_PatientSeeTestResultsPage Patient = null;
-        Patient.myAppointmentsButton.click();
-
+        patientPage.makeAnAppointment.click();
     }
 
     @Given("Patient enters phone number")
     public void patient_enters_phone_number() {
         //Patient.phoneNumber.sendKeys("123-123-1212");
-
+        patientPage.Phone.sendKeys("123-123-1212");
     }
 
     @Then("Patient sends request for an appointment")
     public void patient_sens_request_for_an_appointment() {
-
+        patientPage.AppointmentRequest.submit();
     }
 
 
