@@ -16,18 +16,20 @@ import static utilities.Authentication.generateToken;
 public class US_007_AppointmentApiStepDefs {
 
     String token = "";
-    String endPoint = ConfigurationReader.getProperty("us_007_appointments_url");
+//    String endPoint = ConfigurationReader.getProperty("us_007_appointments_url");
     Response response;
     US_007_Appointment[] appointments;
 
     @Given("generate the token US007")
     public void generate_the_token_us() {
-        token = generateToken();
+//        token = generateToken();
     }
     @Given("user makes an appointment request with API US007")
     public void user_makes_an_appointment_request_with_api_us() {
-        response = getRequest(token, endPoint);
+//        response = getRequest(token, endPoint);
 //        response.prettyPrint();
+
+        response= getRequest(ConfigurationReader.getProperty("us_007_appointments_url"));
     }
     @When("user deserializes the appointments data US007")
     public void user_deserializes_the_appointments_data_us() throws Exception {
