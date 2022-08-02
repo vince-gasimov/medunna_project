@@ -1,11 +1,16 @@
 package pages;
 
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
 public class LoginPage {
+
+
+    public static By myPagesButton;
 
     public LoginPage () {
         PageFactory.initElements(Driver.getDriver(), this);
