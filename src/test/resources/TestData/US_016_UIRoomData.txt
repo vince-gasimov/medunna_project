@@ -1,1 +1,0 @@
-US_016_Rooms{roomNumber=325604, roomType='DAYCARE', status=false, price=250, description='null', createdDate='2022-40-30T08:40'}
