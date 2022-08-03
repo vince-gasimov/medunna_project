@@ -1,4 +1,4 @@
-
+@US_026
 Feature: Any_user_can_use_contact_portal
   Background:
     Given user goes to Medunna Url

@@ -1,1 +1,0 @@
-US_016_Rooms{roomNumber=101601, roomType='TWIN', status=true, price=50, description='101601 - This is a Full TWIN room with 50 CAD .', createdDate='2022-52-29T02:52'}

@@ -31,7 +31,7 @@ public class US_016_API_StepDefs {
                 "Accept", ContentType.JSON
         ).when().get(ConfigurationReader.getProperty("roomResources_api_url"));
 
-       response.prettyPrint();
+//       response.prettyPrint();
 
     }
 

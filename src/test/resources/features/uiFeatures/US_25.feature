@@ -1,4 +1,5 @@
 @US25
+@sprint2
 Feature: patient_make_appointment
   Background: login as a patient
     Given Patient goes to Medunna url
@@ -35,7 +36,7 @@ Feature: patient_make_appointment
     Then Patient enters all information and select past appointment date
     Then Patient verifies Appointment date can not be past date! warning shown
 
-  @US25_TC007
+  @US25_TC007  @smoke
   Scenario: TC07_leave_firstName_empty
     Then Patient enters all information and select future appointment date
     Then Patient verifies Appointment registration saved! pop up shown

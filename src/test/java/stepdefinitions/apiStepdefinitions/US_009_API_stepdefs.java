@@ -26,7 +26,7 @@ public class US_009_API_stepdefs {
                 "Accept", ContentType.JSON
         ).when().get(ConfigurationReader.getProperty(path));
 
-        response.prettyPrint();
+//        response.prettyPrint();
 
     }
 

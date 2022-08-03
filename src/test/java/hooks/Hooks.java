@@ -6,8 +6,6 @@ import io.cucumber.java.Scenario;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;
 
-
-
 import pages.LoginPage;
 
 import org.openqa.selenium.OutputType;

@@ -1,6 +1,8 @@
 @US_023
+@sprint2
 Feature: Staff_sends_invoice_to_patient
 
+  @smoke
   Scenario: patient_gets_appointment
     Given Patient goes to Medunna URL
     And Patient clicks on the icon on the top right corner
@@ -12,9 +14,10 @@ Feature: Staff_sends_invoice_to_patient
     And Patient clicks on Make An Appointments button
     And Patient enters phone number
     Then Patient sends request for an appointment
+    Then user closes the browser
 
-@US_023
-    Scenario: Staff_views_and_creates_an_invoice_to_patient
+  @US_023
+  Scenario: Staff_views_and_creates_an_invoice_to_patient
 
     Given Staff goes to Medunna
     And Staff clicks on the right top of the corner
@@ -29,4 +32,5 @@ Feature: Staff_sends_invoice_to_patient
     And Staff views of patient Exam fee
     And Staff views of patient test item prices
     Then Staff creates invoice for patient
-  Then Staff save invoice
+    Then Staff save invoice
+    Then user closes the browser
